@@ -1,6 +1,11 @@
 export const variables = {
   /* Colour */
-  '--white': '#D7DADC',
+  '--color-primary': '#64FFDA',
+  '--color-primary-dark': '#1DE9B6',
+  '--color-secondary': '#F50057',
+  '--color-secondary-light': '#FF4081',
+  '--color-secondary-dark': '#F50057',
+  '--white': '#FFF',
   '--black': 'rgba(0,0,0,.8)',
   '--grey-100': '#FAFAFA',
   '--grey-200': '#EEEEEE',

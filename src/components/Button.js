@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: linear-gradient(to bottom right, hotpink, pink);
+  /* background: linear-gradient(to bottom right, var(--color-primary), #8e1b36); */
+  background: var(--color-secondary);
   border: 0;
   border-radius: 2px;
   color: ${(props) => props.color};
@@ -12,6 +13,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--white);
 
   span {
     position: relative;

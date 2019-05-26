@@ -72,8 +72,8 @@ const NavList = styled.ul`
     position: absolute;
     width: 0.5rem;
     height: var(--nav-item-height);
-    background-color: hotpink;
-    box-shadow: 1px 0px 15px hotpink;
+    background-color: var(--color-primary);
+    box-shadow: 0 0  18px 3px var(--color-primary);
     transition: transform 0.2s ease;
     transform: translateY(${(p) => lightPosition[p.currentPath]});
   }

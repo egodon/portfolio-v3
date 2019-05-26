@@ -38,11 +38,11 @@ const SocialIcons = styled.div`
 
   svg path {
     cursor: pointer;
-    fill: var(--white);
+    fill: var(--grey-300);
   }
 
   svg:hover path {
-    fill: var(--grey-300);
+    fill: var(--white);
   }
 `;
 
