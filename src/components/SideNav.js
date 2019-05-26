@@ -4,6 +4,7 @@ import { Location, Link } from '@reach/router';
 import { ROUTES } from 'constants/index';
 import Icon, { icons } from 'components/Icon';
 import SideNavFooter from 'components/SideNavFooter';
+import Logo from 'components/Logo';
 
 const navIcon = {
   HOME: icons.home,
@@ -14,7 +15,10 @@ const navIcon = {
 
 const SideNav = () => (
   <Container>
-    <H1>LOGO</H1>
+    <H1>
+      <Logo size="8rem" />
+      <span style={{ fontSize: 18, display: 'block' }}>EVAN GODON</span>
+    </H1>
     <Location>
       {({ location }) => (
         <>
@@ -80,10 +84,10 @@ const NavItem = styled.li`
   display: flex;
   align-items: center;
   padding-left: 3.4rem;
-  color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['grey-300'])};
+  color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['--grey-300'])};
 
   &:hover {
-    color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['grey-300'])};
+    color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['--grey-300'])};
   }
 
   a {
