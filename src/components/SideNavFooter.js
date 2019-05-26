@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon, { icons } from 'components/Icon';
 import { fadeIn } from 'style';
-import { color } from '../style';
 
 const SideNavFooter = () => (
   <Footer>

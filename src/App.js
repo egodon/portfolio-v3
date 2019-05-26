@@ -1,15 +1,14 @@
 import React from 'react';
 import { Root, Routes } from 'react-static';
-import { Link, Router } from '@reach/router';
+import { Router } from '@reach/router';
 import { Transition, animated } from 'react-spring';
-import styled from 'styled-components';
-import GlobalStyle from 'style';
-
+import styled, { ThemeProvider } from 'styled-components';
+import GlobalStyle, { variables } from 'style';
 import SideNav from 'components/SideNav';
 
-function App() {
-  return (
-    <Root>
+const App = () => (
+  <Root>
+    <ThemeProvider theme={variables}>
       <AppContainer>
         <SideNav />
         <React.Suspense fallback={<em>Loading...</em>}>
@@ -18,10 +17,10 @@ function App() {
           </Router>
         </React.Suspense>
       </AppContainer>
-      <GlobalStyle />
-    </Root>
-  );
-}
+    </ThemeProvider>
+    <GlobalStyle />
+  </Root>
+);
 
 const AppContainer = styled.div`
   display: grid;

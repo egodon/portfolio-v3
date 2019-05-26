@@ -1,13 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
-import { color } from './variables.css';
+import { variables } from './variables.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
 
+
+  /* Variables */
+  :root {
+    ${Object.keys(variables).map((key) => `${key}: ${variables[key]};`)}
+  }
+
   body {
-    background-color: ${color.grey_500};
+    background-color: var(--grey-500);
     font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
     Helvetica, Arial, 'Lucida Grande', sans-serif;
     font-weight: 300;
@@ -30,6 +36,8 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+
 `;
 
 export default GlobalStyle;
