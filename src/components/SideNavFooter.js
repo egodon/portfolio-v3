@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Icon, { icons } from 'components/Icon';
-import Button from 'components/Button'
-import { fadeIn } from 'style';
+import Button from 'components/Button';
+import { fadeIn, media } from 'style';
 
 const SideNavFooter = () => (
   <Footer>
@@ -27,6 +27,10 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   animation: ${fadeIn} 0.2s ease;
+
+  ${media.tablet`
+    display: none;
+  `}
 `;
 
 const SocialIcons = styled.div`

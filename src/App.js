@@ -3,7 +3,7 @@ import { Root, Routes } from 'react-static';
 import { Router } from '@reach/router';
 import { Transition, animated } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
-import GlobalStyle, { variables } from 'style';
+import GlobalStyle, { variables, media } from 'style';
 import SideNav from 'components/SideNav';
 
 const App = () => (
@@ -25,6 +25,13 @@ const App = () => (
 const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 22rem 1fr;
+
+  ${media.tablet`
+    --mobile-nav-height: 7rem
+
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
+  `}
 `;
 
 export default App;
