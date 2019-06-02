@@ -59,7 +59,7 @@ const H1 = styled.h1`
   margin-bottom: 5rem;
 `;
 
-const lightPosition = {
+const lightBarPosition = {
   '/': '0',
   '/about': '100%',
   '/experience': '200%',
@@ -73,9 +73,9 @@ const NavList = styled.ul`
     width: 0.5rem;
     height: var(--nav-item-height);
     background-color: var(--color-primary);
-    box-shadow: 0 0  18px 3px var(--color-primary);
+    box-shadow: 0 0 18px 3px var(--color-primary);
     transition: transform 0.2s ease;
-    transform: translateY(${(p) => lightPosition[p.currentPath]});
+    transform: translateY(${(p) => lightBarPosition[p.currentPath]});
   }
 `;
 
@@ -84,10 +84,11 @@ const NavItem = styled.li`
   display: flex;
   align-items: center;
   padding-left: 3.4rem;
-  color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['--grey-300'])};
+  color: ${(p) => (p.isCurrent ? p.theme.__white : p.theme.__grey_300)};
+  transition: color 0.2s ease;
 
   &:hover {
-    color: ${(p) => (p.isCurrent ? p.theme['--white'] : p.theme['--grey-300'])};
+    color: var(--white);
   }
 
   a {

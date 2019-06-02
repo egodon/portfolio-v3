@@ -1,16 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
-import { variables } from './variables.css';
+import { customProperties } from './variables.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
 
-
-  /* Variables */
   :root {
-    ${Object.keys(variables).map((key) => `${key}: ${variables[key]};`)}
-  }
+    ${customProperties}
+  } 
 
   body {
     background-color: var(--grey-500);
