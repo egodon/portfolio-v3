@@ -15,8 +15,7 @@ const SideNavFooter = () => (
       href="https://docs.google.com/document/d/1oRRKbLnIwHAstLXkW2SHXKTz04Ce51gDXKIokOoUQo8/edit?usp=sharing"
       target="_blank"
     >
-      <span>VIEW CV</span>
-      <Icon icon={icons.CHEVERON_RIGHT} className="right-arrow" />
+      <ButtonText>Contact Me</ButtonText>
     </Button>
   </Footer>
 );
@@ -34,7 +33,7 @@ const Footer = styled.footer`
 `;
 
 const SocialIcons = styled.div`
-  padding: 0 2.6rem;
+  padding: 0 2.4rem;
   margin-bottom: 1.8rem;
   display: flex;
   align-items: center;
@@ -49,5 +48,10 @@ const SocialIcons = styled.div`
     fill: var(--white);
   }
 `;
+
+const ButtonText = styled.span`
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`
 
 export default SideNavFooter;

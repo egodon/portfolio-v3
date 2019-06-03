@@ -16,9 +16,9 @@ const navIcon = {
 
 const SideNav = () => (
   <Container>
-    <H1>
+    <LogoContainer>
       <Logo size="8rem" />
-    </H1>
+    </LogoContainer>
     <Location>
       {({ location }) => (
         <>
@@ -70,7 +70,7 @@ const Container = styled.div`
   `}
 `;
 
-const H1 = styled.h1`
+const LogoContainer = styled.div`
   padding: var(--side-padding);
   margin: 0 auto;
   margin-bottom: 5rem;
