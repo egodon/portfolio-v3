@@ -9,3 +9,12 @@ export const fadeIn = keyframes`
     opacity: 1;
   }
 `;
+
+export const flicker = keyframes`
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+`;
+
+
