@@ -1,18 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Location, Link } from '@reach/router';
+import { Location } from '@reach/router';
 import { ROUTES } from 'constants/index';
-import Icon, { icons } from 'components/Icon';
 import SideNavFooter from 'components/SideNavFooter';
+import NavItem from 'components/NavItem';
 import { media } from 'style/index';
 import Logo from 'components/Logo';
-
-const navIcon = {
-  HOME: icons.home,
-  ABOUT: icons.user,
-  EXPERIENCE: icons.paper,
-  PROJECTS: icons.code,
-};
 
 const SideNav = () => (
   <Container>
@@ -24,14 +17,9 @@ const SideNav = () => (
         <>
           <Nav>
             <NavList currentPath={location.pathname}>
-              {Object.keys(ROUTES).map((routeName) => {
-                const isCurrent = location.pathname === ROUTES[routeName];
-                return (
-                  <NavItem key={routeName} isCurrent={isCurrent}>
-                    <Icon src={navIcon[routeName]} size="2rem" fillColor="currentColor" />
-                    <Link to={ROUTES[routeName]}>{routeName}</Link>
-                  </NavItem>
-                );
+              {Object.keys(ROUTES).map((route) => {
+                const isCurrent = location.pathname === ROUTES[route];
+                return <NavItem isCurrent={isCurrent} route={route} />;
               })}
             </NavList>
           </Nav>
@@ -115,24 +103,9 @@ const NavList = styled.ul`
       display: none;
     `}
   }
-`;
-
-const NavItem = styled.li`
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding-left: 3.4rem;
-  color: ${(p) => (p.isCurrent ? p.theme.__white : p.theme.__grey_300)};
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: var(--white);
-  }
 
   a {
     flex: 1;
-    height: var(--nav-item-height);
-    line-height: var(--nav-item-height);
     padding-left: 2.2rem;
     letter-spacing: 1px;
     font-size: var(--fs-small);
@@ -156,10 +129,6 @@ const NavItem = styled.li`
         height: auto;
         line-height: 1;
       }
-  `}
-
-  ${media.mobile`
-    padding: 0 1.2rem;
   `}
 `;
 
