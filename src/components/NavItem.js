@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { Link } from '@reach/router';
 import { ROUTES } from 'constants/index';
 import Icon, { icons } from 'components/Icon';
-import GlitchText from 'components/GlitchText';
+import Glitch from 'components/Glitch';
 import { media } from 'style/index';
+// import Archive from 'icons/archive.svg';
 
 const navIcon = {
   HOME: icons.home,
@@ -15,10 +16,16 @@ const navIcon = {
 
 const NavItem = ({ isCurrent, route }) => (
   <Link to={ROUTES[route]}>
-    <Container key={route} isCurrent={isCurrent}>
-      <Icon src={navIcon[route]} size="2rem" fillColor="currentColor" />
-      <GlitchText text={route} />
-    </Container>
+    <Glitch
+      text={route}
+      // icon={Archive}
+    >
+      {({ text: GlitchText }) => (
+        <Container key={route} isCurrent={isCurrent}>
+          <GlitchText />
+        </Container>
+      )}
+    </Glitch>
   </Link>
 );
 

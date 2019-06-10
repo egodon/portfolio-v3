@@ -17,9 +17,9 @@ const SideNav = () => (
         <>
           <Nav>
             <NavList currentPath={location.pathname}>
-              {Object.keys(ROUTES).map((route) => {
+              {Object.keys(ROUTES).map((route, index) => {
                 const isCurrent = location.pathname === ROUTES[route];
-                return <NavItem isCurrent={isCurrent} route={route} />;
+                return <NavItem isCurrent={isCurrent} route={route} key={index} />;
               })}
             </NavList>
           </Nav>
