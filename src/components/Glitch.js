@@ -40,13 +40,19 @@ const glitch_copy = css`
   height: 100%;
 `;
 
+/**
+ * todo:
+ * [] Ensure text and svg animations start at same time
+ * [] Dry up the animations with js loop
+ */
+
 const Container = styled.span`
   position: relative;
   cursor: inherit;
 
   &:hover svg:first-of-type {
     left: 2px;
-    animation: ${glitch} .7s infinite linear alternate-reverse;
+    animation: ${glitch} 1s infinite linear alternate-reverse;
     color: var(--color-primary);
   }
 
