@@ -226,5 +226,3 @@ export const glitch_skew = keyframes`
     transform: skew(1deg);
   }
 `;
-
-console.log(glitch_skew.rules[1]);
