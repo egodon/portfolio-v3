@@ -21,6 +21,8 @@ const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
     ? (props) => (
         <IconContainer>
           <Icon {...props} />
+          <Icon {...props} />
+          <Icon {...props} />
         </IconContainer>
       )
     : null;
@@ -41,6 +43,18 @@ const glitch_copy = css`
 const Container = styled.span`
   position: relative;
   cursor: inherit;
+
+  &:hover svg:first-of-type {
+    left: 2px;
+    animation: ${glitch} .7s infinite linear alternate-reverse;
+    color: var(--color-primary);
+  }
+
+  &:hover svg:last-of-type {
+    left: -2px;
+    animation: ${glitch_2} .7s infinite linear alternate-reverse;
+    color: var(--color-secondary);
+  }
 `;
 
 const TextContainer = styled.span`
@@ -55,7 +69,7 @@ const TextContainer = styled.span`
     ${glitch_copy}
     left: 1px;
     clip: rect(44px, 450px, 56px, 0);
-    text-shadow: -2px 0 var(--color-primary);
+    text-shadow: -2px 0 var(--color-secondary);
     animation: ${glitch} 1s infinite linear alternate-reverse;
   }
 
@@ -70,6 +84,15 @@ const TextContainer = styled.span`
 
 const IconContainer = styled.span`
   position: relative;
+  display: flex;
+  align-items: center;
+
+  & svg:first-of-type,
+  & svg:last-of-type {
+    position: absolute;
+    transition: color .7s ease;
+  }
+
 `;
 
 export default Glitch;

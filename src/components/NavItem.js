@@ -5,23 +5,24 @@ import { ROUTES } from 'constants/index';
 import Icon, { icons } from 'components/Icon';
 import Glitch from 'components/Glitch';
 import { media } from 'style/index';
-// import Archive from 'icons/archive.svg';
+import HomeIcon from 'icons/home.svg';
+import UserIcon from 'icons/user.svg';
+import WorkIcon from 'icons/briefcase.svg';
+import CodeIcon from 'icons/code.svg';
 
 const navIcon = {
-  HOME: icons.home,
-  ABOUT: icons.user,
-  EXPERIENCE: icons.paper,
-  PROJECTS: icons.code,
+  HOME: HomeIcon,
+  ABOUT: UserIcon,
+  EXPERIENCE: WorkIcon,
+  PROJECTS: CodeIcon,
 };
 
 const NavItem = ({ isCurrent, route }) => (
   <Link to={ROUTES[route]}>
-    <Glitch
-      text={route}
-      // icon={Archive}
-    >
-      {({ text: GlitchText }) => (
+    <Glitch text={route} icon={navIcon[route]}>
+      {({ text: GlitchText, icon: GlitchIcon }) => (
         <Container key={route} isCurrent={isCurrent}>
+          <GlitchIcon width="1.8rem" />
           <GlitchText />
         </Container>
       )}
