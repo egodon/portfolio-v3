@@ -96,7 +96,6 @@ const IconContainer = styled.span`
   & svg:first-of-type,
   & svg:last-of-type {
     position: absolute;
-    transition: color .7s ease;
   }
 
 `;
