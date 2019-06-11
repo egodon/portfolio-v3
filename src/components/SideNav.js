@@ -92,17 +92,19 @@ const NavList = styled.ul`
   &:before {
     content: '';
     position: absolute;
-    width: 0.5rem;
+    width: 0.3rem;
     height: var(--nav-item-height);
     background-color: var(--color-primary);
     box-shadow: 0 0 18px 3px var(--color-primary);
     transition: transform 0.2s ease;
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
-
-    ${media.tablet`
-      display: none;
-    `}
   }
+
+  ${media.tablet`
+    &:before {
+      display: none;
+    }
+  `}
 
   a {
     flex: 1;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
 import { ROUTES } from 'constants/index';
-import Icon, { icons } from 'components/Icon';
 import Glitch from 'components/Glitch';
 import { media } from 'style/index';
 import HomeIcon from 'icons/home.svg';
