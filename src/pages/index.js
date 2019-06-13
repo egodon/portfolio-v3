@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import SideNavFooter from 'components/SideNavFooter';
 import Glitch from 'components/Glitch';
+import H1 from 'components/H1';
 
 export default () => (
   <Container>
     <HeaderContainer>
-      <H1>
-        <Glitch text="Evan_Godon" eachLetter/>
-      </H1>
-      <H2><Glitch text="Front_End_Web_Developer" eachLetter/></H2>
+      <H1>Evan_Godon</H1>
+      <H2>
+        <Glitch text="Front_End_Web_Developer" eachLetter />
+      </H2>
       <SideNavFooter />
     </HeaderContainer>
   </Container>
@@ -28,15 +29,6 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const H1 = styled.h1`
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: var(--fs-xlarge);
-  font-weight: 300;
-  margin-bottom: 1.8rem;
-  position: relative;
 `;
 
 const H2 = styled.h2`
