@@ -4,10 +4,10 @@ import { Link } from '@reach/router';
 import { ROUTES } from 'constants/index';
 import Glitch from 'components/Glitch';
 import { media } from 'style/index';
-import HomeIcon from 'icons/home.svg';
-import UserIcon from 'icons/user.svg';
-import WorkIcon from 'icons/clipboard.svg';
-import CodeIcon from 'icons/code.svg';
+import HomeIcon from 'static/icons/home.svg';
+import UserIcon from 'static/icons/user.svg';
+import WorkIcon from 'static/icons/clipboard.svg';
+import CodeIcon from 'static/icons/code.svg';
 
 const navIcon = {
   HOME: HomeIcon,

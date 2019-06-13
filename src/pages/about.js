@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import VectorProfile from 'images/profile-vector.svg';
-import Profile from 'images/profile.jpg';
+import VectorProfile from 'static/images/profile-vector.svg';
+import Profile from 'static/images/profile.jpg';
 import H1 from 'components/H1';
 import { glitch, glitch_2 } from 'style';
 
