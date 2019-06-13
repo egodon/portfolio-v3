@@ -67,10 +67,6 @@ const TextContainer = styled.span`
   position: relative;
   display: ${(p) => (p.inline ? 'inline-block' : 'block')};
 
-  ${Container}:hover & {
-    animation: ${glitch_skew} 1s infinite linear alternate-reverse;
-  }
-
   ${Container}:hover &::before {
     ${glitch_copy}
     left: 1px;
