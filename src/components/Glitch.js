@@ -6,13 +6,15 @@ const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
     return (
       <>
-        {text.split('').map((letter, index) => (
-          <Container key={index}>
-            <TextContainer inline data-text={letter}>
-              {letter !== ' ' ? letter : <span> </span>}
-            </TextContainer>
-          </Container>
-        ))}
+        {text.split('').map((letter, index) =>
+          console.log(letter === ' ') || (
+            <Container key={index}>
+              <TextContainer inline data-text={letter}>
+                {letter !== ' ' ? letter : <Whitespace />}
+              </TextContainer>
+            </Container>
+          )
+        )}
       </>
     );
   }
@@ -58,7 +60,7 @@ const Container = styled.span`
 
   &:hover svg:last-of-type {
     left: -2px;
-    animation: ${glitch_2} .7s infinite linear alternate-reverse;
+    animation: ${glitch_2} 0.7s infinite linear alternate-reverse;
     color: var(--color-secondary);
   }
 `;
@@ -93,7 +95,11 @@ const IconContainer = styled.span`
   & svg:last-of-type {
     position: absolute;
   }
+`;
 
+const Whitespace = styled.span`
+  width: .4em;
+  display: inline-block;
 `;
 
 export default Glitch;
