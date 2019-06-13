@@ -12,7 +12,7 @@ export const fadeIn = keyframes`
 
 const steps = 20;
 
-const random = (max) => Math.floor(Math.random() * max);
+export const random = (max) => Math.floor(Math.random() * max);
 
 /**
  * todo

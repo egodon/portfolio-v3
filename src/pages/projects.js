@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import H1 from 'components/H1';
 
 export default () => {
-  return <Container>Projects</Container>;
+  return (
+    <Container>
+      <H1>Projects</H1>
+    </Container>
+  );
 };
 
 const Container = styled.div`

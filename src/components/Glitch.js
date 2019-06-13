@@ -1,20 +1,21 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { glitch, glitch_2, glitch_skew } from 'style';
+import { glitch, glitch_2, random } from 'style';
 
 const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
     return (
       <>
-        {text.split('').map((letter, index) =>
-          console.log(letter === ' ') || (
+        {text.split('').map((letter, index) => {
+          const timing = random(20);
+          return (
             <Container key={index}>
-              <TextContainer inline data-text={letter}>
+              <LetterContainer data-text={letter} timing={timing}>
                 {letter !== ' ' ? letter : <Whitespace />}
-              </TextContainer>
+              </LetterContainer>
             </Container>
-          )
-        )}
+          );
+        })}
       </>
     );
   }
@@ -67,23 +68,51 @@ const Container = styled.span`
 
 const TextContainer = styled.span`
   position: relative;
-  display: ${(p) => (p.inline ? 'inline-block' : 'block')};
+  display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
+
+  ${Container} &::before,
+  ${Container} &::after {
+    ${glitch_copy}
+    clip: rect(44px, 450px, 56px, 0);
+  }
+
+  ${Container} &::before {
+    text-shadow: -2px 0 var(--color-secondary);
+  }
+
+  ${Container} &::after {
+    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
+  }
+
 
   ${Container}:hover &::before {
     ${glitch_copy}
     left: 1px;
-    clip: rect(44px, 450px, 56px, 0);
-    text-shadow: -2px 0 var(--color-secondary);
     animation: ${glitch} 1s infinite linear alternate-reverse;
   }
 
   ${Container}:hover &::after {
     ${glitch_copy}
     left: -1px;
-    clip: rect(44px, 450px, 56px, 0);
-    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
-    animation: ${glitch_2} 0.7s infinite linear alternate-reverse;
+    animation: ${glitch_2} .7s infinite linear alternate-reverse;
   }
+`;
+
+const LetterContainer = styled(TextContainer)`
+  display: inline-block;
+
+  /* TODO: Fix the animation loop */
+  /* ${Container} &::before {
+    text-shadow: -2px 0 var(--color-secondary);
+    left: 1px;
+    animation: ${glitch} 1s  ${(p) => p.timing + 's'} infinite linear alternate;
+  }
+
+  ${Container} &::after {
+    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
+    left: -1px;
+    animation: ${glitch} 0.7s ${(p) => p.timing + 's'} infinite linear alternate;
+  } */
 `;
 
 const IconContainer = styled.span`
@@ -98,7 +127,7 @@ const IconContainer = styled.span`
 `;
 
 const Whitespace = styled.span`
-  width: .4em;
+  width: 0.4em;
   display: inline-block;
 `;
 

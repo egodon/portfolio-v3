@@ -3,8 +3,6 @@ import { customProperties } from './variables.css';
 import anurati_woff2 from 'static/fonts/anurati-regular-webfont.woff2';
 import anurati_woff from 'static/fonts/anurati-regular-webfont.woff2';
 
-console.log({ anurati_woff2 });
-
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;

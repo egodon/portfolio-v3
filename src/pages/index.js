@@ -1,16 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import SideNavFooter from 'components/SideNavFooter';
-import Glitch from 'components/Glitch';
 import H1 from 'components/H1';
 
 export default () => (
   <Container>
     <HeaderContainer>
       <H1>Evan Godon</H1>
-      <H2>
-        <Glitch text="Front End Web Developer" eachLetter />
-      </H2>
+      <H2>Front End Web Developer</H2>
       <SideNavFooter />
     </HeaderContainer>
   </Container>
