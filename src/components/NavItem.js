@@ -6,7 +6,7 @@ import Glitch from 'components/Glitch';
 import { media } from 'style/index';
 import HomeIcon from 'icons/home.svg';
 import UserIcon from 'icons/user.svg';
-import WorkIcon from 'icons/briefcase.svg';
+import WorkIcon from 'icons/clipboard.svg';
 import CodeIcon from 'icons/code.svg';
 
 const navIcon = {
