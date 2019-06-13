@@ -4,11 +4,12 @@ import Glitch from 'components/Glitch';
 
 const H1 = ({ children }) => (
   <Container>
-    <Glitch text={children} eachLetter/>
+    <Glitch text={children} eachLetter />
   </Container>
 );
 
 const Container = styled.h1`
+  font-family: 'anuratiregular', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue';
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: var(--fs-xlarge);
