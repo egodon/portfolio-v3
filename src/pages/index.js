@@ -7,9 +7,9 @@ import H1 from 'components/H1';
 export default () => (
   <Container>
     <HeaderContainer>
-      <H1>Evan_Godon</H1>
+      <H1>Evan Godon</H1>
       <H2>
-        <Glitch text="Front_End_Web_Developer" eachLetter />
+        <Glitch text="Front End Web Developer" eachLetter />
       </H2>
       <SideNavFooter />
     </HeaderContainer>
