@@ -32,7 +32,7 @@ const SideNav = () => (
 
 const Container = styled.div`
   background-color: var(--black);
-  height: 100vh;
+  height: 100%;
   padding: 3.2rem 0;
   color: var(--white);
   display: flex;

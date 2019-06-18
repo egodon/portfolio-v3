@@ -1,7 +1,6 @@
 import React from 'react';
 import { Root, Routes } from 'react-static';
 import { Router } from '@reach/router';
-import { Transition, animated } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle, { variables, media } from 'style';
 import SideNav from 'components/SideNav';
@@ -23,8 +22,10 @@ const App = () => (
 );
 
 const AppContainer = styled.div`
+  height: 100vh;
   display: grid;
   grid-template-columns: 22rem 1fr;
+  overflow: hidden;
 
   ${media.tablet`
     --mobile-nav-height: 7rem
