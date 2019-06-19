@@ -1,26 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import PageContainer from 'components/layout/PageContainer';
 import SideNavFooter from 'components/SideNavFooter';
 import H1 from 'components/H1';
 
 export default () => (
-  <Container>
+  <PageContainer>
     <HeaderContainer>
       <H1>Evan Godon</H1>
       <H2>Front End Web Developer</H2>
       <SideNavFooter />
     </HeaderContainer>
-  </Container>
+  </PageContainer>
 );
 
-const Container = styled.div`
-  padding: 5rem;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 const HeaderContainer = styled.div`
   display: flex;

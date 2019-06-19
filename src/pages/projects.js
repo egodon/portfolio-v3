@@ -1,18 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 
 export default () => {
   return (
-    <Container>
+    <PageContainer>
       <H1>Projects</H1>
-    </Container>
+    </PageContainer>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;

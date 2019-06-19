@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRouteData } from 'react-static';
 import VectorProfile from 'static/images/profile-vector.svg';
 import Profile from 'static/images/profile.jpg';
+import PageContainer from 'components/layout/PageContainer'
 import H1 from 'components/H1';
 import { glitch, glitch_2 } from 'style';
 
@@ -13,7 +14,7 @@ export default () => {
   const { header, paragraph_1, paragraph_2 } = aboutData;
 
   return (
-    <Container>
+    <PageContainer>
       <H1>{header}</H1>
       <Content>
         <ProfileContainer
@@ -36,17 +37,9 @@ export default () => {
           <p>{paragraph_2}</p>
         </AboutText>
       </Content>
-    </Container>
+    </PageContainer>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
 
 const Content = styled.div`
   display: flex;
