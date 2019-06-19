@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useRouteData } from 'react-static';
 import VectorProfile from 'static/images/profile-vector.svg';
 import Profile from 'static/images/profile.jpg';
 import H1 from 'components/H1';
@@ -8,10 +9,13 @@ import { glitch, glitch_2 } from 'style';
 export default () => {
   const [profileHovered, setProfileHovered] = useState(false);
 
+  const { aboutData } = useRouteData();
+
+  const { header, paragraph_1, paragraph_2 } = aboutData;
+
   return (
     <Container>
-      <H1>About</H1>
-
+      <H1>{header}</H1>
       <Content>
         <ProfileContainer
           onMouseEnter={() => setProfileHovered(true)}
@@ -28,18 +32,9 @@ export default () => {
           )}
         </ProfileContainer>
         <AboutText>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. i Quod maiores
-            similique animi excepturi! Natus hic expedita necessitatibus unde, nostrum ad
-            sequi cupiditate corrupti, repellat accusamus perferendis sapiente animi aut
-            architecto magnam nulla molestiae officia sunt debitis suscipit porro?
-          </p>
+          <p>{paragraph_1}</p>
           <br />
-          <p>
-            Nihil perferendis officia maiores dignissimos ex. Quia dolorum quis iure.
-            Earum, eius. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta,
-            explicabo!
-          </p>
+          <p>{paragraph_2}</p>
         </AboutText>
       </Content>
     </Container>

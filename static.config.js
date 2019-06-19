@@ -1,10 +1,28 @@
 import path from 'path';
-import axios from 'axios';
+import fs from 'fs';
+import util from 'util';
+import { reloadClientData } from 'react-static/node';
+
+const readFile = util.promisify(fs.readFile);
+
+if (process.env.NODE_ENV === 'development') {
+  fs.watch('./public/content', reloadClientData);
+}
 
 export default {
-  getRoutes: async () => {
-    return [];
-  },
+  getSite: () => ({
+    siteTitle: 'Evan Godon',
+    metaDescription: 'A front-end web developer experienced in React',
+  }),
+  getRoutes: () => [
+    {
+      path: '/about',
+      getData: async () => {
+        const aboutData = await readFile('./public/content/about.json', 'utf8');
+        return { aboutData: JSON.parse(aboutData) };
+      },
+    },
+  ],
   plugins: [
     [
       require.resolve('react-static-plugin-source-filesystem'),
