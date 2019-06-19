@@ -9,6 +9,12 @@ if (process.env.NODE_ENV === 'development') {
   fs.watch('./public/content', reloadClientData);
 }
 
+const readPageData = async (page) => {
+  const pageData = await readFile(`./public/content/${page}.json`, 'utf8');
+
+  return { [page + 'Data']: JSON.parse(pageData) };
+};
+
 export default {
   getSite: () => ({
     siteTitle: 'Evan Godon',
@@ -17,10 +23,15 @@ export default {
   getRoutes: () => [
     {
       path: '/about',
-      getData: async () => {
-        const aboutData = await readFile('./public/content/about.json', 'utf8');
-        return { aboutData: JSON.parse(aboutData) };
-      },
+      getData: () => readPageData('about'),
+    },
+    {
+      path: '/experience',
+      getData: () => readPageData('experience'),
+    },
+    {
+      path: '/projects',
+      getData: () => readPageData('projects'),
     },
   ],
   plugins: [
