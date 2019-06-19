@@ -10,7 +10,6 @@ export default () => {
   const [profileHovered, setProfileHovered] = useState(false);
 
   const { aboutData } = useRouteData();
-
   const { header, paragraph_1, paragraph_2 } = aboutData;
 
   return (

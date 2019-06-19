@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
 
-const WorkExperience = ({ workExperience }) => {
-  const { company, timePeriod, position, techStack, responsabilities } = workExperience;
+const WorkExperience = ({ company }) => {
+  const { companyName, timePeriod, position, techStack, responsibilities } = company;
 
   return (
     <Container>
@@ -11,15 +11,15 @@ const WorkExperience = ({ workExperience }) => {
       <TimeLine>
         <IconContainer>
           {/* <MapPinIcon width="1.6rem" /> */}
-          {company[0]}
+          {companyName[0]}
         </IconContainer>
       </TimeLine>
       <Details>
-        <Company>{company}</Company>
+        <Company>{companyName}</Company>
         <Position>{position}</Position>
         <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
         <ResponsibilityList>
-          {responsabilities.map((responsibility, index) => (
+          {responsibilities.map((responsibility, index) => (
             <Responsibility key={index}>
               <RightChevronIcon color="var(--color-primary)" width="1.8rem" />
               {responsibility}
@@ -33,13 +33,14 @@ const WorkExperience = ({ workExperience }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: max-content 8rem 1fr;
+  grid-template-columns: 17rem 8rem 1fr;
   margin-bottom: 6rem;
 `;
 
 const TimePeriod = styled.span`
   font-size: var(--fs-small);
   color: var(--grey-300);
+  text-align: right;
 `;
 
 const TimeLine = styled.div`
