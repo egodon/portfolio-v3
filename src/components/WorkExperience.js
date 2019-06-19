@@ -33,7 +33,7 @@ const WorkExperience = ({ workExperience }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 16rem 8rem 1fr;
+  grid-template-columns: max-content 8rem 1fr;
   margin-bottom: 6rem;
 `;
 
