@@ -19,8 +19,8 @@ const WorkExperience = ({ workExperience }) => {
         <Position>{position}</Position>
         <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
         <ResponsibilityList>
-          {responsabilities.map((responsibility) => (
-            <Responsibility>
+          {responsabilities.map((responsibility, index) => (
+            <Responsibility key={index}>
               <RightChevronIcon color="var(--color-primary)" width="1.8rem" />
               {responsibility}
             </Responsibility>

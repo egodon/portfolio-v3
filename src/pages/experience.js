@@ -10,8 +10,8 @@ export default () => {
         <H1 largeMargin>Experience</H1>
 
         <ExperienceList>
-          {workExperiences.map((workExperience) => (
-            <WorkExperience workExperience={workExperience} />
+          {workExperiences.map((workExperience, index) => (
+            <WorkExperience workExperience={workExperience} key={index} />
           ))}
         </ExperienceList>
       </Content>
