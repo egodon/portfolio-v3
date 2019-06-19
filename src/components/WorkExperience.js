@@ -34,7 +34,8 @@ const WorkExperience = ({ company }) => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 17rem 8rem 1fr;
-  margin-bottom: 6rem;
+  --container-margin-bottom: 6rem;
+  margin-bottom: var(--container-margin-bottom);
 `;
 
 const TimePeriod = styled.span`
@@ -52,9 +53,13 @@ const TimeLine = styled.div`
     content: '';
     position: absolute;
     display: block;
-    height: 130%;
+    height: calc(100% + var(--container-margin-bottom));
     width: 0.2rem;
     background-color: var(--color-secondary);
+  }
+
+  ${Container}:last-of-type &::before {
+    background-image: linear-gradient(to bottom, var(--color-secondary) 20%, rgba(18, 18, 18, 1));
   }
 `;
 
