@@ -16,6 +16,7 @@ export const variables = {
   __grey_500: '#121212',
 
   /* Font-size */
+  __fs_xsmall: '1rem',
   __fs_small: '1.2rem',
   __fs_medium: '1.4rem',
   __fs_default: '1.6rem',

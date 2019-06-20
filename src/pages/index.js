@@ -21,7 +21,6 @@ const Container = styled.div`
   height: 100%;
 `
 
-
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@ const HeaderContainer = styled.div`
 `;
 
 const H2 = styled.h2`
-  margin-bottom: 4.8rem;
+  margin-bottom: 6.2rem;
   font-weight: 300;
   color: var(--grey-300);
   text-transform: uppercase;

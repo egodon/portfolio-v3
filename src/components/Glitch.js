@@ -43,12 +43,6 @@ const glitch_copy = css`
   height: 100%;
 `;
 
-/**
- * todo:
- * [] Ensure text and svg animations start at same time
- * [] Dry up the animations with js loop
- */
-
 const Container = styled.span`
   position: relative;
   cursor: inherit;
@@ -111,7 +105,7 @@ const LetterContainer = styled(TextContainer)`
 
   ${Container} &::before {
     ${glitch_copy}
-    text-shadow: -2px 0 var(--color-primary);
+    text-shadow: -2px 0 var(--color-secondary);
     left: 2px;
     animation: ${glitch_loop} 20s ${(p) => p.timing + 's'} infinite linear alternate;
   }
