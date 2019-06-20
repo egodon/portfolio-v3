@@ -12,6 +12,7 @@ const Container = styled.h1`
   font-family: 'anuratiregular', 'Helvitica';
   text-transform: uppercase;
   letter-spacing: 8px;
+  margin-right: -8px;
   font-size: var(--fs-xlarge);
   font-weight: 300;
   margin-bottom: ${(p) => (p.largeMargin ? '6rem' : '3.2rem')};

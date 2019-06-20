@@ -48,6 +48,7 @@ const TimeLine = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  opacity: 0.9;
 
   &::before {
     content: '';

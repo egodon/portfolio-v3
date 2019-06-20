@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { glitch, glitch_2, random } from 'style';
+import { glitch_skew } from '../style/animations.css';
 
 const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
@@ -70,6 +71,10 @@ const TextContainer = styled.span`
   position: relative;
   display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
 
+  ${Container}:hover & {
+    animation: ${glitch_skew} 1s infinite linear alternate-reverse;
+  }
+
   ${Container} &::before,
   ${Container} &::after {
     ${glitch_copy}
@@ -101,14 +106,18 @@ const TextContainer = styled.span`
 const LetterContainer = styled(TextContainer)`
   display: inline-block;
 
+  ${Container}:hover & {
+    animation: unset;
+  }
+
   /* TODO: Fix the animation loop */
   /* ${Container} &::before {
     text-shadow: -2px 0 var(--color-secondary);
     left: 1px;
     animation: ${glitch} 1s  ${(p) => p.timing + 's'} infinite linear alternate;
-  }
+  } */
 
-  ${Container} &::after {
+  /* ${Container} &::after {
     text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
     left: -1px;
     animation: ${glitch} 0.7s ${(p) => p.timing + 's'} infinite linear alternate;

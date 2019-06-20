@@ -24,5 +24,8 @@ const HeaderContainer = styled.div`
 const H2 = styled.h2`
   margin-bottom: 4.8rem;
   font-weight: 300;
-  letter-spacing: 3px;
+  color: var(--grey-300);
+  text-transform: uppercase;
+  font-size: var(--fs-default);
+  letter-spacing: 4px;
 `;
