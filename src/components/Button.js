@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: var(--color-secondary);
-  border: 0;
+  border: 1px solid currentColor;
+  background-color: transparent;
   border-radius: 2px;
-  color: ${(props) => props.color};
+  color: ${(props) => props.color || props.theme.__color_secondary};
   padding: 1.2rem 2.4rem;
   cursor: pointer;
   transition: all 0.1s;
   font-size: var(--fs-small);
-  color: var(--white);
+  opacity: 0.9;
 
   &:hover {
-    opacity: 0.9;
+    opacity: 1;
   }
 `;
+
+// TODO: add some cool button animation
 
 export default Button;

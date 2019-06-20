@@ -60,7 +60,7 @@ const TimeLine = styled.div`
   }
 
   ${Container}:last-of-type &::before {
-    background-image: linear-gradient(to bottom, var(--color-secondary) 20%, rgba(18, 18, 18, 1));
+    background-image: linear-gradient(to bottom, var(--color-secondary) 70%, rgba(18, 18, 18, 1));
   }
 `;
 
