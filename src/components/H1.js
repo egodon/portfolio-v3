@@ -14,7 +14,7 @@ const Container = styled.h1`
   letter-spacing: 8px;
   font-size: var(--fs-xlarge);
   font-weight: 300;
-  margin-bottom: ${(p) => (p.largeMargin ? '6rem' : '2.4rem')};
+  margin-bottom: ${(p) => (p.largeMargin ? '6rem' : '3.2rem')};
   position: relative;
 `;
 
