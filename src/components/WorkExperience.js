@@ -21,7 +21,7 @@ const WorkExperience = ({ company }) => {
         <ResponsibilityList>
           {responsibilities.map((responsibility, index) => (
             <Responsibility key={index}>
-              <RightChevronIcon color="var(--color-primary)" width="1.8rem" />
+              <RightChevronIcon  />
               {responsibility}
             </Responsibility>
           ))}
@@ -48,32 +48,39 @@ const TimeLine = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  opacity: 0.9;
+  --icon-container-size: 3.6rem;
+  --icon-container-margin-top: calc(var(--icon-container-size) / 3);
+  --icon-container-diff: calc(
+    var(--icon-container-size) - var(--icon-container-margin-top)
+  );
 
   &::before {
     content: '';
     position: absolute;
+    top: var(--icon-container-diff);
     display: block;
-    height: calc(100% + var(--container-margin-bottom));
-    width: 0.2rem;
+    height: calc(100% + var(--icon-container-diff));
+    width: 1px;
     background-color: var(--color-secondary);
   }
 
   ${Container}:last-of-type &::before {
-    background-image: linear-gradient(to bottom, var(--color-secondary) 70%, rgba(18, 18, 18, 1));
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-secondary) 70%,
+      rgba(18, 18, 18, 1)
+    );
   }
 `;
 
 const IconContainer = styled.div`
   font-family: 'anuratiregular', 'Helvitica';
-  position: relative;
-  top: calc(var(--size) / 3 * -1);
-  background-color: var(--color-secondary);
-  border-radius: 50%;
-  --size: 3.6rem;
-  height: var(--size);
-  width: var(--size);
-  line-height: var(--size);
+  color: var(--color-secondary);
+  height: var(--icon-container-size);
+  width: var(--icon-container-size);
+  margin-top: calc(var(--icon-container-margin-top) * -1);
+  line-height: var(--icon-container-size);
+  border: 1px solid var(--color-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,6 +111,12 @@ const Responsibility = styled.li`
   margin-bottom: 0.4rem;
   display: flex;
   align-items: center;
+
+  svg {
+    stroke-width: 1;
+    color: var(--color-primary);
+    width: 1.8rem;
+  }
 `;
 
 export default WorkExperience;
