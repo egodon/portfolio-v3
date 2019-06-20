@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { glitch, glitch_2, random } from 'style';
-import { glitch_skew } from '../style/animations.css';
+import { glitch, glitch_2, random, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
 
 const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
@@ -110,18 +109,19 @@ const LetterContainer = styled(TextContainer)`
     animation: unset;
   }
 
-  /* TODO: Fix the animation loop */
-  /* ${Container} &::before {
-    text-shadow: -2px 0 var(--color-secondary);
-    left: 1px;
-    animation: ${glitch} 1s  ${(p) => p.timing + 's'} infinite linear alternate;
-  } */
+  ${Container} &::before {
+    ${glitch_copy}
+    text-shadow: -2px 0 var(--color-primary);
+    left: 2px;
+    animation: ${glitch_loop} 20s ${(p) => p.timing + 's'} infinite linear alternate;
+  }
 
-  /* ${Container} &::after {
+  ${Container} &::after {
+    ${glitch_copy}
     text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
-    left: -1px;
-    animation: ${glitch} 0.7s ${(p) => p.timing + 's'} infinite linear alternate;
-  } */
+    left: -2px;
+    animation: ${glitch_loop_2} 19s ${(p) => p.timing + 's'} infinite linear alternate;
+  }
 `;
 
 const IconContainer = styled.span`
