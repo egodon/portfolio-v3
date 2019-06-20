@@ -40,7 +40,7 @@ const Container = styled.li`
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--white);
+    color: var(--white); 
   }
 
   ${media.mobile`

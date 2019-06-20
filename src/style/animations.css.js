@@ -4,7 +4,6 @@ export const fadeIn = keyframes`
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -12,7 +11,7 @@ export const fadeIn = keyframes`
 
 const steps = 20;
 
-export const random = (max) => Math.floor(Math.random() * max);
+export const random = (max) => (Math.random() * max).toFixed(2);
 
 /**
  * todo
