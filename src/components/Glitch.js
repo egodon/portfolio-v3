@@ -1,16 +1,15 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { glitch, glitch_2, random, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
+import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
 
 const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
     return (
       <>
         {text.split('').map((letter, index) => {
-          const timing = random(20);
           return (
             <Container key={index}>
-              <LetterContainer data-text={letter} timing={timing}>
+              <LetterContainer data-text={letter}>
                 {letter !== ' ' ? letter : <Whitespace />}
               </LetterContainer>
             </Container>
@@ -107,14 +106,14 @@ const LetterContainer = styled(TextContainer)`
     ${glitch_copy}
     text-shadow: -2px 0 var(--color-secondary);
     left: 2px;
-    animation: ${glitch_loop} 20s ${(p) => p.timing + 's'} infinite linear alternate;
+    animation: ${glitch_loop} 20s .3s infinite linear alternate;
   }
 
   ${Container} &::after {
     ${glitch_copy}
     text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
     left: -2px;
-    animation: ${glitch_loop_2} 19s ${(p) => p.timing + 's'} infinite linear alternate;
+    animation: ${glitch_loop_2} 20s .3s infinite linear alternate;
   }
 `;
 
