@@ -3,6 +3,7 @@ import { useRouteData } from 'react-static';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import Project from 'components/Project';
+import Title from 'components/Title';
 
 export default () => {
   const { projectsData } = useRouteData();
@@ -12,13 +13,16 @@ export default () => {
   console.log({ projects });
 
   return (
-    <PageContainer>
-      <H1>{header}</H1>
-      <ul>
-        {projects.map((project, index) => (
-          <Project project={project} key={index} />
-        ))}
-      </ul>
-    </PageContainer>
+    <>
+      <Title title={header} />
+      <PageContainer>
+        <H1>{header}</H1>
+        <ul>
+          {projects.map((project, index) => (
+            <Project project={project} key={index} />
+          ))}
+        </ul>
+      </PageContainer>
+    </>
   );
 };

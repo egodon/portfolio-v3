@@ -5,6 +5,7 @@ import VectorProfile from 'static/images/profile-vector.svg';
 import Profile from 'static/images/profile.jpg';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
+import Title from 'components/Title';
 import { glitch, glitch_2 } from 'style';
 import { media } from 'style/variables.css';
 
@@ -15,30 +16,33 @@ export default () => {
   const { header, paragraph_1, paragraph_2 } = aboutData;
 
   return (
-    <PageContainer>
-      <H1>{header}</H1>
-      <Content>
-        <ProfileContainer
-          onMouseEnter={() => setProfileHovered(true)}
-          onMouseLeave={() => setProfileHovered(false)}
-        >
-          {profileHovered ? (
-            <VectorProfileContainer>
-              <VectorProfile fill="var(--color-secondary)" />
-              <VectorProfile fill="var(--color-secondary)" />
-              <VectorProfile fill="var(--color-primary)" />
-            </VectorProfileContainer>
-          ) : (
-            <ProfileImg src={Profile} alt="profile" />
-          )}
-        </ProfileContainer>
-        <AboutText>
-          <p>{paragraph_1}</p>
-          <br />
-          <p>{paragraph_2}</p>
-        </AboutText>
-      </Content>
-    </PageContainer>
+    <>
+      <Title title={header} />
+      <PageContainer>
+        <H1>{header}</H1>
+        <Content>
+          <ProfileContainer
+            onMouseEnter={() => setProfileHovered(true)}
+            onMouseLeave={() => setProfileHovered(false)}
+          >
+            {profileHovered ? (
+              <VectorProfileContainer>
+                <VectorProfile fill="var(--color-secondary)" />
+                <VectorProfile fill="var(--color-secondary)" />
+                <VectorProfile fill="var(--color-primary)" />
+              </VectorProfileContainer>
+            ) : (
+              <ProfileImg src={Profile} alt="profile" />
+            )}
+          </ProfileContainer>
+          <AboutText>
+            <p>{paragraph_1}</p>
+            <br />
+            <p>{paragraph_2}</p>
+          </AboutText>
+        </Content>
+      </PageContainer>
+    </>
   );
 };
 
