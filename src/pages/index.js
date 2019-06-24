@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SocialMedia from 'components/SocialMedia';
 import H1 from 'components/H1';
+import { media } from 'style/variables.css';
 
 export default () => (
   <Container>
@@ -19,7 +20,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-`
+`;
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -34,4 +35,8 @@ const H2 = styled.h2`
   text-transform: uppercase;
   font-size: var(--fs-default);
   letter-spacing: 4px;
+
+  ${media.mobile`
+    font-size: var(--fs-mobile);
+  `}
 `;

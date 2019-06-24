@@ -37,6 +37,7 @@ const Container = styled.div`
   color: var(--white);
   display: flex;
   flex-direction: column;
+  z-index: 100;
 
   --side-padding: 3.2rem;
   --nav-item-height: 3.8rem;

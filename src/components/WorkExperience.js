@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
+import { media } from 'style/variables.css';
 
 const WorkExperience = ({ company }) => {
   const { companyName, timePeriod, position, techStack, responsibilities } = company;
@@ -21,7 +22,7 @@ const WorkExperience = ({ company }) => {
         <ResponsibilityList>
           {responsibilities.map((responsibility, index) => (
             <Responsibility key={index}>
-              <RightChevronIcon  />
+              <RightChevronIcon />
               {responsibility}
             </Responsibility>
           ))}
@@ -36,12 +37,18 @@ const Container = styled.div`
   grid-template-columns: 17rem 8rem 1fr;
   --container-margin-bottom: 6rem;
   margin-bottom: var(--container-margin-bottom);
+
+  ${media.mobile`
+    display: block;
+  `}
 `;
 
 const TimePeriod = styled.span`
   font-size: var(--fs-small);
   color: var(--grey-300);
   text-align: right;
+  display: inline-block;
+  margin-bottom: 1.8rem;
 `;
 
 const TimeLine = styled.div`
@@ -71,6 +78,10 @@ const TimeLine = styled.div`
       rgba(18, 18, 18, 1)
     );
   }
+
+  ${media.mobile`
+    display: none;
+  `}
 `;
 
 const IconContainer = styled.div`

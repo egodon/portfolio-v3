@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useRouteData } from 'react-static';
 import VectorProfile from 'static/images/profile-vector.svg';
 import Profile from 'static/images/profile.jpg';
-import PageContainer from 'components/layout/PageContainer'
+import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import { glitch, glitch_2 } from 'style';
+import { media } from 'style/variables.css';
 
 export default () => {
   const [profileHovered, setProfileHovered] = useState(false);
@@ -43,6 +44,11 @@ export default () => {
 
 const Content = styled.div`
   display: flex;
+  align-items: center;
+
+  ${media.tablet`
+      flex-direction: column;
+  `}
 `;
 
 const ProfileContainer = styled.div`
@@ -73,6 +79,10 @@ const AboutText = styled.div`
   font-size: var(--fs-medium);
   margin: 0 4rem;
   line-height: 1.4;
+
+  ${media.tablet`
+      margin-top: 4rem;
+  `}
 `;
 
 const VectorProfileContainer = styled.div`

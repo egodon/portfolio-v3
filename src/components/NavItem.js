@@ -66,6 +66,7 @@ const Container = styled.li`
 
   ${media.mobile`
     padding: 0 1.2rem;
+    font-size: var(--fs-xsmall);
   `}
 `;
 
