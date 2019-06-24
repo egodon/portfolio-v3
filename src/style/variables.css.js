@@ -8,7 +8,7 @@ export const variables = {
   __color_secondary_light: '#FF4081',
   __color_secondary_dark: '#F50057',
   __white: '#FFF',
-  __black: 'rgba(0,0,0,.8)',
+  __black: 'rgba(2, 2, 2)',
   __grey_100: '#FAFAFA',
   __grey_200: '#EEEEEE',
   __grey_300: '#BDBDBD',
