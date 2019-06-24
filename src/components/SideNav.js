@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Location } from '@reach/router';
 import { ROUTES } from 'constants/index';
-import SideNavFooter from 'components/SideNavFooter';
+import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
 import { media } from 'style/index';
 import Logo from 'components/Logo';
@@ -23,7 +23,7 @@ const SideNav = () => (
               })}
             </NavList>
           </Nav>
-          {location.pathname !== '/' && <SideNavFooter />}
+          {location.pathname !== '/' && <SocialMedia inside="sidenav" />}
         </>
       )}
     </Location>

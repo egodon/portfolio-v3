@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SideNavFooter from 'components/SideNavFooter';
+import SocialMedia from 'components/SocialMedia';
 import H1 from 'components/H1';
 
 export default () => (
@@ -8,7 +8,7 @@ export default () => (
     <HeaderContainer>
       <H1>Evan Godon</H1>
       <H2>Front End Web Developer</H2>
-      <SideNavFooter />
+      <SocialMedia />
     </HeaderContainer>
   </Container>
 );

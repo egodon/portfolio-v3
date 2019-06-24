@@ -7,30 +7,33 @@ import CodesandboxIcon from 'static/icons/codesandbox.svg';
 import GitHubIcon from 'static/icons/github.svg';
 import LinkedinIcon from 'static/icons/linkedin.svg';
 
-const SideNavFooter = () => (
+const socialLinks = [
+  {
+    icon: CodesandboxIcon,
+    url: 'https://codesandbox.io/',
+  },
+  {
+    icon: GitHubIcon,
+    url: 'https://github.com',
+  },
+  {
+    icon: LinkedinIcon,
+    url: 'https://www.linkedin.com/',
+  },
+];
+
+const SocialMedia = ({ inside }) => (
   <Footer>
-    <SocialIcons>
-      <Glitch icon={CodesandboxIcon}>
-        {({ icon: GlitchIcon }) => (
-          <IconContainer>
-            <GlitchIcon />
-          </IconContainer>
-        )}
-      </Glitch>
-      <Glitch icon={GitHubIcon}>
-        {({ icon: GlitchIcon }) => (
-          <IconContainer>
-            <GlitchIcon />
-          </IconContainer>
-        )}
-      </Glitch>
-      <Glitch icon={LinkedinIcon}>
-        {({ icon: GlitchIcon }) => (
-          <IconContainer>
-            <GlitchIcon />
-          </IconContainer>
-        )}
-      </Glitch>
+    <SocialIcons inside={inside}>
+      {socialLinks.map((socialLink) => (
+        <Glitch icon={socialLink.icon} key={socialLink.url}>
+          {({ icon: GlitchIcon }) => (
+            <IconContainer inside={inside} href={socialLink.url} target="_blank" noopener>
+              <GlitchIcon />
+            </IconContainer>
+          )}
+        </Glitch>
+      ))}
     </SocialIcons>
     <Button
       href="https://docs.google.com/document/d/1oRRKbLnIwHAstLXkW2SHXKTz04Ce51gDXKIokOoUQo8/edit?usp=sharing"
@@ -57,7 +60,7 @@ const Footer = styled.footer`
 const SocialIcons = styled.div`
   margin-bottom: 1.8rem;
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 1rem;
 
   svg {
@@ -73,13 +76,17 @@ const IconContainer = styled.a`
   color: var(--grey-300);
   border: 1px solid currentColor;
   font-size: var(--fs-xsmall);
-  --size: 5.5rem;
+  --size: ${(p) => (p.inside === 'sidenav' ? '4.5rem' : '5.5rem')};
   width: var(--size);
   height: var(--size);
   cursor: pointer;
 
   &:hover {
     color: var(--white);
+  }
+
+  svg {
+    width: ${(p) => (p.inside === 'sidenav' ? '1.8rem' : '5.5rem')};
   }
 `;
 
@@ -88,4 +95,4 @@ const ButtonText = styled.span`
   letter-spacing: 1px;
 `;
 
-export default SideNavFooter;
+export default SocialMedia;
