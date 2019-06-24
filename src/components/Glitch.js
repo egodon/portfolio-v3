@@ -2,15 +2,16 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2, random } from 'style';
 
+// TODO: pre compute an array of random numbers for the letter animations
 const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   if (eachLetter) {
     return (
       <>
         {text.split('').map((letter, index) => {
-          const timing = random(20);
+          // const timing = random(20);
           return (
             <Container key={index}>
-              <LetterContainer data-text={letter} timing={timing}>
+              <LetterContainer data-text={letter} timing={0}>
                 {letter !== ' ' ? letter : <Whitespace />}
               </LetterContainer>
             </Container>
