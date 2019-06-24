@@ -1,3 +1,15 @@
 {
-  "header": "Projects"
+  "header": "Projects",
+  "projects": [
+    {
+      "projectName": "LinkLib",
+      "sourceCode": "https://github.com/egodon/link-library-v2",
+      "websiteUrl": "https://linklib-v2.netlify.com/"
+    },
+    {
+      "projectName": "Tracy's Porfolio",
+      "sourceCode": "https://github.com/egodon/tracy-portfolio",
+      "websiteUrl": "https://traci.netlify.com/"
+    }
+  ]
 }
