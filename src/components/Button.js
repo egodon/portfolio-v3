@@ -13,8 +13,11 @@ const Button = styled.button`
   &:hover {
     opacity: 1;
   }
+
+  &:active {
+    background-color: var(--color-secondary);
+  }
 `;
 
-// TODO: add some cool button animation
 
 export default Button;
