@@ -35,21 +35,38 @@ const Container = styled.li`
   align-items: center;
   height: var(--nav-item-height);
   line-height: var(--nav-item-height);
-  padding-left: 1.8rem;
+  padding-left: 2.4rem;
   color: ${(p) => (p.isCurrent ? p.theme.__white : p.theme.__grey_300)};
   transition: color 0.2s ease;
+  font-size: var(--fs-small);
 
   &:hover {
-    color: var(--white); 
+    color: var(--white);
   }
-
-  ${media.mobile`
-    padding: 0 1.2rem;
-  `}
 
   svg {
     margin-right: 1.6rem;
   }
+
+  ${media.tablet`
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    height: var(--mobile-nav-height);
+    line-height: 1;
+
+    svg {
+      margin-right: 0;
+    }
+     
+    span {
+      margin-top: .8rem;
+    }
+  `}
+
+  ${media.mobile`
+    padding: 0 1.2rem;
+  `}
 `;
 
 export default NavItem;
