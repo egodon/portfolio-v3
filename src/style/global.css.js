@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import { customProperties } from './variables.css';
 import anurati_woff2 from 'static/fonts/anurati-regular-webfont.woff2';
 import anurati_woff from 'static/fonts/anurati-regular-webfont.woff2';
+import IBMPlexSans_woff from 'static/fonts/IBMPlexSans-Regular.woff';
+import IBMPlexSans_woff2 from 'static/fonts/IBMPlexSans-Regular.woff2';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,10 +16,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: var(--grey-500);
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
-    Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-family: 'IBMPlexSans', monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: var(--fs-default);
+    letter-spacing: 0.3px;
     margin: 0;
     padding: 0;
     color: var(--white);
@@ -33,6 +35,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'anuratiregular';
     src: url(${anurati_woff2}) format('woff2'),
          url(${anurati_woff}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IBMPlexSans';
+    src: url(${IBMPlexSans_woff}) format('woff'),
+         url(${IBMPlexSans_woff2}) format('woff2');
     font-weight: normal;
     font-style: normal;
   }
