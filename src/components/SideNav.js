@@ -1,34 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Location } from '@reach/router';
 import { ROUTES } from 'constants/index';
 import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
 import { media } from 'style/index';
 import Logo from 'components/Logo';
 
-const SideNav = () => (
-  <Container>
-    <LogoContainer>
-      <Logo size="8rem" />
-    </LogoContainer>
-    <Location>
-      {({ location }) => (
-        <>
-          <Nav>
-            <NavList currentPath={location.pathname}>
-              {Object.keys(ROUTES).map((route, index) => {
-                const isCurrent = location.pathname === ROUTES[route];
-                return <NavItem isCurrent={isCurrent} route={route} key={index} />;
-              })}
-            </NavList>
-          </Nav>
-          {location.pathname !== '/' && <SocialMedia inside="sidenav" />}
-        </>
-      )}
-    </Location>
-  </Container>
-);
+const SideNav = ({ pathname }) => {
+  return (
+    <Container>
+      <LogoContainer>
+        <Logo size="8rem" />
+      </LogoContainer>
+      <>
+        <Nav>
+          <NavList currentPath={pathname}>
+            {Object.keys(ROUTES).map((route, index) => {
+              const isCurrent = pathname === ROUTES[route];
+              return <NavItem isCurrent={isCurrent} route={route} key={index} />;
+            })}
+          </NavList>
+        </Nav>
+        {pathname !== '/' && <SocialMedia inside="sidenav" />}
+      </>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   background-color: var(--black);
@@ -94,7 +91,7 @@ const NavList = styled.ul`
     height: var(--nav-item-height);
     background-color: var(--color-primary);
     box-shadow: 0 0 18px 3px var(--color-primary);
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
   }
 

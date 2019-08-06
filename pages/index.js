@@ -4,8 +4,9 @@ import SocialMedia from 'components/SocialMedia';
 import H1 from 'components/H1';
 import { media } from 'style/variables.css';
 import Title from 'components/Title';
+import withTemplate from 'utils/withThemplate';
 
-export default () => (
+export default withTemplate(() => (
   <>
     <Title title="Evan Godon" withoutName />
     <Container>
@@ -16,7 +17,7 @@ export default () => (
       </HeaderContainer>
     </Container>
   </>
-);
+));
 
 const Container = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Head } from 'react-static';
+import Head from 'next/head';
 
 const Title = ({ title, withoutName }) => (
   <Head>

@@ -1,13 +1,12 @@
 import React from 'react';
-import { useRouteData } from 'react-static';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import Project from 'components/Project';
 import Title from 'components/Title';
+import projectsData from 'static/content/projects.json';
+import withTemplate from 'utils/withThemplate';
 
-export default () => {
-  const { projectsData } = useRouteData();
-
+export default withTemplate(() => {
   const { header, projects } = projectsData;
 
   return (
@@ -23,4 +22,4 @@ export default () => {
       </PageContainer>
     </>
   );
-};
+});

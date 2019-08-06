@@ -4,3 +4,5 @@ export const ROUTES = {
   'EXPERIENCE': '/experience',
   'PROJECTS': '/projects'
 }
+
+export const isSSR = !!(typeof window === 'undefined');

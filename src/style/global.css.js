@@ -56,6 +56,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  svg {
+    stroke-width: 1;
+  }
+
   ::-webkit-scrollbar-thumb {
     background-color: var(--color-secondary);
   }

@@ -1,4 +1,19 @@
 {
-  "presets": ["react-static/babel-preset.js"],
-  "plugins": ["babel-plugin-styled-components"]
+  "presets": ["next/babel"],
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./src/components",
+          "css": "./src/css",
+          "constants": "./src/constants",
+          "style": "./src/style",
+          "utils": "./src/utils"
+        }
+      }
+    ]
+  ]
 }

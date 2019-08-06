@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useRouteData } from 'react-static';
 import VectorProfile from 'static/images/profile-vector.svg';
 import Profile from 'static/images/profile.jpg';
 import PageContainer from 'components/layout/PageContainer';
@@ -8,11 +7,12 @@ import H1 from 'components/H1';
 import Title from 'components/Title';
 import { glitch, glitch_2 } from 'style';
 import { media } from 'style/variables.css';
+import aboutData from 'static/content/about.json';
+import withTemplate from 'utils/withThemplate';
 
-export default () => {
+export default withTemplate(() => {
   const [profileHovered, setProfileHovered] = useState(false);
 
-  const { aboutData } = useRouteData();
   const { header, paragraph_1, paragraph_2 } = aboutData;
 
   return (
@@ -27,9 +27,9 @@ export default () => {
           >
             {profileHovered ? (
               <VectorProfileContainer>
-                <VectorProfile fill="var(--color-secondary)" />
-                <VectorProfile fill="var(--color-secondary)" />
-                <VectorProfile fill="var(--color-primary)" />
+                <img src={VectorProfile} alt="glitch" fill="var(--color-secondary)" />
+                <img src={VectorProfile} alt="glitch" fill="var(--color-secondary)" />
+                <img src={VectorProfile} alt="glitch" fill="var(--color-primary)" />
               </VectorProfileContainer>
             ) : (
               <ProfileImg src={Profile} alt="profile" />
@@ -44,7 +44,7 @@ export default () => {
       </PageContainer>
     </>
   );
-};
+});
 
 const Content = styled.div`
   display: flex;

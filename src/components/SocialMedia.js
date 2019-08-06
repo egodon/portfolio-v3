@@ -29,7 +29,7 @@ const SocialMedia = ({ inside }) => (
         <Glitch icon={socialLink.icon} key={socialLink.url}>
           {({ icon: GlitchIcon }) => (
             <IconContainer inside={inside} href={socialLink.url} target="_blank" noopener>
-              <GlitchIcon />
+              <GlitchIcon viewBox="0 0 24 24"/>
             </IconContainer>
           )}
         </Glitch>

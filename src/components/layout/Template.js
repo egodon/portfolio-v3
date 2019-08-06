@@ -1,26 +1,19 @@
 import React from 'react';
-import { Root, Routes } from 'react-static';
-import { Router } from '@reach/router';
+import { withRouter } from 'next/router'
 import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle, { variables, media } from 'style';
 import SideNav from 'components/SideNav';
 
-const App = () => (
-  <Root>
+const Template = ({ children, router }) => (
+  <>
     <ThemeProvider theme={variables}>
       <AppContainer>
-        <SideNav />
-        <Main>
-          <React.Suspense fallback="<em>Loading...</em>">
-            <Router>
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </Main>
+        <SideNav pathname={router.pathname}/>
+        <Main>{children}</Main>
       </AppContainer>
     </ThemeProvider>
     <GlobalStyle />
-  </Root>
+  </>
 );
 
 const AppContainer = styled.div`
@@ -41,4 +34,4 @@ const Main = styled.main`
   overflow-y: auto;
 `;
 
-export default App;
+export default withRouter(Template);

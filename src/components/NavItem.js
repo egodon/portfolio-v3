@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from '@reach/router';
+import Link from 'next/link';
 import { ROUTES } from 'constants/index';
 import Glitch from 'components/Glitch';
 import { media } from 'style/index';
@@ -17,15 +17,17 @@ const navIcon = {
 };
 
 const NavItem = ({ isCurrent, route }) => (
-  <Link to={ROUTES[route]}>
-    <Glitch text={route} icon={navIcon[route]}>
-      {({ text: GlitchText, icon: GlitchIcon }) => (
-        <Container key={route} isCurrent={isCurrent}>
-          <GlitchIcon width="1.8rem" />
-          <GlitchText />
-        </Container>
-      )}
-    </Glitch>
+  <Link href={ROUTES[route]}>
+    <a>
+      <Glitch text={route} icon={navIcon[route]}>
+        {({ text: GlitchText, icon: GlitchIcon }) => (
+          <Container key={route} isCurrent={isCurrent}>
+            <GlitchIcon viewBox="0 0 24 24" width="1.8rem" />
+            <GlitchText />
+          </Container>
+        )}
+      </Glitch>
+    </a>
   </Link>
 );
 

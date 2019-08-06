@@ -5,3 +5,4 @@ dist/
 tmp/
 yarn-error.log
 todo.md
+.next/

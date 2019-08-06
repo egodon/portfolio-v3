@@ -17,19 +17,19 @@ const Project = ({ project }) => {
         <H3>{projectName}</H3>
         <Description>{description}</Description>
         <BuiltWith>
-          {builtWith.map((technology) => (
-            <Technology>
-              <RightChevronIcon />
+          {builtWith.map((technology, index) => (
+            <Technology key={index}>
+              <RightChevronIcon viewBox="0 0 24 24"/>
               {technology}
             </Technology>
           ))}
         </BuiltWith>
         <ButtonGroup>
           <Button as="a">
-            View code <GitHubIcon />
+            View code <GitHubIcon viewBox="0 0 24 24" />
           </Button>
           <Button as="a" color="var(--white)">
-            Live Site <ExternalLinkIcon />
+            Live Site <ExternalLinkIcon viewBox="0 0 24 24" />
           </Button>
         </ButtonGroup>
       </TextContainer>
