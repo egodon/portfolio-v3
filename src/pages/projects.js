@@ -16,7 +16,7 @@ export default () => {
     <>
       <Title title={header} />
       <PageContainer>
-        <H1>{header}</H1>
+        <H1 largeMargin>{header}</H1>
         <ul>
           {projects.map((project, index) => (
             <Project project={project} key={index} />

@@ -3,11 +3,13 @@
   "projects": [
     {
       "projectName": "LinkLib",
+      "description": "A SPA made in React that stores and organizes ressources I'd like to bookmark.",
       "sourceCode": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib-v2.netlify.com/"
     },
     {
       "projectName": "Tracy's Porfolio",
+      "description": "A portfolio website I made for my girlfriend who works as a concept artist.",
       "sourceCode": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://traci.netlify.com/"
     }
