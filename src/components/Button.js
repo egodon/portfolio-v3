@@ -10,6 +10,7 @@ const Button = styled.button`
   transition: all 0.1s;
   font-size: var(--fs-xsmall);
   --height: 4.2rem;
+  line-height: var(--height);
   height: var(--height);
   display: flex;
   justify-content: center;
@@ -22,6 +23,13 @@ const Button = styled.button`
 
   &:active {
     /* background-color: var(--color-secondary); */
+  }
+
+  svg {
+    stroke-width: 1;
+    color: currentColor;
+    width: 1.6rem;
+    margin: 0 0.8rem;
   }
 `;
 

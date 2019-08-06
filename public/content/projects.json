@@ -3,15 +3,25 @@
   "projects": [
     {
       "projectName": "LinkLib",
-      "description": "A SPA made in React that stores and organizes ressources I'd like to bookmark.",
+      "description": "A single-page application made in React that stores and organizes ressources I'd like to bookmark.",
+      "imageSrc": "linklib.png",
       "sourceCode": "https://github.com/egodon/link-library-v2",
-      "websiteUrl": "https://linklib-v2.netlify.com/"
+      "websiteUrl": "https://linklib-v2.netlify.com/",
+      "builtWith": ["React", "NextJs", "Auth0"]
     },
     {
       "projectName": "Tracy's Porfolio",
       "description": "A portfolio website I made for my girlfriend who works as a concept artist.",
       "sourceCode": "https://github.com/egodon/tracy-portfolio",
-      "websiteUrl": "https://traci.netlify.com/"
+      "websiteUrl": "https://traci.netlify.com/",
+      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"]
+    },
+    {
+      "projectName": "My Porfolio",
+      "description": "",
+      "sourceCode": "https://github.com/egodon/tracy-portfolio",
+      "websiteUrl": "https://traci.netlify.com/",
+      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"]
     }
   ]
 }

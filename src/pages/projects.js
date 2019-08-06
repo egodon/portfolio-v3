@@ -10,8 +10,6 @@ export default () => {
 
   const { header, projects } = projectsData;
 
-  console.log({ projects });
-
   return (
     <>
       <Title title={header} />

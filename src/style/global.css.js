@@ -56,6 +56,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--grey-500);
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
 `;
 
 export default GlobalStyle;

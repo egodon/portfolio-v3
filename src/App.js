@@ -10,11 +10,13 @@ const App = () => (
     <ThemeProvider theme={variables}>
       <AppContainer>
         <SideNav />
-        <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            <Routes path="*" />
-          </Router>
-        </React.Suspense>
+        <Main>
+          <React.Suspense fallback="<em>Loading...</em>">
+            <Router>
+              <Routes path="*" />
+            </Router>
+          </React.Suspense>
+        </Main>
       </AppContainer>
     </ThemeProvider>
     <GlobalStyle />
@@ -33,6 +35,10 @@ const AppContainer = styled.div`
     grid-template-columns: auto;
     grid-template-rows: calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
   `}
+`;
+
+const Main = styled.main`
+  overflow-y: auto;
 `;
 
 export default App;
