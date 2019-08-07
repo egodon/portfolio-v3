@@ -4,8 +4,8 @@
   "scripts": {
     "start": "next start",
     "dev": "next",
-    "build": "next build",
-    "serve": "serve dist -p 3000"
+    "build": "next build && next export",
+    "serve": "serve out -p 3000"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
