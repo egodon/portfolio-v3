@@ -8,9 +8,8 @@ import Title from 'components/Title';
 import { glitch, glitch_2 } from 'style';
 import { media } from 'style/variables.css';
 import aboutData from 'static/content/about.json';
-import withTemplate from 'utils/withThemplate';
 
-export default withTemplate(() => {
+export default () => {
   const [profileHovered, setProfileHovered] = useState(false);
 
   const { header, paragraph_1, paragraph_2 } = aboutData;
@@ -44,7 +43,7 @@ export default withTemplate(() => {
       </PageContainer>
     </>
   );
-});
+};
 
 const Content = styled.div`
   display: flex;

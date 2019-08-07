@@ -4,9 +4,8 @@ import H1 from 'components/H1';
 import Project from 'components/Project';
 import Title from 'components/Title';
 import projectsData from 'static/content/projects.json';
-import withTemplate from 'utils/withThemplate';
 
-export default withTemplate(() => {
+export default () => {
   const { header, projects } = projectsData;
 
   return (
@@ -22,4 +21,4 @@ export default withTemplate(() => {
       </PageContainer>
     </>
   );
-});
+};

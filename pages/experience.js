@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import withTemplate from 'utils/withThemplate';
 import PageContainer from 'components/layout/PageContainer';
 import WorkExperience from 'components/WorkExperience';
 import Title from 'components/Title';
@@ -9,7 +8,7 @@ import H1 from 'components/H1';
 import ExternalLinkIcon from 'static/icons/external-link.svg';
 import experienceData from 'static/content/experience.json';
 
-export default withTemplate(() => {
+export default () => {
   const { header, companies } = experienceData;
 
   return (
@@ -31,7 +30,7 @@ export default withTemplate(() => {
       </PageContainer>
     </>
   );
-});
+};
 
 const Content = styled.div`
   display: flex;

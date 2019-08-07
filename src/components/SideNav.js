@@ -91,7 +91,7 @@ const NavList = styled.ul`
     height: var(--nav-item-height);
     background-color: var(--color-primary);
     box-shadow: 0 0 18px 3px var(--color-primary);
-    transition: transform 0.1s ease;
+    transition: transform 0.2s ease;
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
   }
 
