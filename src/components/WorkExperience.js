@@ -22,7 +22,7 @@ const WorkExperience = ({ company }) => {
         <ResponsibilityList>
           {responsibilities.map((responsibility, index) => (
             <Responsibility key={index}>
-              <RightChevronIcon />
+              <RightChevronIcon viewBox="0 0 24 24" />
               {responsibility}
             </Responsibility>
           ))}
