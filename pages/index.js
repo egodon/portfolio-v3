@@ -37,8 +37,8 @@ const H2 = styled.h2`
   font-weight: 300;
   color: var(--grey-300);
   text-transform: uppercase;
-  font-size: var(--fs-default);
-  letter-spacing: 4px;
+  font-size: 16px;
+  letter-spacing: 5.4px;
 
   ${media.mobile`
     font-size: var(--fs-mobile);
