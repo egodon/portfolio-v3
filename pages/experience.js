@@ -17,9 +17,11 @@ export default () => {
       <PageContainer>
         <Content>
           <H1 largeMargin>{header}</H1>
-          <CvButton>
-            <span>View CV</span>
-            <ExternalLinkIcon viewBox="0 0 24 24" />
+          <CvButton as="a">
+            <span>
+              <span>View CV</span>
+              <ExternalLinkIcon viewBox="0 0 24 24" />
+            </span>
           </CvButton>
           <ExperienceList>
             {companies.map((company, index) => (
@@ -39,12 +41,19 @@ const Content = styled.div`
 `;
 
 const CvButton = styled(Button)`
-  margin-bottom: 3.6rem;
+  display: block;
+  margin-bottom: 4.2rem;
+
+  > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   svg {
-    margin-left: 0.8rem;
     position: relative;
     top: -2px;
+    right: -3px;
   }
 `;
 

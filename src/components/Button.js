@@ -29,8 +29,9 @@ const Button = styled.button`
     stroke-width: 1;
     color: currentColor;
     width: 1.6rem;
-    margin: 0 0.8rem;
+    margin-left: 0.6rem;
   }
+
 `;
 
 export default Button;
