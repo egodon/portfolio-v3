@@ -8,7 +8,7 @@ import GitHubIcon from 'static/icons/github.svg';
 import ExternalLinkIcon from 'static/icons/external-link.svg';
 
 const Project = ({ project }) => {
-  const { projectName, description, builtWith } = project;
+  const { projectName, description, builtWith, githubUrl, websiteUrl } = project;
 
   return (
     <Container>
@@ -19,16 +19,16 @@ const Project = ({ project }) => {
         <BuiltWith>
           {builtWith.map((technology, index) => (
             <Technology key={index}>
-              <RightChevronIcon viewBox="0 0 24 24"/>
+              <RightChevronIcon viewBox="0 0 24 24" />
               {technology}
             </Technology>
           ))}
         </BuiltWith>
         <ButtonGroup>
-          <Button as="a">
+          <Button as="a" href={githubUrl} target="_blank">
             View code <GitHubIcon viewBox="0 0 24 24" />
           </Button>
-          <Button as="a" color="var(--white)">
+          <Button as="a" href={websiteUrl} target="_blank" color="var(--white)">
             Live Site <ExternalLinkIcon viewBox="0 0 24 24" />
           </Button>
         </ButtonGroup>

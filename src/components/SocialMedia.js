@@ -14,11 +14,11 @@ const socialLinks = [
   },
   {
     icon: GitHubIcon,
-    url: 'https://github.com',
+    url: 'https://github.com/egodon',
   },
   {
     icon: LinkedinIcon,
-    url: 'https://www.linkedin.com/',
+    url: 'https://www.linkedin.com/in/egodon/',
   },
 ];
 

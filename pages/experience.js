@@ -17,7 +17,11 @@ export default () => {
       <PageContainer>
         <Content>
           <H1 largeMargin>{header}</H1>
-          <CvButton as="a">
+          <CvButton
+            as="a"
+            href="https://docs.google.com/document/d/1oRRKbLnIwHAstLXkW2SHXKTz04Ce51gDXKIokOoUQo8/edit?usp=sharing"
+            target="_blank"
+          >
             <span>
               <span>View CV</span>
               <ExternalLinkIcon viewBox="0 0 24 24" />
