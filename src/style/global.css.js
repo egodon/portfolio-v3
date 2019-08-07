@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-dark);
   }
 
   ::-webkit-scrollbar-track {
