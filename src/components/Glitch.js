@@ -36,6 +36,7 @@ const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
   return <Container>{children({ text: GlitchText, icon: GlitchIcon })}</Container>;
 };
 
+// todo: move this to own styled component
 const glitch_copy = css`
   content: attr(data-text);
   position: absolute;

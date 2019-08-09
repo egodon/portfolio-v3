@@ -9,17 +9,21 @@ export const fadeIn = keyframes`
   }
 `;
 
-const steps = 20;
-
 export const random = (max) => (Math.random() * max).toFixed(2);
+
+export const rainEffect = keyframes`
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+`;
 
 /**
  * todo
  * [] Use clip-path instead of clip
  */
-const clip = () => `clip: rect(${random(100)}px, 9999px, 0);`;
-const transform = () => `transform: skew(${random(100) / 100}deg)`;
-
 export const glitch = keyframes`
   0% {
     clip: rect(5px, 9999px, 54px, 0);
