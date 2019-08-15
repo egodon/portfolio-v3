@@ -6,40 +6,65 @@ import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
 import GitHubIcon from 'static/icons/github.svg';
 import ExternalLinkIcon from 'static/icons/external-link.svg';
+import { media } from 'style/variables.css';
 
 const Project = ({ project }) => {
   const { projectName, description, builtWith, githubUrl, websiteUrl } = project;
 
   return (
-    <Container>
-      <img width="350" height="200" src={tmpImage} alt={`Screenshot of ${projectName}`} />
-      <TextContainer>
-        <H3>{projectName}</H3>
-        <Description>{description}</Description>
-        <BuiltWith>
-          {builtWith.map((technology, index) => (
-            <Technology key={index}>
-              <RightChevronIcon viewBox="0 0 24 24" />
-              {technology}
-            </Technology>
-          ))}
-        </BuiltWith>
-        <ButtonGroup>
-          <Button as="a" href={githubUrl} target="_blank">
-            View code <GitHubIcon viewBox="0 0 24 24" />
-          </Button>
-          <Button as="a" href={websiteUrl} target="_blank" color="var(--white)">
-            Live Site <ExternalLinkIcon viewBox="0 0 24 24" />
-          </Button>
-        </ButtonGroup>
-      </TextContainer>
-    </Container>
+    <>
+      <Container>
+        <ProjectImage height="200" src={tmpImage} alt={`Screenshot of ${projectName}`} />
+        <TextContainer>
+          <H3>{projectName}</H3>
+          <Description>{description}</Description>
+          <BuiltWith>
+            {builtWith.map((technology, index) => (
+              <Technology key={index}>
+                <RightChevronIcon viewBox="0 0 24 24" />
+                {technology}
+              </Technology>
+            ))}
+          </BuiltWith>
+          <ButtonGroup>
+            <Button as="a" href={websiteUrl} target="_blank" color="var(--white)">
+              Live Site <ExternalLinkIcon viewBox="0 0 24 24" />
+            </Button>
+            <Button as="a" href={githubUrl} target="_blank">
+              View code <GitHubIcon viewBox="0 0 24 24" />
+            </Button>
+          </ButtonGroup>
+        </TextContainer>
+      </Container>
+      <Line />
+    </>
   );
 };
 
+// todo: Don't display last line
+const Line = styled.span`
+  max-width: 20rem;
+  margin: 4rem auto;
+  display: block;
+  border-bottom: 1px solid var(--grey-400);
+`;
+
 const Container = styled.li`
-  margin-bottom: 6rem;
   display: flex;
+
+  ${media.tablet`
+    flex-direction: column;
+    align-items: flex-start;
+  `}
+`;
+
+const ProjectImage = styled.img`
+  width: 100%;
+  max-width: 35rem;
+
+  ${media.tablet`
+    margin-bottom: 1.8rem;
+  `}
 `;
 
 const TextContainer = styled.div`
@@ -47,6 +72,10 @@ const TextContainer = styled.div`
   max-width: 45rem;
   display: flex;
   flex-direction: column;
+
+  ${media.tablet`
+    margin-left: 0;
+  `}
 `;
 
 const BuiltWith = styled.ul`
@@ -62,7 +91,8 @@ const BuiltWith = styled.ul`
 const Technology = styled.li`
   display: flex;
   align-items: center;
-  color: var(--grey-200);
+  color: var(--grey-300);
+  margin-bottom: 1.2rem;
 
   svg {
     stroke-width: 1;
@@ -77,7 +107,7 @@ const H3 = styled.h3`
 
 const Description = styled.p`
   font-size: var(--fs-medium);
-  color: var(--grey-200);
+  color: var(--grey-300);
 `;
 
 export default Project;

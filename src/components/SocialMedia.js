@@ -25,11 +25,12 @@ const socialLinks = [
   },
 ];
 
-const SocialMedia = ({ inside }) => {
+const SocialMedia = ({ inside, displayOnMobile }) => {
   const [iconHovered, setIconHovered] = useState(null);
+  console.log({ displayOnMobile });
 
   return (
-    <Footer>
+    <Footer displayOnMobile={displayOnMobile}>
       <SocialIcons inside={inside}>
         {socialLinks.map((socialLink) => (
           <Glitch icon={socialLink.icon} key={socialLink.id}>
@@ -68,7 +69,7 @@ const Footer = styled.footer`
   animation: ${fadeIn} 0.2s ease;
 
   ${media.tablet`
-    display: none;
+    display: ${(props) => (props.displayOnMobile ? 'flex' : 'none')};
   `}
 `;
 
@@ -104,6 +105,14 @@ const IconContainer = styled.a`
   svg {
     width: ${(p) => (p.inside === 'sidenav' ? '1.8rem' : '5.5rem')};
   }
+
+  ${media.tablet`
+    --size: 4.2rem;
+
+    svg {
+      width: 2.4rem;
+    }
+  `}
 `;
 
 const ButtonText = styled.span`

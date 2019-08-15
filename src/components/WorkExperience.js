@@ -122,11 +122,23 @@ const Responsibility = styled.li`
   margin-bottom: 0.4rem;
   display: flex;
   align-items: center;
+  position: relative;
+
+  ${media.mobile`
+      align-items: flex-start;
+    `}
 
   svg {
     stroke-width: 1;
     color: var(--color-primary);
     width: 1.8rem;
+    position: absolute;
+    left: -2rem;
+
+    ${media.mobile`
+      width: 2rem;
+      top: -0.4rem;
+    `}
   }
 `;
 

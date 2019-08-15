@@ -12,7 +12,7 @@ export default () => (
       <HeaderContainer>
         <H1>Evan Godon</H1>
         <H2>Front End Web Developer</H2>
-        <SocialMedia />
+        <SocialMedia displayOnMobile/>
       </HeaderContainer>
     </Container>
   </>
@@ -39,8 +39,10 @@ const H2 = styled.h2`
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 5.4px;
+  text-align: center;
 
   ${media.mobile`
     font-size: var(--fs-mobile);
+    letter-spacing: 2px;
   `}
 `;
