@@ -7,28 +7,31 @@ const WorkExperience = ({ company }) => {
   const { companyName, timePeriod, position, techStack, responsibilities } = company;
 
   return (
-    <Container>
-      <TimePeriod>{timePeriod}</TimePeriod>
-      <TimeLine>
-        <IconContainer>
-          {/* <MapPinIcon width="1.6rem" /> */}
-          {companyName[0]}
-        </IconContainer>
-      </TimeLine>
-      <Details>
-        <Company>{companyName}</Company>
-        <Position>{position}</Position>
-        <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
-        <ResponsibilityList>
-          {responsibilities.map((responsibility, index) => (
-            <Responsibility key={index}>
-              <RightChevronIcon viewBox="0 0 24 24" />
-              {responsibility}
-            </Responsibility>
-          ))}
-        </ResponsibilityList>
-      </Details>
-    </Container>
+    <>
+      <Container>
+        <TimePeriod>{timePeriod}</TimePeriod>
+        <TimeLine>
+          <IconContainer>
+            {/* <MapPinIcon width="1.6rem" /> */}
+            {companyName[0]}
+          </IconContainer>
+        </TimeLine>
+        <Details>
+          <Company>{companyName}</Company>
+          <Position>{position}</Position>
+          <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
+          <ResponsibilityList>
+            {responsibilities.map((responsibility, index) => (
+              <Responsibility key={index}>
+                <RightChevronIcon viewBox="0 0 24 24" />
+                {responsibility}
+              </Responsibility>
+            ))}
+          </ResponsibilityList>
+        </Details>
+      </Container>
+      <Line />
+    </>
   );
 };
 
@@ -40,6 +43,23 @@ const Container = styled.div`
 
   ${media.mobile`
     display: block;
+    margin-bottom: 0;
+  `}
+`;
+
+const Line = styled.span`
+  max-width: 26rem;
+  margin: 4rem auto;
+  display: block;
+  border-bottom: 1px solid var(--grey-400);
+  display: none;
+
+  &:last-of-type {
+    opacity: 0;
+  }
+
+  ${media.mobile`
+    display: block;
   `}
 `;
 
@@ -48,7 +68,7 @@ const TimePeriod = styled.span`
   color: var(--grey-300);
   text-align: right;
   display: inline-block;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
 `;
 
 const TimeLine = styled.div`
@@ -99,6 +119,7 @@ const IconContainer = styled.div`
 
 const Company = styled.h3`
   margin-bottom: 0.6rem;
+  color: var(--grey-200);
 `;
 
 const Position = styled.h4`
@@ -111,11 +132,12 @@ const Details = styled.div``;
 const TechStack = styled.div`
   margin-bottom: 3.2rem;
   font-size: var(--fs-medium);
-  color: var(--grey-200);
+  color: var(--grey-300);
 `;
 
 const ResponsibilityList = styled.ul`
   font-size: var(--fs-medium);
+  color: var(--grey-300);
 `;
 
 const Responsibility = styled.li`
@@ -130,7 +152,7 @@ const Responsibility = styled.li`
 
   svg {
     stroke-width: 1;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     width: 1.8rem;
     position: absolute;
     left: -2rem;

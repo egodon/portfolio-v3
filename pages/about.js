@@ -78,13 +78,13 @@ const ProfileContainer = styled.div`
 `;
 
 const AboutText = styled.div`
-  max-width: 40rem;
+  max-width: 45rem;
   font-size: var(--fs-medium);
   margin: 0 4rem;
   line-height: 1.4;
 
   ${media.tablet`
-      margin-top: 4rem;
+      margin: 4rem 0;
   `}
 `;
 

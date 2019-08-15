@@ -11,7 +11,8 @@ const AnimatedBackground = () => {
       <Line m={13} delay={10.8} />
       <Line m={5} delay={8.8} />
       <Line m={17} delay={7.2} />
-      <Line m={27} delay={1} />
+      <Line m={27} delay={0.2} />
+      <Line m={34} delay={11.8} />
       <Line m={45} delay={3.5} />
     </Container>
   );
@@ -38,7 +39,7 @@ const Line = styled.div`
   background: rgba(255, 255, 255, 0);
   overflow: hidden;
   margin-left: ${(props) => props.m}%;
-
+  
   &::after {
     content: '';
     display: block;
@@ -53,7 +54,7 @@ const Line = styled.div`
       rgba(255, 255, 255, 0.2) 75%,
       rgba(255, 255, 255, 0.4) 100%
     );
-    animation: ${rainEffect} 12s 0s infinite;
+    animation: ${rainEffect} 14s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
     animation-delay: ${(props) => props.delay}s;

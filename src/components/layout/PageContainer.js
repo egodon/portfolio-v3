@@ -5,7 +5,7 @@ export default styled.div`
   height: 100%;
   align-items: center;
   flex-direction: column;
-  padding: 0 2rem;
+  padding: 0 2.8rem;
   padding-top: 16%;
   overflow-y: auto;
 `;

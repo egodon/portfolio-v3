@@ -10,8 +10,8 @@ export const variables = {
   __white: '#FFF',
   __black: 'rgba(2, 2, 2)',
   __grey_100: '#FAFAFA',
-  __grey_200: '#EEEEEE',
-  __grey_300: '#BDBDBD',
+  __grey_200: '#cfcfcf',
+  __grey_300: '#CACACA',
   __grey_400: '#424242',
   __grey_500: '#121212',
 

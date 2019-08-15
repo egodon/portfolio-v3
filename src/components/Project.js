@@ -41,12 +41,15 @@ const Project = ({ project }) => {
   );
 };
 
-// todo: Don't display last line
 const Line = styled.span`
-  max-width: 20rem;
+  max-width: 26rem;
   margin: 4rem auto;
   display: block;
   border-bottom: 1px solid var(--grey-400);
+
+  &:last-of-type {
+    opacity: 0;
+  }
 `;
 
 const Container = styled.li`
@@ -96,13 +99,14 @@ const Technology = styled.li`
 
   svg {
     stroke-width: 1;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     width: 1.8rem;
   }
 `;
 
 const H3 = styled.h3`
   margin-bottom: 0.8rem;
+  color: var(--grey-200);
 `;
 
 const Description = styled.p`
