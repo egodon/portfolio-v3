@@ -27,7 +27,6 @@ const socialLinks = [
 
 const SocialMedia = ({ inside, displayOnMobile }) => {
   const [iconHovered, setIconHovered] = useState(null);
-  console.log({ displayOnMobile });
 
   return (
     <Footer displayOnMobile={displayOnMobile}>
