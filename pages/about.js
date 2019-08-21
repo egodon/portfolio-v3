@@ -31,7 +31,14 @@ export default () => {
                 <img src={VectorProfile} alt="glitch" fill="var(--color-primary)" />
               </VectorProfileContainer>
             ) : (
-              <ProfileImg src={Profile} alt="profile" />
+              <ProfileImg
+                src={Profile}
+                alt="profile"
+                style={{
+                  backgroundSize: 'cover',
+                  backgroundImage: `url(${require(`../static/images/profile.jpg`)})`,
+                }}
+              />
             )}
           </ProfileContainer>
           <AboutText>
