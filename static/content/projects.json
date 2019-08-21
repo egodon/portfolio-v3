@@ -7,21 +7,24 @@
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib-v2.netlify.com/",
-      "builtWith": ["React", "NextJs", "Auth0"]
+      "builtWith": ["React", "NextJs", "Auth0"],
+      "screenshot": "linklib.png"
     },
     {
       "projectName": "Tracy's Porfolio",
       "description": "A portfolio website I made for my girlfriend who works as a concept artist.",
       "githubUrl": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://traci.netlify.com/",
-      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"]
+      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"],
+      "screenshot": "traci-portfolio.png"
     },
     {
-      "projectName": "My Porfolio",
+      "projectName": "Porfolio",
       "description": "",
       "githubUrl": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://traci.netlify.com/",
-      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"]
+      "builtWith": ["React Static", "Styled-Components", "Netlify CMS"],
+      "screenshot": "portfolio.png"
     }
   ]
 }

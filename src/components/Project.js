@@ -9,12 +9,12 @@ import ExternalLinkIcon from 'static/icons/external-link.svg';
 import { media } from 'style/variables.css';
 
 const Project = ({ project }) => {
-  const { projectName, description, builtWith, githubUrl, websiteUrl } = project;
+  const { projectName, description, builtWith, githubUrl, websiteUrl, screenshot } = project;
 
   return (
     <>
       <Container>
-        <ProjectImage height="200" src={tmpImage} alt={`Screenshot of ${projectName}`} />
+        <ProjectImage height="200" src={`/static/images/${screenshot}`} alt={`Screenshot of ${projectName}`} />
         <TextContainer>
           <H3>{projectName}</H3>
           <Description>{description}</Description>
@@ -43,7 +43,7 @@ const Project = ({ project }) => {
 
 const Line = styled.span`
   max-width: 26rem;
-  margin: 4rem auto;
+  margin: 8rem auto;
   display: block;
   border-bottom: 1px solid var(--grey-400);
 
@@ -64,6 +64,8 @@ const Container = styled.li`
 const ProjectImage = styled.img`
   width: 100%;
   max-width: 35rem;
+  /* border: 1px solid var(--color-secondary-dark); */
+  padding: 2px;
 
   ${media.tablet`
     margin-bottom: 1.8rem;

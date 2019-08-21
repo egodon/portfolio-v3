@@ -2,6 +2,9 @@ const path = require('path');
 const withImages = require('next-images');
 
 module.exports = withImages({
+  onDemandEntries: {
+    pagesBufferLength: 4,
+  },
   exclude: [
     path.resolve(__dirname, 'static/icons'),
   ],
