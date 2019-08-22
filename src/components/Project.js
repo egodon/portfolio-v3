@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import LQIPImage from 'components/LQIPImage';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
@@ -7,7 +8,7 @@ import GitHubIcon from 'static/icons/github.svg';
 import ExternalLinkIcon from 'static/icons/external-link.svg';
 import { media } from 'style/variables.css';
 
-// todo: Make image component for using LQIP 
+// todo: Make image component for using LQIP
 
 const Project = ({ project }) => {
   const {
@@ -19,22 +20,12 @@ const Project = ({ project }) => {
     screenshot,
   } = project;
 
-  const imageId = `${projectName}-screenshot`;
-
-  useEffect(() => {
-    const image = document.getElementById(imageId);
-    image.src = `/static/images/${screenshot}`;
-    image.onload = () => console.log('hello');
-    console.log(image);
-  });
-
   return (
     <>
       <Container>
-        <ProjectImage
-          id={imageId}
-          height="200"
-          src={require(`../../static/images/${screenshot}?lqip`)}
+        <LQIPImage
+          imageId={`${projectName}-screenshot`}
+          imageUrl={screenshot}
           alt={`Screenshot of ${projectName}`}
         />
         <TextContainer>
@@ -83,21 +74,11 @@ const Container = styled.li`
   `}
 `;
 
-const blurEffect = keyframes`
-  from {
-    filter: blur(2px);
-  }
-
-  to {
-    filter: blur(0)
-  }
-`;
-
 const ProjectImage = styled.img`
   width: 100%;
   min-width: 35rem;
   max-width: 35rem;
-  animation: ${blurEffect} 2s ease;
+  height: 20rem;
 
   ${media.tablet`
     margin-bottom: 1.8rem;
