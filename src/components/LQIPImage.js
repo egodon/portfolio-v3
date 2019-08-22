@@ -12,12 +12,12 @@ const LQIPImage = ({ imageId, imageUrl, alt }) => {
   useEffect(() => {
     const image = document.getElementById(imageId);
     image.src = originalImage;
-  })
+  });
 
   const src =
-    isSSR || imageIsCached(originalImage)
-      ? originalImage
-      : require(`../../static/images/${imageUrl}?lqip`);
+    isSSR || !imageIsCached(originalImage)
+      ? require(`../../static/images/${imageUrl}?lqip`)
+      : originalImage;
 
   return <StyledImage id={imageId} alt={alt} src={src} />;
 };
@@ -37,7 +37,6 @@ const StyledImage = styled.img`
   min-width: 35rem;
   max-width: 35rem;
   height: 20rem;
-  /* animation: ${blurEffect} 1s ease; */
 `;
 
 function imageIsCached(src) {
