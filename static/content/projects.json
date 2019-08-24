@@ -8,7 +8,7 @@
       "githubUrl": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib-v2.netlify.com/",
       "builtWith": ["React", "NextJs", "Auth0"],
-      "screenshot": "linklib.png"
+      "screenshotUrl": "https://ucarecdn.com/1b54cf29-96b8-4a9c-9441-9c124ebb1d69"
     },
     {
       "projectName": "Tracy's Porfolio",
@@ -16,7 +16,7 @@
       "githubUrl": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://traci.netlify.com/",
       "builtWith": ["React Static", "Styled-Components", "Netlify CMS"],
-      "screenshot": "traci-portfolio.png"
+      "screenshotUrl": "https://ucarecdn.com/3e3eed5d-5404-447d-ace8-64c1fa300f7d"
     },
     {
       "projectName": "Porfolio",
@@ -24,7 +24,7 @@
       "githubUrl": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://traci.netlify.com/",
       "builtWith": ["React Static", "Styled-Components", "Netlify CMS"],
-      "screenshot": "portfolio.png"
+      "screenshotUrl": "https://ucarecdn.com/02924235-2b49-4a37-9852-66ec0906d75d"
     }
   ]
 }

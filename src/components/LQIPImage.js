@@ -1,46 +1,65 @@
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { isSSR } from 'constants';
+import { fadeOut } from 'style/animations.css';
 
 /**
  * This will inline a low quality image place holder
  * and replace it with the original image once it has loaded.
+ *
  */
-const LQIPImage = ({ imageId, imageUrl, alt }) => {
-  const originalImage = '/static/images/' + imageUrl;
+const LQIPImage = ({ imageId, url, alt }) => {
+  const originalImage = `${url}/-/resize/x350/-/format/auto/`;
+  const placeholder = `${url}/-/format/auto/-/resize/x200/-/blur/50/`;
+
+  const [imageLoaded, setImageLoaded] = useState(!isSSR && imageIsCached(originalImage));
 
   useEffect(() => {
-    const image = document.getElementById(imageId);
-    image.src = originalImage;
-  });
+    if (!imageLoaded) {
+      const image = new Image();
+      image.src = originalImage;
+      image.onload = () => setImageLoaded(true);
+    }
+  }, [imageLoaded]);
 
-  const src =
-    isSSR || !imageIsCached(originalImage)
-      ? require(`../../static/images/${imageUrl}?lqip`)
-      : originalImage;
-
-  return <StyledImage id={imageId} alt={alt} src={src} />;
+  return (
+    <Container>
+      {!imageLoaded ? (
+        <ImagePlaceholder id={imageId} src={placeholder} alt={alt} />
+      ) : (
+        <>
+          <OriginalImage id={imageId} alt={alt} src={originalImage} />
+          <ImagePlaceholderAnimate src={placeholder} />
+        </>
+      )}
+    </Container>
+  );
 };
 
-const blurEffect = keyframes`
-  from {
-    filter: blur(2px);
-  }
-
-  to {
-    filter: blur(0)
-  }
+const Container = styled.div`
+  position: relative;
+  width: 40rem;
 `;
 
 const StyledImage = styled.img`
   width: 100%;
-  min-width: 35rem;
-  max-width: 35rem;
-  height: 20rem;
+  height: 100%;
+`;
+
+const ImagePlaceholder = styled(StyledImage)``;
+
+const ImagePlaceholderAnimate = styled(ImagePlaceholder)`
+  position: absolute;
+  left: 0;
+  animation: ${fadeOut} 0.6s ease forwards;
+`;
+
+const OriginalImage = styled(StyledImage)`
+  position: relative;
 `;
 
 function imageIsCached(src) {
-  var image = new Image();
+  const image = new Image();
   image.src = src;
 
   return image.complete;

@@ -9,6 +9,15 @@ export const fadeIn = keyframes`
   }
 `;
 
+export const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 export const random = (max) => (Math.random() * max).toFixed(2);
 
 export const rainEffect = keyframes`

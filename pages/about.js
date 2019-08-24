@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import VectorProfile from 'static/images/profile-vector.svg';
-import Profile from 'static/images/profile.jpg';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import Title from 'components/Title';
@@ -12,7 +11,7 @@ import aboutData from 'static/content/about.json';
 export default () => {
   const [profileHovered, setProfileHovered] = useState(false);
 
-  const { header, paragraph_1, paragraph_2 } = aboutData;
+  const { header, profileImage, paragraph_1, paragraph_2 } = aboutData;
 
   return (
     <>
@@ -32,12 +31,8 @@ export default () => {
               </VectorProfileContainer>
             ) : (
               <ProfileImg
-                src={Profile}
+                src={profileImage}
                 alt="profile"
-                style={{
-                  backgroundSize: 'cover',
-                  backgroundImage: `url(${require(`../static/images/profile.jpg`)})`,
-                }}
               />
             )}
           </ProfileContainer>

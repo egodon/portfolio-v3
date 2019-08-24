@@ -17,7 +17,7 @@ const Project = ({ project }) => {
     builtWith,
     githubUrl,
     websiteUrl,
-    screenshot,
+    screenshotUrl,
   } = project;
 
   return (
@@ -25,7 +25,7 @@ const Project = ({ project }) => {
       <Container>
         <LQIPImage
           imageId={`${projectName}-screenshot`}
-          imageUrl={screenshot}
+          url={screenshotUrl}
           alt={`Screenshot of ${projectName}`}
         />
         <TextContainer>

@@ -30,6 +30,7 @@ const SideNav = ({ pathname }) => {
 const Container = styled.div`
   background-color: var(--black);
   height: 100%;
+  min-height: 60rem;
   padding: 3.2rem 0;
   color: var(--white);
   display: flex;
