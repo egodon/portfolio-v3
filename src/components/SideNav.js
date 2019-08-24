@@ -48,6 +48,7 @@ const Container = styled.div`
     right: 0;
     grid-row: 2 / 3;
     height: auto;
+    min-height: auto;
     flex-direction: row;
     align-items: center;
   `}
