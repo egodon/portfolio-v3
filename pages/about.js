@@ -13,7 +13,7 @@ export default () => {
     <>
       <Title title={header} />
       <PageContainer>
-        <H1>{header}</H1>
+        <H1 largeMargin>{header}</H1>
         <Content>
           <ProfileContainer>
             <ProfileImg
