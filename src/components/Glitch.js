@@ -81,7 +81,7 @@ const TextContainer = styled.span`
   }
 
   ${Container} &::after {
-    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-primary);
+    text-shadow: -2px 0 var(--color-secondary), 2px 2px var(--color-primary);
   }
 
 

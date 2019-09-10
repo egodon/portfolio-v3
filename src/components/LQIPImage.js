@@ -38,7 +38,7 @@ const LQIPImage = ({ imageId, url, alt }) => {
 
 const Container = styled.div`
   position: relative;
-  width: 40rem;
+  max-width: 40rem;
 `;
 
 const StyledImage = styled.img`
