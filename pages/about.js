@@ -1,45 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import VectorProfile from 'static/images/profile-vector.svg';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import Title from 'components/Title';
-import { glitch, glitch_2 } from 'style';
 import { media } from 'style/variables.css';
 import aboutData from 'static/content/about.json';
 
 export default () => {
-  const [profileHovered, setProfileHovered] = useState(false);
-
-  const { header, profileImage, paragraph_1, paragraph_2 } = aboutData;
-
+  const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
+  
   return (
     <>
       <Title title={header} />
       <PageContainer>
         <H1>{header}</H1>
         <Content>
-          <ProfileContainer
-            onMouseEnter={() => setProfileHovered(true)}
-            onMouseLeave={() => setProfileHovered(false)}
-          >
-            {profileHovered ? (
-              <VectorProfileContainer>
-                <img src={VectorProfile} alt="glitch" fill="var(--color-secondary)" />
-                <img src={VectorProfile} alt="glitch" fill="var(--color-secondary)" />
-                <img src={VectorProfile} alt="glitch" fill="var(--color-primary)" />
-              </VectorProfileContainer>
-            ) : (
-              <ProfileImg
-                src={profileImage}
-                alt="profile"
-              />
-            )}
+          <ProfileContainer>
+            <ProfileImg
+              src={profileImage + '/-/preview/440x440/-/grayscale/'}
+              alt="profile"
+            />
           </ProfileContainer>
           <AboutText>
             <p>{paragraph_1}</p>
             <br />
             <p>{paragraph_2}</p>
+            <br />
+            <p>{paragraph_3}</p>
           </AboutText>
         </Content>
       </PageContainer>
@@ -63,20 +50,6 @@ const ProfileContainer = styled.div`
   border: 3px solid var(--color-secondary);
   border-radius: 50%;
   overflow: hidden;
-
-  &:hover svg:first-of-type {
-    left: 6px;
-    top: 8px;
-    animation: ${glitch} 1s infinite linear alternate-reverse;
-    color: var(--color-primary);
-  }
-
-  &:hover svg:last-of-type {
-    left: -6px;
-    top: 5px;
-    animation: ${glitch_2} 0.7s infinite linear alternate-reverse;
-    color: var(--color-primary);
-  }
 `;
 
 const AboutText = styled.div`
@@ -90,19 +63,6 @@ const AboutText = styled.div`
   `}
 `;
 
-const VectorProfileContainer = styled.div`
-  position: relative;
-
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 16rem;
-    height: 16rem;
-  }
-`;
-
 const ProfileImg = styled.img`
   max-width: 100%;
-  filter: grayscale(1);
 `;

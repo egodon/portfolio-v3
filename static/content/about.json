@@ -1,7 +1,7 @@
 {
   "header": "About",
-  "profileImage": "https://ucarecdn.com/45917334-c972-4131-84fb-279507f513f2/profile.jpg",
-  "paragraph_1": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, necessitatibus natus. Maiores nam cum aut in voluptatibus odio necessitatibus molestiae!",
-  "paragraph_2": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas.",
-  "test": "hey man"
+  "profileImage": "https://ucarecdn.com/45917334-c972-4131-84fb-279507f513f2",
+  "paragraph_1": "Hi, I'm Evan Godon, a front-end web developer from Montreal. I see myself as a life-long student and I have a high interest in learning new web technologies.",
+  "paragraph_2": "Currently, I enjoy working on the front-end with the React ecosystem but I'm also comfortable using Node on the backend. Additionally, I like to dabble in web design and animations.",
+  "paragraph_3": " I just recently moved to Toronto and I am seeking new opportunities."
 }
