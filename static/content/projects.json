@@ -3,7 +3,7 @@
   "projects": [
     {
       "projectName": "LinkLib",
-      "description": "A single-page application made in React that stores and organizes ressources I'd like to bookmark.",
+      "description": "A single-page application made in React that stores and organizes web-related ressources I'd like to bookmark.",
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib-v2.netlify.com/",
