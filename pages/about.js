@@ -47,7 +47,7 @@ const ProfileContainer = styled.div`
   position: relative;
   width: 16rem;
   height: 16rem;
-  border: 3px solid var(--color-secondary);
+  border: 2px solid var(--color-secondary);
   border-radius: 50%;
   overflow: hidden;
 `;
