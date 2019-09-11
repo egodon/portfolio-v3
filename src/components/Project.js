@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 import LQIPImage from 'components/LQIPImage';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
 import GitHubIcon from 'static/icons/github.svg';
-import ExternalLinkIcon from 'static/icons/external-link.svg';
+import GlobeIcon from 'static/icons/globe.svg';
 import { media } from 'style/variables.css';
-
-// todo: Make image component for using LQIP
 
 const Project = ({ project }) => {
   const {
@@ -41,7 +39,7 @@ const Project = ({ project }) => {
           </BuiltWith>
           <ButtonGroup>
             <Button as="a" href={websiteUrl} target="_blank" color="var(--white)">
-              Live Site <ExternalLinkIcon viewBox="0 0 24 24" />
+              Live Site <GlobeIcon viewBox="0 0 24 24" />
             </Button>
             <Button as="a" href={githubUrl} target="_blank">
               View code <GitHubIcon viewBox="0 0 24 24" />
