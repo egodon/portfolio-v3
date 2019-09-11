@@ -51,7 +51,7 @@ const ImagePlaceholder = styled(StyledImage)``;
 const ImagePlaceholderAnimate = styled(ImagePlaceholder)`
   position: absolute;
   left: 0;
-  animation: ${fadeOut} 0.6s ease forwards;
+  animation: ${fadeOut} 0.2s ease forwards;
 `;
 
 const OriginalImage = styled(StyledImage)`
