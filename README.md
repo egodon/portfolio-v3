@@ -1,5 +1,4 @@
 # Portfolio
-Version 3
 
 Built with Nextjs and Styled-components
 
