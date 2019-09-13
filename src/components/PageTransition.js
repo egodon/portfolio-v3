@@ -6,8 +6,8 @@ import { useRouter } from 'hooks/useRouter';
 export const PageTransition = ({ children, ...props }) => {
   const router = useRouter();
   const transitions = useTransition(router, (router) => router.pathname, {
-    from: { opacity: 0, transform: 'skew(1deg)' },
-    enter: { opacity: 1, transform: 'skew(0)' },
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
     leave: {
       position: 'absolute',
       top: 0,
@@ -45,5 +45,5 @@ const Page = styled(animated.main)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
 `;
