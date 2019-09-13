@@ -11,7 +11,8 @@
           "css": "./src/css",
           "constants": "./src/constants",
           "style": "./src/style",
-          "utils": "./src/utils"
+          "utils": "./src/utils",
+          "hooks": "./src/hooks"
         }
       }
     ]

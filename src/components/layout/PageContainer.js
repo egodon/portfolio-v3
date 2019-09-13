@@ -7,5 +7,4 @@ export default styled.div`
   flex-direction: column;
   padding: 0 2.8rem;
   padding-top: 16%;
-  overflow-y: auto;
 `;
