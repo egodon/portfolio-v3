@@ -53,7 +53,7 @@ const Project = ({ project }) => {
 };
 
 const Line = styled.span`
-  max-width: 26rem;
+  max-width: 34rem;
   margin: 8rem auto;
   display: block;
   border-bottom: 1px solid var(--grey-400);

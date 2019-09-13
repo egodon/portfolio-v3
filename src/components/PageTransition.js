@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTransition, animated } from 'react-spring';
 import { useRouter } from 'hooks/useRouter';
+import { isSSR } from '../constants';
 
 export const PageTransition = ({ children, ...props }) => {
   const router = useRouter();
   const transitions = useTransition(router, (router) => router.pathname, {
-    from: { opacity: 0 },
+    from: { opacity: isSSR ? 1 : 0 },
     enter: { opacity: 1 },
     leave: {
       position: 'absolute',
@@ -17,7 +18,7 @@ export const PageTransition = ({ children, ...props }) => {
       opacity: 0,
     },
     config: {
-      duration: 250,
+      duration: 100,
     },
   });
 
