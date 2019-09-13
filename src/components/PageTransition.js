@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useTransition, animated } from 'react-spring';
 import { useRouter } from 'hooks/useRouter';
-import { isSSR } from '../constants';
+import { isSSR } from 'constants';
 
 export const PageTransition = ({ children, ...props }) => {
+  const isFirstRender = useRef(true);
   const router = useRouter();
+
+  useEffect(() => {
+    isFirstRender.current = false;
+  }, []);
+
   const transitions = useTransition(router, (router) => router.pathname, {
-    from: { opacity: isSSR ? 1 : 0 },
+    from: { opacity: isSSR || isFirstRender.current ? 1 : 0 },
     enter: { opacity: 1 },
     leave: {
       position: 'absolute',
@@ -18,7 +24,7 @@ export const PageTransition = ({ children, ...props }) => {
       opacity: 0,
     },
     config: {
-      duration: 100,
+      duration: 250,
     },
   });
 
