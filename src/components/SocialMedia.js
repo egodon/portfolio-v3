@@ -61,7 +61,6 @@ const SocialMedia = ({ inside, displayOnMobile }) => {
 };
 
 const Footer = styled.footer`
-  margin-top: auto;
   padding: 0 var(--side-padding);
   display: flex;
   flex-direction: column;

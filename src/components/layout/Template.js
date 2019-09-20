@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'next/router';
 import styled, { ThemeProvider } from 'styled-components';
 import SideNav from 'components/SideNav';
 import AnimatedBackground from 'components/AnimatedBackground';
+import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'style';
 
-const Template = ({ children, router }) => (
-  <>
-    <ThemeProvider theme={variables}>
-      <AppContainer>
-        <SideNav pathname={router.pathname} />
-        <Main>
-          <>
-            <AnimatedBackground />
-            {children}
-          </>
-        </Main>
-      </AppContainer>
-    </ThemeProvider>
-    <GlobalStyle />
-  </>
-);
+const Template = ({ children, router }) => {
+  const [inDarkMode, setDarkMode] = useState(true);
+  return (
+    <>
+      <ThemeProvider theme={{ ...variables, inDarkMode, setDarkMode }}>
+        <AppContainer>
+          <SideNav pathname={router.pathname} />
+          <Main>
+            <>
+              <AnimatedBackground />
+              <ThemeSwitch />
+              {children}
+            </>
+          </Main>
+        </AppContainer>
+      </ThemeProvider>
+      <GlobalStyle />
+    </>
+  );
+};
 
 const AppContainer = styled.div`
   height: 100vh;
