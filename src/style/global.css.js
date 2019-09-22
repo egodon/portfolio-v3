@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   } 
 
   body {
-    background-color: var(--grey-500);
     font-family: 'IBMPlexSans', monospace;
     font-weight: 300;
     font-size: var(--fs-default);
@@ -29,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: all .2s ease;
   }
 
   @font-face {

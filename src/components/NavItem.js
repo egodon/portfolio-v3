@@ -21,7 +21,10 @@ const NavItem = ({ isCurrent, route }) => (
     <a>
       <Glitch text={route} icon={navIcon[route]}>
         {({ text: GlitchText, icon: GlitchIcon }) => (
-          <Container key={route} isCurrent={isCurrent}>
+          <Container
+            key={route}
+            isCurrent={isCurrent}
+          >
             <GlitchIcon viewBox="0 0 24 24" width="1.8rem" />
             <GlitchText />
           </Container>
@@ -31,19 +34,25 @@ const NavItem = ({ isCurrent, route }) => (
   </Link>
 );
 
-const Container = styled.li`
+const Container = styled.li.attrs((props) => ({
+  ariaCurrent: props.isCurrent ? 'page' : false,
+}))`
   cursor: pointer;
   display: flex;
   align-items: center;
   height: var(--nav-item-height);
   line-height: var(--nav-item-height);
   padding-left: 2.4rem;
-  color: ${(p) => (p.isCurrent ? p.theme.__white : p.theme.__grey_300)};
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_400)};
   transition: color 0.2s ease;
   font-size: var(--fs-small);
 
   &:hover {
-    color: var(--white);
+    color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
+  }
+
+  &[aria-current='page'] {
+    color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
   }
 
   svg {

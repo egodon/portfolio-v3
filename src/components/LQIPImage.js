@@ -15,11 +15,17 @@ const LQIPImage = ({ imageId, url, alt }) => {
   const [imageLoaded, setImageLoaded] = useState(!isSSR && imageIsCached(originalImage));
 
   useEffect(() => {
+    let image = {};
     if (!imageLoaded) {
-      const image = new Image();
+      image = new Image();
       image.src = originalImage;
       image.onload = () => setImageLoaded(true);
     }
+    return () => {
+      if (image.src) {
+        image.onload = () => null;
+      }
+    };
   }, [imageLoaded]);
 
   return (

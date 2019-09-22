@@ -7,7 +7,8 @@ import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'style';
 
 const Template = ({ children, router }) => {
-  const [inDarkMode, setDarkMode] = useState(true);
+  const [inDarkMode, setDarkMode] = useState(false);
+
   return (
     <>
       <ThemeProvider theme={{ ...variables, inDarkMode, setDarkMode }}>
@@ -20,9 +21,9 @@ const Template = ({ children, router }) => {
               {children}
             </>
           </Main>
+          <GlobalStyle theme={{ ...variables, inDarkMode }} />
         </AppContainer>
       </ThemeProvider>
-      <GlobalStyle />
     </>
   );
 };
@@ -32,13 +33,15 @@ const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 22rem 1fr;
   overflow: hidden;
+  background-color: ${({ theme }) =>
+    theme.inDarkMode ? theme.__grey_500 : theme.__white};
 
   ${media.tablet`
     --mobile-nav-height: 7rem
 
     grid-template-columns: auto;
     grid-template-rows: calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
-  `}
+  `};
 `;
 
 const Main = styled.main`

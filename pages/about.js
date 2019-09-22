@@ -57,6 +57,7 @@ const AboutText = styled.div`
   font-size: var(--fs-medium);
   margin: 0 4rem;
   line-height: 1.4;
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)}; 
 
   ${media.tablet`
       margin: 4rem 0;
