@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: var(--white);
-    line-height: 1.6;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "liga" 0;
@@ -41,6 +40,14 @@ const GlobalStyle = createGlobalStyle`
   outline: 0;
   outline: 0 !important;
   outline-style:none;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 , h5, h6 {
+    line-height: 1;
   }
 
   button, object, embed { 

@@ -8,7 +8,6 @@ const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
     return (
       <>
         {text.split('').map((letter, index) => {
-          // const timing = random(20);
           return (
             <Container key={index}>
               <LetterContainer data-text={letter} timing={0.5}>

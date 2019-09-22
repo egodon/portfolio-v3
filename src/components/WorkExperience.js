@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
 import { media } from 'style/variables.css';
 
@@ -65,10 +65,26 @@ const Line = styled.span`
 
 const TimePeriod = styled.span`
   font-size: var(--fs-small);
-  color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
   text-align: right;
   display: inline-block;
   margin-bottom: 1.2rem;
+`;
+
+const darkLineGradient = css`
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-secondary) 70%,
+    rgba(18, 18, 18, 1)
+  );
+`;
+
+const lightLineGradient = css`
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-secondary) 70%,
+    rgba(255, 255, 255, 1)
+  );
 `;
 
 const TimeLine = styled.div`
@@ -92,11 +108,7 @@ const TimeLine = styled.div`
   }
 
   ${Container}:last-of-type &::before {
-    background-image: linear-gradient(
-      to bottom,
-      var(--color-secondary) 70%,
-      rgba(18, 18, 18, 1)
-    );
+    ${({ theme }) => (theme.isDarkMode ? darkLineGradient : lightLineGradient)}
   }
 
   ${media.mobile`
@@ -118,26 +130,32 @@ const IconContainer = styled.div`
 `;
 
 const Company = styled.h3`
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   color: var(--grey-200);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
 `;
 
 const Position = styled.h4`
   margin-bottom: 1.2rem;
   color: var(--grey-200);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
+
 `;
 
-const Details = styled.div``;
+const Details = styled.div`
+`;
 
 const TechStack = styled.div`
   margin-bottom: 3.2rem;
   font-size: var(--fs-medium);
-  color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
+
+
 `;
 
 const ResponsibilityList = styled.ul`
   font-size: var(--fs-medium);
-  color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
 const Responsibility = styled.li`

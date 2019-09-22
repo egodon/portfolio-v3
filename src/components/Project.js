@@ -1,5 +1,5 @@
-import React  from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import styled, { css } from 'styled-components';
 import LQIPImage from 'components/LQIPImage';
 import RightChevronIcon from 'static/icons/chevron-right.svg';
 import ButtonGroup from 'components/ButtonGroup';
@@ -56,11 +56,22 @@ const Line = styled.span`
   max-width: 34rem;
   margin: 8rem auto;
   display: block;
-  border-bottom: 1px solid var(--grey-400);
+  border-bottom: 1px solid
+    ${({ theme }) => (theme.inDarkMode ? theme.__grey_400 : theme.__grey_200)};
 
   &:last-of-type {
     opacity: 0;
   }
+`;
+
+const greyShadow = css`
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 8px 0px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 3px -2px;
+`;
+
+const coloredShadow = css`
+  box-shadow: var(--color-secondary) 0px 0px 8px 0px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 3px -2px;
 `;
 
 const Container = styled.li`
@@ -69,18 +80,11 @@ const Container = styled.li`
   ${media.tablet`
     flex-direction: column;
     align-items: flex-start;
-  `}
-`;
+  `};
 
-const ProjectImage = styled.img`
-  width: 100%;
-  min-width: 35rem;
-  max-width: 35rem;
-  height: 20rem;
-
-  ${media.tablet`
-    margin-bottom: 1.8rem;
-  `}
+  img {
+    ${({ theme }) => (theme.inDarkMode ? coloredShadow : greyShadow)};
+  }
 `;
 
 const TextContainer = styled.div`
@@ -107,8 +111,8 @@ const BuiltWith = styled.ul`
 const Technology = styled.li`
   display: flex;
   align-items: center;
-  color: var(--grey-300);
   margin-bottom: 1.2rem;
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 
   svg {
     stroke-width: 1;
@@ -119,12 +123,13 @@ const Technology = styled.li`
 
 const H3 = styled.h3`
   margin-bottom: 0.8rem;
-  color: var(--grey-200);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_200 : theme.__grey_500)};
 `;
 
 const Description = styled.p`
   font-size: var(--fs-medium);
   color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
 export default Project;

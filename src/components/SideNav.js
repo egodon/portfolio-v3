@@ -96,8 +96,9 @@ const NavList = styled.ul`
     background-color: var(--color-secondary);
     box-shadow: ${({ theme }) =>
       theme.inDarkMode ? '0 0 18px 3px var(--color-secondary)' : 0};
-    transition: transform 0.2s ease;
+    transition: ${({ theme }) => (theme.inDarkMode ? 'transform 0.2s ease' : 'none')};
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
+    z-index: 1;
   }
 
   ${media.tablet`

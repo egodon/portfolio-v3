@@ -43,7 +43,6 @@ const Container = styled.li`
   line-height: var(--nav-item-height);
   padding-left: 2.4rem;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_400)};
-  transition: color 0.2s ease;
   font-size: var(--fs-small);
 
   &:hover {
@@ -52,6 +51,7 @@ const Container = styled.li`
 
   &[aria-current='page'] {
     color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
+    background-color: ${({ theme }) => (theme.inDarkMode ? 'none' : theme.__grey_100)};
   }
 
   svg {
