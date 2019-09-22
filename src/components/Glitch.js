@@ -1,9 +1,16 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2, random } from 'style';
+import React, { useEffect } from 'react';
+import styled, { css, withTheme } from 'styled-components';
+import { useForceUpdate } from 'hooks/useForceUpdate';
+import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
 
-// TODO: pre compute an array of random numbers for the letter animations
-const Glitch = ({ text, icon: Icon, eachLetter, children }) => {
+const Glitch = ({ text, icon: Icon, eachLetter, theme, children }) => {
+  const forceUpdate = useForceUpdate();
+  console.log({ theme });
+
+  useEffect(() => {
+    forceUpdate();
+  }, [theme.inDarkMode]);
+
   if (eachLetter) {
     return (
       <>
@@ -136,4 +143,4 @@ const Whitespace = styled.span`
   display: inline-block;
 `;
 
-export default Glitch;
+export default withTheme(Glitch);
