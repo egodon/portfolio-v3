@@ -25,6 +25,7 @@ const Container = styled.div`
   right: 0;
   bottom: 0;
   height: 100%;
+  pointer-events: none;
 `;
 
 const darkGradient = css`
