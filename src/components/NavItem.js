@@ -24,6 +24,7 @@ const NavItem = ({ isCurrent, route }) => (
           <Container
             key={route}
             isCurrent={isCurrent}
+            aria-current={isCurrent ? 'page' : false}
           >
             <GlitchIcon viewBox="0 0 24 24" width="1.8rem" />
             <GlitchText />
@@ -34,9 +35,7 @@ const NavItem = ({ isCurrent, route }) => (
   </Link>
 );
 
-const Container = styled.li.attrs((props) => ({
-  ariaCurrent: props.isCurrent ? 'page' : false,
-}))`
+const Container = styled.li`
   cursor: pointer;
   display: flex;
   align-items: center;
