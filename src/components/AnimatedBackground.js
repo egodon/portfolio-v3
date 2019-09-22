@@ -64,7 +64,7 @@ const Line = styled.div`
     width: 100%;
     top: -50%;
     left: 0;
-    ${({ inDarkMode }) => (inDarkMode ? darkGradient : lightGradient)};
+    ${({ theme }) => (theme.inDarkMode ? darkGradient : lightGradient)};
 
     animation: ${rainEffect} 14s 0s infinite;
     animation-fill-mode: forwards;
