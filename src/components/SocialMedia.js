@@ -61,7 +61,6 @@ const SocialMedia = ({ inside, displayOnMobile }) => {
 };
 
 const Footer = styled.footer`
-  margin-top: auto;
   padding: 0 var(--side-padding);
   display: flex;
   flex-direction: column;
@@ -72,7 +71,6 @@ const Footer = styled.footer`
   `}
 `;
 
-// TODO: make border glitch animation
 const SocialIcons = styled.div`
   margin-bottom: 1.8rem;
   display: grid;
@@ -90,6 +88,7 @@ const IconContainer = styled.a`
   align-items: center;
   justify-content: center;
   color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
   border: 1px solid currentColor;
   font-size: var(--fs-xsmall);
   --size: ${(p) => (p.inside === 'sidenav' ? '4.5rem' : '5.5rem')};
@@ -98,7 +97,7 @@ const IconContainer = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: var(--white);
+    color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
   }
 
   svg {

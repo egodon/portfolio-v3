@@ -35,7 +35,7 @@ const HeaderContainer = styled.div`
 const H2 = styled.h2`
   margin-bottom: 6.2rem;
   font-weight: 300;
-  color: var(--grey-300);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 5.4px;

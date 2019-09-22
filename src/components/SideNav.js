@@ -28,11 +28,12 @@ const SideNav = ({ pathname }) => {
 };
 
 const Container = styled.div`
-  background-color: var(--black);
+  background-color: ${({ theme }) =>
+    theme.inDarkMode ? theme.__black : theme.__grey_200};
   height: 100%;
   min-height: 60rem;
   padding: 3.2rem 0;
-  color: var(--white);
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
   display: flex;
   flex-direction: column;
   z-index: 100;
@@ -77,6 +78,7 @@ const lightBarPosition = {
 
 const Nav = styled.nav`
   width: 100%;
+  margin-bottom: auto;
 
   ${media.tablet`
       height: var(--mobile-nav-height);
@@ -92,9 +94,11 @@ const NavList = styled.ul`
     width: 0.3rem;
     height: var(--nav-item-height);
     background-color: var(--color-secondary);
-    box-shadow: 0 0 18px 3px var(--color-secondary);
-    transition: transform 0.2s ease;
+    box-shadow: ${({ theme }) =>
+      theme.inDarkMode ? '0 0 18px 3px var(--color-secondary)' : 0};
+    transition: ${({ theme }) => (theme.inDarkMode ? 'transform 0.2s ease' : 'none')};
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
+    z-index: 1;
   }
 
   ${media.tablet`

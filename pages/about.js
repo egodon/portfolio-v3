@@ -8,7 +8,7 @@ import aboutData from 'static/content/about.json';
 
 export default () => {
   const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
-  
+
   return (
     <>
       <Title title={header} />
@@ -56,11 +56,12 @@ const AboutText = styled.div`
   max-width: 45rem;
   font-size: var(--fs-medium);
   margin: 0 4rem;
-  line-height: 1.4;
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_500)};
+  letter-spacing: 1.2px;
 
   ${media.tablet`
       margin: 4rem 0;
-  `}
+  `};
 `;
 
 const ProfileImg = styled.img`

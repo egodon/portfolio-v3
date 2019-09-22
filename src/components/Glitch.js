@@ -1,24 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled, { css, withTheme } from 'styled-components';
-import { useForceUpdate } from 'hooks/useForceUpdate';
 import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
 
 const Glitch = ({ text, icon: Icon, eachLetter, theme, children }) => {
-  const forceUpdate = useForceUpdate();
-  console.log({ theme });
-
-  useEffect(() => {
-    forceUpdate();
-  }, [theme.inDarkMode]);
-
   if (eachLetter) {
     return (
       <>
         {text.split('').map((letter, index) => {
-          // const timing = random(20);
           return (
             <Container key={index}>
-              <LetterContainer data-text={letter} timing={0}>
+              <LetterContainer data-text={letter} timing={0.4} key={theme.inDarkMode}>
                 {letter !== ' ' ? letter : <Whitespace />}
               </LetterContainer>
             </Container>
@@ -114,15 +105,15 @@ const LetterContainer = styled(TextContainer)`
 
   ${Container} &::before {
     ${glitch_copy}
-    text-shadow: -2px 0 var(--color-secondary);
-    left: 2px;
+    text-shadow: -3px 0 var(--color-secondary);
+    left: 3px;
     animation: ${glitch_loop} 22s ${(p) => p.timing + 's'} infinite linear alternate;
   }
 
   ${Container} &::after {
     ${glitch_copy}
-    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-secondary);
-    left: -2px;
+    text-shadow: -3px 0 var(--color-primary), 2px 2px var(--color-secondary);
+    left: -3px;
     animation: ${glitch_loop_2} 22s ${(p) => p.timing + 's'} infinite linear alternate;
   }
 `;

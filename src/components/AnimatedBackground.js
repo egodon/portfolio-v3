@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rainEffect } from 'style/animations.css';
 
 const AnimatedBackground = () => {
@@ -25,10 +25,26 @@ const Container = styled.div`
   right: 0;
   bottom: 0;
   height: 100%;
-  z-index: -1;
+  pointer-events: none;
 `;
 
-// todo: Reduce duplicate styles here
+const darkGradient = css`
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 75%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+`;
+
+const lightGradient = css`
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+`;
 
 const Line = styled.div`
   position: absolute;
@@ -39,7 +55,7 @@ const Line = styled.div`
   background: rgba(255, 255, 255, 0);
   overflow: hidden;
   margin-left: ${(props) => props.m}%;
-  
+
   &::after {
     content: '';
     display: block;
@@ -48,12 +64,8 @@ const Line = styled.div`
     width: 100%;
     top: -50%;
     left: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(255, 255, 255, 0.4) 100%
-    );
+    ${({ theme }) => (theme.inDarkMode ? darkGradient : lightGradient)};
+
     animation: ${rainEffect} 14s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);

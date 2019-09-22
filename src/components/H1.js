@@ -10,6 +10,7 @@ const H1 = ({ children, largeMargin }) => (
 );
 
 const Container = styled.h1`
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
   font-family: 'anuratiregular', 'Helvitica';
   text-transform: uppercase;
   letter-spacing: 8px;

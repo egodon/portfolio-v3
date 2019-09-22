@@ -10,7 +10,7 @@ export const variables = {
   __white: '#FFF',
   __black: 'rgba(2, 2, 2)',
   __grey_100: '#FAFAFA',
-  __grey_200: '#cfcfcf',
+  __grey_200: '#dbdbdb',
   __grey_300: '#CACACA',
   __grey_400: '#424242',
   __grey_500: '#121212',
@@ -19,7 +19,7 @@ export const variables = {
   __fs_xsmall: '1rem',
   __fs_small: '1.2rem',
   __fs_medium: '1.4rem',
-  __fs_default: '1.8rem',
+  __fs_default: '1.6rem',
   __fs_large: '2.8rem',
   __fs_xlarge: '3.6rem',
 };
