@@ -42,7 +42,7 @@ const Container = styled.li`
   height: var(--nav-item-height);
   line-height: var(--nav-item-height);
   padding-left: 2.4rem;
-  color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_400)};
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
   font-size: var(--fs-small);
 
   &:hover {

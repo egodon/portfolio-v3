@@ -96,6 +96,7 @@ const TimeLine = styled.div`
   --icon-container-diff: calc(
     var(--icon-container-size) - var(--icon-container-margin-top)
   );
+  transition: background-image .2s ease;
 
   &::before {
     content: '';
@@ -108,7 +109,7 @@ const TimeLine = styled.div`
   }
 
   ${Container}:last-of-type &::before {
-    ${({ theme }) => (theme.isDarkMode ? darkLineGradient : lightLineGradient)}
+    ${({ theme }) => (theme.inDarkMode ? darkLineGradient : lightLineGradient)}
   }
 
   ${media.mobile`
