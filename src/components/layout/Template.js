@@ -5,9 +5,10 @@ import SideNav from 'components/SideNav';
 import AnimatedBackground from 'components/AnimatedBackground';
 import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'style';
+import { isNightTime } from 'utils';
 
 const Template = ({ children, router }) => {
-  const [inDarkMode, setDarkMode] = useState(false);
+  const [inDarkMode, setDarkMode] = useState(isNightTime());
 
   return (
     <>
