@@ -38,10 +38,10 @@ const Project = ({ project }) => {
             ))}
           </BuiltWith>
           <ButtonGroup>
-            <Button as="a" href={websiteUrl} target="_blank" color="var(--white)">
+            <LiveSiteButton as="a" href={websiteUrl} target="_blank" rel="noopener">
               Live Site <GlobeIcon viewBox="0 0 24 24" />
-            </Button>
-            <Button as="a" href={githubUrl} target="_blank">
+            </LiveSiteButton>
+            <Button as="a" href={githubUrl} target="_blank" rel="noopener">
               View code <GitHubIcon viewBox="0 0 24 24" />
             </Button>
           </ButtonGroup>
@@ -130,6 +130,10 @@ const Description = styled.p`
   font-size: var(--fs-medium);
   color: var(--grey-300);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
+`;
+
+const LiveSiteButton = styled(Button)`
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_100 : theme.__grey_500)};
 `;
 
 export default Project;
