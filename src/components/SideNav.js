@@ -103,12 +103,17 @@ const NavList = styled.ul`
 
   ${media.tablet`
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 100%;
 
     &:before {
       display: none;
     }
+  `}
+
+  ${media.mobile`
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
   `}
 `;
 

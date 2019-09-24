@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from 'style';
 
 export default styled.div`
   display: flex;
@@ -9,4 +10,8 @@ export default styled.div`
   padding-top: 16%;
   width: 100%;
   overflow-y: auto;
+
+  ${media.mobile`
+    padding-top: 24%;
+  `}
 `;

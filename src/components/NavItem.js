@@ -75,7 +75,7 @@ const Container = styled.li`
   `}
 
   ${media.mobile`
-    padding: 0 1.2rem;
+    padding: 0 2.4rem;
     font-size: var(--fs-xsmall);
   `}
 `;

@@ -45,8 +45,10 @@ const Content = styled.div`
 
 const ProfileContainer = styled.div`
   position: relative;
-  width: 16rem;
-  height: 16rem;
+  --size: 16rem;
+  min-width: var(--size);
+  min-height: var(--size);
+  width: var(--size);
   border: 2px solid var(--color-secondary);
   border-radius: 50%;
   overflow: hidden;
