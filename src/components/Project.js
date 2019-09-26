@@ -84,6 +84,7 @@ const Container = styled.li`
 
   img {
     ${({ theme }) => (theme.inDarkMode ? coloredShadow : greyShadow)};
+    margin-bottom: 2rem;
   }
 `;
 

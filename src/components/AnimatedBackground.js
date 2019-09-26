@@ -46,7 +46,7 @@ const lightGradient = css`
   );
 `;
 
-const Line = styled.div`
+const LineBase = styled.div`
   position: absolute;
   width: 1px;
   height: 100%;
@@ -54,7 +54,6 @@ const Line = styled.div`
   left: 50%;
   background: rgba(255, 255, 255, 0);
   overflow: hidden;
-  margin-left: ${(props) => props.m}%;
 
   &::after {
     content: '';
@@ -64,11 +63,18 @@ const Line = styled.div`
     width: 100%;
     top: -50%;
     left: 0;
-    ${({ theme }) => (theme.inDarkMode ? darkGradient : lightGradient)};
 
     animation: ${rainEffect} 14s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+`;
+
+const Line = styled(LineBase)`
+  margin-left: ${(props) => props.m}%;
+
+  &::after {
+    ${({ theme }) => (theme.inDarkMode ? darkGradient : lightGradient)};
     animation-delay: ${(props) => props.delay}s;
   }
 `;

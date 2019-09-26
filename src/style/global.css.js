@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { customProperties } from './variables.css';
 import anurati_woff2 from 'static/fonts/anurati-regular-webfont.woff2';
 import anurati_woff from 'static/fonts/anurati-regular-webfont.woff2';
-import IBMPlexSans_woff from 'static/fonts/IBMPlexSans-Regular.woff';
-import IBMPlexSans_woff2 from 'static/fonts/IBMPlexSans-Regular.woff2';
 import inter_woff from 'static/fonts/inter.woff';
 import inter_woff2 from 'static/fonts/inter.woff2';
 
@@ -67,14 +65,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'ibmpplexsans';
-    src: url(${IBMPlexSans_woff}) format('woff'),
-         url(${IBMPlexSans_woff2}) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
     font-family: 'interUI';
     src: url(${inter_woff}) format('woff'),
          url(${inter_woff2}) format('woff2');
@@ -93,6 +83,10 @@ const GlobalStyle = createGlobalStyle`
 
   svg {
     stroke-width: 1;
+  }
+
+  ::selection {
+    background-color: var(--color-secondary-light);
   }
 
   ::-webkit-scrollbar-thumb {

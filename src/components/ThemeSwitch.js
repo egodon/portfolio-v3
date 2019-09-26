@@ -35,7 +35,7 @@ const Border = styled.span`
   border: 1px solid currentColor;
 `;
 
-const SwitchButton = styled.span`
+const SwitchButtonBase = styled.span`
   display: flex;
   align-items: center;
   padding: 2px 4px;
@@ -44,6 +44,11 @@ const SwitchButton = styled.span`
   svg {
     width: 1.6rem;
     transition: color 0.15s ease;
+  }
+`;
+
+const SwitchButton = styled(SwitchButtonBase)`
+  svg {
     color: ${(props) => (props.active ? props.theme.__color_secondary : 'currentColor')};
     stroke-width: ${({ theme, active }) => (!theme.inDarkMode && active ? 2 : 1)};
   }

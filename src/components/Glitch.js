@@ -49,20 +49,19 @@ const Container = styled.span`
 
   &:hover svg:first-of-type {
     left: 2px;
-    animation: ${glitch} 1s infinite linear alternate-reverse;
     color: var(--color-primary);
+    animation: ${glitch} 1s infinite linear alternate-reverse;
   }
 
   &:hover svg:last-of-type {
     left: -2px;
-    animation: ${glitch_2} 0.7s infinite linear alternate-reverse;
     color: var(--color-secondary);
+    animation: ${glitch_2} 0.7s infinite linear alternate-reverse;
   }
 `;
 
-const TextContainer = styled.span`
+const TextContainerBase = styled.span`
   position: relative;
-  display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
 
   ${Container}:hover & {
     animation: ${glitch_skew} 1s infinite linear alternate-reverse;
@@ -82,7 +81,6 @@ const TextContainer = styled.span`
     text-shadow: -2px 0 var(--color-secondary), 2px 2px var(--color-primary);
   }
 
-
   ${Container}:hover &::before {
     ${glitch_copy}
     left: 1px;
@@ -96,7 +94,11 @@ const TextContainer = styled.span`
   }
 `;
 
-const LetterContainer = styled(TextContainer)`
+const TextContainer = styled(TextContainerBase)`
+  display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
+`;
+
+const LetterContainerBase = styled(TextContainer)`
   display: inline-block;
 
   ${Container}:hover & {
@@ -107,13 +109,21 @@ const LetterContainer = styled(TextContainer)`
     ${glitch_copy}
     text-shadow: -3px 0 var(--color-secondary);
     left: 3px;
-    animation: ${glitch_loop} 22s ${(p) => p.timing + 's'} infinite linear alternate;
   }
 
   ${Container} &::after {
     ${glitch_copy}
     text-shadow: -3px 0 var(--color-primary), 2px 2px var(--color-secondary);
     left: -3px;
+  }
+`;
+
+const LetterContainer = styled(LetterContainerBase)`
+  ${Container} &::before {
+    animation: ${glitch_loop} 22s ${(p) => p.timing + 's'} infinite linear alternate;
+  }
+
+  ${Container} &::after {
     animation: ${glitch_loop_2} 22s ${(p) => p.timing + 's'} infinite linear alternate;
   }
 `;
