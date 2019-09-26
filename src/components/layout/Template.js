@@ -34,12 +34,11 @@ const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 22rem 1fr;
   overflow: hidden;
-  background-color: ${({ theme }) =>
-    theme.inDarkMode ? theme.__grey_500 : theme.__white};
+  --bg-color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_500 : theme.__white)};
+  background-color: var(--bg-color);
 
   ${media.tablet`
     --mobile-nav-height: 7rem
-
     grid-template-columns: auto;
     grid-template-rows: calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
   `};
