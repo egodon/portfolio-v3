@@ -17,7 +17,7 @@ export default () => {
         <Content>
           <ProfileContainer>
             <ProfileImg
-              src={profileImage + '/-/preview/440x440/-/grayscale/'}
+              src={profileImage + '/-/preview/460x460/-/grayscale/'}
               alt="profile"
             />
           </ProfileContainer>
@@ -52,6 +52,8 @@ const ProfileContainer = styled.div`
   border: 2px solid var(--color-secondary);
   border-radius: 50%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 `;
 
 const AboutText = styled.div`

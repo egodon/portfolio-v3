@@ -4,8 +4,7 @@ import { Sun, Moon } from 'react-feather';
 import { useThemeContext } from 'style';
 
 const ThemeSwitch = () => {
-  const themeContext = useThemeContext();
-  const { inDarkMode, setDarkMode } = themeContext;
+  const { inDarkMode, setDarkMode } = useThemeContext();
 
   return (
     <Container>

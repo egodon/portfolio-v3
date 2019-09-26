@@ -6,9 +6,9 @@
       "description": "A single-page application made in React that stores and organizes web-related ressources I'd like to bookmark.",
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v2",
-      "websiteUrl": "https://linklib-v2.netlify.com/",
-      "builtWith": ["React", "NextJs", "Auth0"],
-      "screenshotUrl": "https://ucarecdn.com/1b54cf29-96b8-4a9c-9441-9c124ebb1d69"
+      "websiteUrl": "https://linklib.tk",
+      "builtWith": ["NextJs", "Material UI"],
+      "screenshotUrl": "https://ucarecdn.com/6440d5cf-6e4d-4514-b98c-9713d6c14a73"
     },
     {
       "projectName": "Tracy's Porfolio",
