@@ -5,12 +5,15 @@ import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
 import { media } from 'style/index';
 import Logo from 'components/Logo';
+import Glitch from 'components/Glitch';
 
 const SideNav = ({ pathname }) => {
   return (
     <Container>
       <LogoContainer>
-        <Logo size="8rem" />
+        <Glitch icon={() => <Logo size="8rem" />}>
+          {({ icon: GlitchLogo }) => <GlitchLogo />}
+        </Glitch>
       </LogoContainer>
       <>
         <Nav>
