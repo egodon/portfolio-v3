@@ -11,7 +11,7 @@ const socialLinks = [
   {
     id: 'CodeSandbox',
     icon: CodesandboxIcon,
-    url: 'https://codesandbox.io/',
+    url: 'https://codesandbox.io/u/egodon',
   },
   {
     id: 'GitHub',
