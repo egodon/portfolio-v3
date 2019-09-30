@@ -30,8 +30,8 @@ const contact: NextPage = () => {
     };
   }
 
-  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
-    console.log({ values });
+  function handleSubmit(event: React.FormEvent<HTMLInputElement>) {
+    const form = event.target;
     fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -47,9 +47,9 @@ const contact: NextPage = () => {
 
   const HiddenNetlifyForm = () => (
     <NetlifyForm form-name="Contact" netlify hidden>
-      <input type="text" value={values.name} />
-      <input type="text" value={values.email} />
-      <input type="text" value={values.message} />
+      <input type="text" value={values.name} readOnly />
+      <input type="text" value={values.email} readOnly />
+      <input type="text" value={values.message} readOnly />
     </NetlifyForm>
   );
 
@@ -63,7 +63,7 @@ const contact: NextPage = () => {
           {messageSent ? (
             <div>Message Sent</div>
           ) : (
-            <Form autoComplete="off" data-netlify>
+            <Form autoComplete="off" data-netlify onSubmit={handleSubmit}>
               <Input
                 label="Name"
                 name="name"
@@ -84,7 +84,7 @@ const contact: NextPage = () => {
                 value={values.message}
                 as="textarea"
               />
-              <SendButton type="submit" onClick={handleSubmit}>
+              <SendButton type="submit">
                 <Send />
                 Send
               </SendButton>
