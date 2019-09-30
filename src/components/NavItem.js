@@ -26,7 +26,7 @@ const NavItem = ({ isCurrent, route }) => (
             isCurrent={isCurrent}
             aria-current={isCurrent ? 'page' : false}
           >
-            <GlitchIcon viewBox="0 0 24 24" width="1.8rem" />
+            <GlitchIcon viewBox="0 0 24 24" width={18} />
             <GlitchText />
           </Container>
         )}
@@ -51,7 +51,8 @@ const Container = styled.li`
 
   &[aria-current='page'] {
     color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
-    background-color: ${({ theme }) => (theme.inDarkMode ? 'none' : theme.__grey_100)};
+    background-color: ${({ theme }) =>
+      theme.inDarkMode ? 'none' : theme.__grey_100};
   }
 
   svg {
@@ -64,6 +65,7 @@ const Container = styled.li`
     padding-left: 0;
     height: var(--mobile-nav-height);
     line-height: 1;
+    padding: 0 2.4rem;
 
     svg {
       margin-right: 0;
@@ -75,7 +77,6 @@ const Container = styled.li`
   `}
 
   ${media.mobile`
-    padding: 0 2.4rem;
     font-size: var(--fs-xsmall);
   `}
 `;

@@ -23,7 +23,7 @@ const Logo = ({ size }) => (
 );
 
 Logo.defaultProps = {
-  size: 70,
+  size: 80,
 };
 
 const SVG = styled.svg`

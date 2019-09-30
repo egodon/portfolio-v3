@@ -11,7 +11,7 @@ const SideNav = ({ pathname }) => {
   return (
     <Container>
       <LogoContainer>
-        <Glitch icon={() => <Logo size="8rem" />}>
+        <Glitch icon={() => <Logo />}>
           {({ icon: GlitchLogo }) => <GlitchLogo />}
         </Glitch>
       </LogoContainer>
@@ -99,7 +99,8 @@ const NavList = styled.ul`
     background-color: var(--color-secondary);
     box-shadow: ${({ theme }) =>
       theme.inDarkMode ? '0 0 18px 3px var(--color-secondary)' : 0};
-    transition: ${({ theme }) => (theme.inDarkMode ? 'transform 0.2s ease' : 'none')};
+    transition: ${({ theme }) =>
+      theme.inDarkMode ? 'transform 0.2s ease' : 'none'};
     transform: translateY(${(p) => lightBarPosition[p.currentPath]});
     z-index: 1;
   }
