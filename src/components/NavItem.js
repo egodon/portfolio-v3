@@ -8,12 +8,14 @@ import HomeIcon from 'static/icons/home.svg';
 import UserIcon from 'static/icons/user.svg';
 import WorkIcon from 'static/icons/clipboard.svg';
 import CodeIcon from 'static/icons/code.svg';
+import { Mail } from 'react-feather';
 
 const navIcon = {
   HOME: HomeIcon,
   ABOUT: UserIcon,
   EXPERIENCE: WorkIcon,
   PROJECTS: CodeIcon,
+  CONTACT: Mail,
 };
 
 const NavItem = ({ isCurrent, route }) => (
@@ -65,7 +67,7 @@ const Container = styled.li`
     padding-left: 0;
     height: var(--mobile-nav-height);
     line-height: 1;
-    padding: 0 2.4rem;
+    padding: 0 1.2rem;
 
     svg {
       margin-right: 0;
@@ -77,6 +79,7 @@ const Container = styled.li`
   `}
 
   ${media.mobile`
+    padding: 0;
     font-size: var(--fs-xsmall);
   `}
 `;

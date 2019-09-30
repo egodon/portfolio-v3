@@ -10,6 +10,7 @@ export default styled.div`
   padding-top: 16%;
   width: 100%;
   overflow-y: auto;
+  z-index: 2;
 
   ${media.mobile`
     padding-top: 24%;

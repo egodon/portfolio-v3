@@ -15,7 +15,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "icon-gen": "^2.0.0",
     "lqip-loader": "^2.2.0",
-    "next": "^9.0.3",
+    "next": "^9.0.7",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.1.2",
     "next-optimized-images": "^2.5.3",
@@ -23,10 +23,12 @@
     "react-dom": "^16.8.2",
     "react-feather": "^2.0.3",
     "react-spring": "^8.0.27",
+    "react-textarea-autosize": "^7.1.0",
     "styled-components": "^4.2.0",
     "url-loader": "^2.1.0"
   },
   "devDependencies": {
+    "@types/react": "^16.9.3",
     "babel-eslint": "9.x",
     "eslint": "5.x",
     "eslint-config-react-app": "^3.0.8",
@@ -35,6 +37,7 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
-    "serve": "10.1.2"
+    "serve": "10.1.2",
+    "typescript": "^3.6.3"
   }
 }

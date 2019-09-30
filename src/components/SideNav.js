@@ -77,6 +77,7 @@ const lightBarPosition = {
   '/about': '100%',
   '/experience': '200%',
   '/projects': '300%',
+  '/contact': '400%',
 };
 
 const Nav = styled.nav`
@@ -117,7 +118,7 @@ const NavList = styled.ul`
 
   ${media.mobile`
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
   `}
 `;
 

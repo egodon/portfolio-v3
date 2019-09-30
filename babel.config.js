@@ -3,7 +3,7 @@ module.exports = {
   plugins: [
     [
       'styled-components',
-      { ssr: true, displayName: process.env.NODE_ENV === 'developement' },
+      { ssr: true, displayName: process.env.NODE_ENV === 'development' },
     ],
     [
       'module-resolver',
