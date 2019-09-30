@@ -32,7 +32,7 @@ const contact: NextPage = () => {
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     console.log({ values });
-    fetch('/', {
+    fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'Contact', ...values }),
