@@ -35,7 +35,7 @@ const contact: NextPage = () => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...values }),
+      body: encode({ 'form-name': 'Contact', ...values }),
     })
       .then(() => {
         setMessageSent(true);
@@ -45,16 +45,25 @@ const contact: NextPage = () => {
     event.preventDefault();
   }
 
+  const HiddenNetlifyForm = () => (
+    <NetlifyForm form-name="Contact" netlify hidden>
+      <input type="text" value={values.name} />
+      <input type="text" value={values.email} />
+      <input type="text" value={values.message} />
+    </NetlifyForm>
+  );
+
   return (
     <>
       <Title title="Contact" />
       <PageContainer>
         <H1 largeMargin>Contact</H1>
+        <HiddenNetlifyForm />
         <Content>
           {messageSent ? (
             <div>Message Sent</div>
           ) : (
-            <Form autoComplete="off" name="contact" data-netlify>
+            <Form autoComplete="off" data-netlify>
               <Input
                 label="Name"
                 name="name"
@@ -64,6 +73,7 @@ const contact: NextPage = () => {
               <Input
                 label="Email"
                 name="email"
+                type="email"
                 onChange={handleChange('email')}
                 value={values.email}
               />
@@ -99,6 +109,10 @@ const SendButton = styled(Button)`
   svg {
     margin-right: 0.8rem;
   }
+`;
+
+const NetlifyForm = styled.form`
+  display: none;
 `;
 
 const encode = (data) => {
