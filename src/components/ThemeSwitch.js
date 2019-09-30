@@ -25,6 +25,7 @@ const Container = styled.div`
   position: absolute;
   top: 2rem;
   right: 2rem;
+  z-index: 3;
 `;
 
 const Border = styled.span`
@@ -48,7 +49,8 @@ const SwitchButtonBase = styled.span`
 
 const SwitchButton = styled(SwitchButtonBase)`
   svg {
-    color: ${(props) => (props.active ? props.theme.__color_secondary : 'currentColor')};
+    color: ${(props) =>
+      props.active ? props.theme.__color_secondary : 'currentColor'};
     stroke-width: ${({ theme, active }) => (!theme.inDarkMode && active ? 2 : 1)};
   }
 `;
