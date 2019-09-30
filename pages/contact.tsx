@@ -36,7 +36,9 @@ const contact: NextPage = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...values }),
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        setMessageSent(true);
+      })
       .catch((error) => alert(error));
 
     event.preventDefault();
@@ -48,28 +50,35 @@ const contact: NextPage = () => {
       <PageContainer>
         <H1 largeMargin>Contact</H1>
         <Content>
-          <Form autoComplete="off" name="contact" method="POST" data-netlify>
-            <Input
-              label="Name"
-              onChange={handleChange('name')}
-              value={values.name}
-            />
-            <Input
-              label="Email"
-              onChange={handleChange('email')}
-              value={values.email}
-            />
-            <Input
-              label="Message"
-              onChange={handleChange('message')}
-              value={values.message}
-              as="textarea"
-            />
-            <SendButton type="submit" onClick={handleSubmit}>
-              <Send />
-              Send
-            </SendButton>
-          </Form>
+          {messageSent ? (
+            <div>Message Sent</div>
+          ) : (
+            <Form autoComplete="off" data-netlify>
+              <Input
+                label="Name"
+                name="name"
+                onChange={handleChange('name')}
+                value={values.name}
+              />
+              <Input
+                label="Email"
+                name="email"
+                onChange={handleChange('email')}
+                value={values.email}
+              />
+              <Input
+                label="Message"
+                name="message"
+                onChange={handleChange('message')}
+                value={values.message}
+                as="textarea"
+              />
+              <SendButton type="submit" onClick={handleSubmit}>
+                <Send />
+                Send
+              </SendButton>
+            </Form>
+          )}
         </Content>
       </PageContainer>
     </>

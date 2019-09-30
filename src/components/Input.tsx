@@ -5,19 +5,19 @@ import Textarea from 'react-textarea-autosize';
 type Props = {
   label: string;
   type?: string;
+  name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   as?: 'textarea';
-  rows?: number;
 };
 
 const Input: React.FC<Props> = ({
   label,
+  name,
   type = 'text',
   onChange,
   value,
   as,
-  rows,
 }) => {
   return (
     <Container>
@@ -31,7 +31,13 @@ const Input: React.FC<Props> = ({
           value={value}
         />
       ) : (
-        <InputStyled type={type} onChange={onChange} value={value} as={as} />
+        <InputStyled
+          type={type}
+          name={name}
+          onChange={onChange}
+          value={value}
+          as={as}
+        />
       )}
     </Container>
   );
