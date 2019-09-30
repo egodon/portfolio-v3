@@ -26,6 +26,7 @@ const Input: React.FC<Props> = ({
         <Textarea
           rows={5}
           minRows={5}
+          name={name}
           maxRows={16}
           onChange={onChange}
           value={value}

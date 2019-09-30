@@ -31,6 +31,7 @@ const contact: NextPage = () => {
   }
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
+    console.log({ values });
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -53,7 +54,7 @@ const contact: NextPage = () => {
           {messageSent ? (
             <div>Message Sent</div>
           ) : (
-            <Form autoComplete="off" data-netlify>
+            <Form autoComplete="off" name="contact" data-netlify>
               <Input
                 label="Name"
                 name="name"

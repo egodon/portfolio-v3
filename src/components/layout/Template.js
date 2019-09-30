@@ -34,7 +34,8 @@ const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 22rem 1fr;
   overflow: hidden;
-  --bg-color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_500 : theme.__white)};
+  --bg-color: ${({ theme }) =>
+    theme.inDarkMode ? theme.__grey_500 : theme.__white};
   background-color: var(--bg-color);
 
   ${media.tablet`
@@ -47,6 +48,7 @@ const AppContainer = styled.div`
 const Main = styled.main`
   overflow-y: auto;
   position: relative;
+  color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
 export default withRouter(Template);
