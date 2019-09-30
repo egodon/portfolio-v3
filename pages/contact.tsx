@@ -31,7 +31,6 @@ const contact: NextPage = () => {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLInputElement>) {
-    const form = event.target;
     fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
