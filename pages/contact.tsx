@@ -7,7 +7,7 @@ import Title from 'components/Title';
 import Button from 'components/Button';
 import H1 from 'components/H1';
 import Input from 'components/Input';
-import { Send } from 'react-feather';
+import { Send, CheckCircle } from 'react-feather';
 
 type State = {
   name: string;
@@ -31,7 +31,7 @@ const contact: NextPage = () => {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLInputElement>) {
-    fetch('/contact', {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'Contact', ...values }),
@@ -45,10 +45,11 @@ const contact: NextPage = () => {
   }
 
   const HiddenNetlifyForm = () => (
-    <NetlifyForm form-name="Contact" netlify hidden>
+    <NetlifyForm form-name="Contact" method="POST" netlify hidden>
       <input type="text" value={values.name} readOnly />
       <input type="text" value={values.email} readOnly />
       <input type="text" value={values.message} readOnly />
+      <input type="hidden" name="form-name" value="contact" />
     </NetlifyForm>
   );
 
@@ -57,12 +58,14 @@ const contact: NextPage = () => {
       <Title title="Contact" />
       <PageContainer>
         <H1 largeMargin>Contact</H1>
-        <HiddenNetlifyForm />
         <Content>
           {messageSent ? (
-            <div>Message Sent</div>
+            <MessageSent>
+              <CheckCircle /> <span>Message Sent</span>
+            </MessageSent>
           ) : (
             <Form autoComplete="off" data-netlify onSubmit={handleSubmit}>
+              <HiddenNetlifyForm />
               <Input
                 label="Name"
                 name="name"
@@ -104,6 +107,17 @@ const Form = styled.form``;
 
 const SendButton = styled(Button)`
   margin-left: auto;
+
+  svg {
+    margin-right: 0.8rem;
+  }
+`;
+
+const MessageSent = styled.div`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
     margin-right: 0.8rem;
