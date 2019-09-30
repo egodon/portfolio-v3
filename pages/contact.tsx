@@ -31,7 +31,15 @@ const contact: NextPage = () => {
   }
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
-    // event.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...values }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    event.preventDefault();
   }
 
   return (
@@ -82,5 +90,11 @@ const SendButton = styled(Button)`
     margin-right: 0.8rem;
   }
 `;
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
 
 export default contact;
