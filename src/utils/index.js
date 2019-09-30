@@ -7,13 +7,11 @@ const options = {
   hour12: false,
 };
 
-const formatter = new Intl.DateTimeFormat([], options);
-
 export const isNightTime = () => {
-  const time = formatter.format(new Date());
-  const hour = +time;
+  const time = new Date().toLocaleString([], options);
+  const hour = parseInt(time, 10);
 
-  const isNight = hour >= 17 || hour <= 6;
+  const isNight = hour >= 17 || hour < 6;
 
   if (isSSR) {
     console.log(`Hour is ${hour}, setting ${isNight ? 'night' : 'light'} theme`);
