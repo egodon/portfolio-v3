@@ -5,18 +5,11 @@
       "companyName": "Huddol",
       "position": "Front-End Web Developer",
       "timePeriod": "August 2018 - June 2019",
-      "techStack": [
-        "React",
-        "Redux",
-        "Redux-Thunk",
-        "Emotion",
-        "Jest",
-        "Webpack"
-      ],
+      "techStack": ["React", "Redux", "Redux-Thunk", "Emotion", "Jest", "Webpack"],
       "responsibilities": [
         "Built the front-end of a social-media app using server-side rendered React and Redux",
         "Maintained configuration code including Webpack to ensure app could efficiently be pushed to production",
-        "Developed the mobile version of the app"
+        "Developed the mobile version of the web app"
       ]
     },
     {
