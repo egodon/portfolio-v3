@@ -6,7 +6,7 @@ const Favicon: React.FC = () => (
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/static/favion/favicon.ico"
+      href="/static/favicon/favicon.ico"
     />
     <link
       rel="icon"
