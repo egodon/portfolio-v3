@@ -9,6 +9,7 @@ type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   as?: 'textarea';
+  required?: boolean;
 };
 
 const Input: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const Input: React.FC<Props> = ({
   onChange,
   value,
   as,
+  required = false,
 }) => {
   return (
     <Container>
@@ -30,6 +32,7 @@ const Input: React.FC<Props> = ({
           maxRows={16}
           onChange={onChange}
           value={value}
+          required={required}
         />
       ) : (
         <InputStyled
@@ -38,6 +41,7 @@ const Input: React.FC<Props> = ({
           onChange={onChange}
           value={value}
           as={as}
+          required={required}
         />
       )}
     </Container>
@@ -70,6 +74,7 @@ const Container = styled.div`
 `;
 
 const Label = styled.label`
+  font-size: var(--fs-small);
   margin-bottom: 0.8rem;
 `;
 

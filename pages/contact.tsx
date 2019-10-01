@@ -45,12 +45,12 @@ const contact: NextPage = () => {
   }
 
   const HiddenNetlifyForm = () => (
-    <NetlifyForm form-name="Contact" method="POST" netlify hidden>
-      <input type="text" value={values.name} readOnly />
-      <input type="text" value={values.email} readOnly />
-      <input type="text" value={values.message} readOnly />
+    <>
+      <input type="hidden" value={values.name} readOnly />
+      <input type="hidden" value={values.email} readOnly />
+      <input type="hidden" value={values.message} readOnly />
       <input type="hidden" name="form-name" value="contact" />
-    </NetlifyForm>
+    </>
   );
 
   return (
@@ -67,12 +67,14 @@ const contact: NextPage = () => {
             <Form autoComplete="off" data-netlify onSubmit={handleSubmit}>
               <HiddenNetlifyForm />
               <Input
+                required
                 label="Name"
                 name="name"
                 onChange={handleChange('name')}
                 value={values.name}
               />
               <Input
+                required
                 label="Email"
                 name="email"
                 type="email"
@@ -80,6 +82,7 @@ const contact: NextPage = () => {
                 value={values.email}
               />
               <Input
+                required
                 label="Message"
                 name="message"
                 onChange={handleChange('message')}
@@ -118,6 +121,10 @@ const MessageSent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
+  color: var(--color-secondary);
+  border: 1px solid currentColor;
+  padding: 2rem;
 
   svg {
     margin-right: 0.8rem;
@@ -128,10 +135,9 @@ const NetlifyForm = styled.form`
   display: none;
 `;
 
-const encode = (data) => {
-  return Object.keys(data)
+const encode = (data) =>
+  Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
-};
 
 export default contact;
