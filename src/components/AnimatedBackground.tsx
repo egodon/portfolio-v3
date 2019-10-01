@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { rainEffect } from 'style/animations.css';
 
-const AnimatedBackground = () => {
+const AnimatedBackground: React.FC = () => {
   return (
     <Container>
       <Line m={-41} delay={2.5} />
@@ -71,7 +71,7 @@ const LineBase = styled.div`
   }
 `;
 
-const Line = styled(LineBase)`
+const Line = styled(LineBase)<{ m: number; delay: number }>`
   margin-left: ${(props) => props.m}%;
 
   &::after {

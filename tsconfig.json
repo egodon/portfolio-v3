@@ -17,13 +17,14 @@
     "paths": {
       "pages": ["./pages"],
       "components/*": ["./src/components/*"],
-      "style": ["./src/style"],
+      "style/*": ["./src/style/*"],
       "context": ["./src/context"],
       "hooks/*": ["./src/hooks/*"],
       "api/*": ["./src/pages/api/*"],
       "interfaces": ["src/interfaces"],
       "constants/*": ["./src/constants/*"],
-      "utils/*": ["./src/utils/*"]
+      "utils/*": ["./src/utils/*"],
+      "static/*": ["./static/*"]
     }
   },
   "exclude": ["node_modules"],

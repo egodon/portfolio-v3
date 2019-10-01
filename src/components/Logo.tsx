@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo = ({ size }) => (
+const Logo: React.FC<{ size?: number | string }> = ({ size }) => (
   <SVG
     width={size}
     height={66}

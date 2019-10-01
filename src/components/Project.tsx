@@ -1,14 +1,23 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import LQIPImage from 'components/LQIPImage';
-import RightChevronIcon from 'static/icons/chevron-right.svg';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
-import GitHubIcon from 'static/icons/github.svg';
-import GlobeIcon from 'static/icons/globe.svg';
 import { media } from 'style/variables.css';
+import { ChevronRight, Globe, GitHub } from 'react-feather';
 
-const Project = ({ project }) => {
+type Props = {
+  project: {
+    projectName: string;
+    description: string;
+    builtWith: string[];
+    githubUrl: string;
+    websiteUrl: string;
+    screenshotUrl: string;
+  };
+};
+
+const Project: React.FC<Props> = ({ project }) => {
   const {
     projectName,
     description,
@@ -32,18 +41,18 @@ const Project = ({ project }) => {
           <BuiltWith>
             {builtWith.map((technology, index) => (
               <Technology key={index}>
-                <RightChevronIcon viewBox="0 0 24 24" />
+                <ChevronRight />
                 {technology}
               </Technology>
             ))}
           </BuiltWith>
           <ButtonGroup>
             <LiveSiteButton as="a" href={websiteUrl} target="_blank" rel="noopener">
-              Live Site <GlobeIcon viewBox="0 0 24 24" />
+              Live Site <Globe />
             </LiveSiteButton>
-            <Button as="a" href={githubUrl} target="_blank" rel="noopener">
-              View code <GitHubIcon viewBox="0 0 24 24" />
-            </Button>
+            <GitHubButton as="a" href={githubUrl} target="_blank" rel="noopener">
+              View code <GitHub />
+            </GitHubButton>
           </ButtonGroup>
         </TextContainer>
       </Container>
@@ -70,8 +79,8 @@ const greyShadow = css`
 `;
 
 const coloredShadow = css`
-  box-shadow: var(--color-secondary) 0px 0px 8px 0px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px,
-    rgba(0, 0, 0, 0.12) 0px 3px 3px -2px;
+  box-shadow: var(--color-secondary) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 3px 3px -2px;
 `;
 
 const Container = styled.li`
@@ -133,8 +142,16 @@ const Description = styled.p`
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
-const LiveSiteButton = styled(Button)`
+type ButtonAsAnchor = {
+  href: string;
+  target: string;
+  rel: string;
+};
+
+const LiveSiteButton = styled(Button)<ButtonAsAnchor>`
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_100 : theme.__grey_500)};
 `;
+
+const GitHubButton = styled(Button)<ButtonAsAnchor>``;
 
 export default Project;

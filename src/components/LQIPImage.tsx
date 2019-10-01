@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { isSSR } from 'constants';
+import { isSSR } from 'constants/index';
 import { fadeOut } from 'style/animations.css';
+
+type Props = {
+  imageId: string;
+  url: string;
+  alt: string;
+};
 
 /**
  * This will inline a low quality image place holder
  * and replace it with the original image once it has loaded.
  *
  */
-const LQIPImage = ({ imageId, url, alt }) => {
+const LQIPImage: React.FC<Props> = ({ imageId, url, alt }) => {
   const originalImage = `${url}/-/resize/x350/-/format/auto/`;
   const placeholder = `${url}/-/format/auto/-/resize/x200/-/blur/50/`;
 
-  const [imageLoaded, setImageLoaded] = useState(!isSSR && imageIsCached(originalImage));
+  const [imageLoaded, setImageLoaded] = useState(
+    !isSSR && imageIsCached(originalImage)
+  );
 
   useEffect(() => {
-    let image = {};
+    let image: HTMLImageElement = new Image();
     if (!imageLoaded) {
-      image = new Image();
       image.src = originalImage;
       image.onload = () => setImageLoaded(true);
     }

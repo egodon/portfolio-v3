@@ -1,4 +1,4 @@
-import { isSSR } from 'constants';
+import { isSSR } from 'constants/index';
 
 const options = {
   timeZone: 'America/New_York',

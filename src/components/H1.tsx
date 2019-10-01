@@ -3,13 +3,18 @@ import styled from 'styled-components';
 import Glitch from 'components/Glitch';
 import { media } from 'style/variables.css';
 
-const H1 = ({ children, largeMargin }) => (
+type Props = {
+  largeMargin?: boolean;
+  children: string;
+};
+
+const H1: React.FC<Props> = ({ children, largeMargin }) => (
   <Container largeMargin={largeMargin}>
     <Glitch text={children} eachLetter />
   </Container>
 );
 
-const Container = styled.h1`
+const Container = styled.h1<{ largeMargin?: boolean }>`
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
   font-family: 'anuratiregular', 'Helvitica';
   text-transform: uppercase;

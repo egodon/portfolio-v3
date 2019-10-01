@@ -1,15 +1,39 @@
 import React from 'react';
 import styled, { css, withTheme } from 'styled-components';
-import { glitch, glitch_2, glitch_skew, glitch_loop, glitch_loop_2 } from 'style';
+import {
+  glitch,
+  glitch_2,
+  glitch_skew,
+  glitch_loop,
+  glitch_loop_2,
+} from 'style/animations.css';
 
-const Glitch = ({ text, icon: Icon, eachLetter, theme, children }) => {
+type Props = {
+  text?: string;
+  Icon?: string | (() => React.ReactElement);
+  eachLetter?: boolean;
+  theme: any;
+  children?: ({ GlitchText, GlitchIcon }) => React.ReactNode;
+};
+
+const Glitch: React.FC<Props> = ({
+  text,
+  Icon,
+  eachLetter = false,
+  theme,
+  children,
+}) => {
   if (eachLetter) {
     return (
       <>
         {text.split('').map((letter, index) => {
           return (
             <Container key={index}>
-              <LetterContainer data-text={letter} timing={0.4} key={theme.inDarkMode}>
+              <LetterContainer
+                data-text={letter}
+                timing={0.4}
+                key={theme.inDarkMode}
+              >
                 {letter !== ' ' ? letter : <Whitespace />}
               </LetterContainer>
             </Container>
@@ -31,7 +55,7 @@ const Glitch = ({ text, icon: Icon, eachLetter, theme, children }) => {
 
   const GlitchText = () => <TextContainer data-text={text}>{text}</TextContainer>;
 
-  return <Container>{children({ text: GlitchText, icon: GlitchIcon })}</Container>;
+  return <Container>{children({ GlitchText, GlitchIcon })}</Container>;
 };
 
 // todo: move this to own styled component
@@ -94,7 +118,7 @@ const TextContainerBase = styled.span`
   }
 `;
 
-const TextContainer = styled(TextContainerBase)`
+const TextContainer = styled(TextContainerBase)<{ eachLetter?: boolean }>`
   display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
 `;
 
@@ -118,13 +142,14 @@ const LetterContainerBase = styled(TextContainer)`
   }
 `;
 
-const LetterContainer = styled(LetterContainerBase)`
+const LetterContainer = styled(LetterContainerBase)<{ timing: number }>`
   ${Container} &::before {
     animation: ${glitch_loop} 22s ${(p) => p.timing + 's'} infinite linear alternate;
   }
 
   ${Container} &::after {
-    animation: ${glitch_loop_2} 22s ${(p) => p.timing + 's'} infinite linear alternate;
+    animation: ${glitch_loop_2} 22s ${(p) => p.timing + 's'} infinite linear
+      alternate;
   }
 `;
 

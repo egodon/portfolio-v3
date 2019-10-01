@@ -1,7 +1,17 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import RightChevronIcon from 'static/icons/chevron-right.svg';
+import { ChevronRight } from 'react-feather';
 import { media } from 'style/variables.css';
+
+type Props = {
+  company: {
+    companyName: string;
+    timePeriod: string;
+    position: string;
+    techStack: string[];
+    responsibilities: string[];
+  };
+};
 
 const WorkExperience = ({ company }) => {
   const { companyName, timePeriod, position, techStack, responsibilities } = company;
@@ -11,10 +21,7 @@ const WorkExperience = ({ company }) => {
       <Container>
         <TimePeriod>{timePeriod}</TimePeriod>
         <TimeLine>
-          <IconContainer>
-            {/* <MapPinIcon width="1.6rem" /> */}
-            {companyName[0]}
-          </IconContainer>
+          <IconContainer>{companyName[0]}</IconContainer>
         </TimeLine>
         <Details>
           <Company>{companyName}</Company>
@@ -23,7 +30,7 @@ const WorkExperience = ({ company }) => {
           <ResponsibilityList>
             {responsibilities.map((responsibility, index) => (
               <Responsibility key={index}>
-                <RightChevronIcon viewBox="0 0 24 24" />
+                <ChevronRight />
                 {responsibility}
               </Responsibility>
             ))}
@@ -96,7 +103,7 @@ const TimeLine = styled.div`
   --icon-container-diff: calc(
     var(--icon-container-size) - var(--icon-container-margin-top)
   );
-  transition: background-image .2s ease;
+  transition: background-image 0.2s ease;
 
   &::before {
     content: '';
@@ -140,18 +147,14 @@ const Position = styled.h4`
   margin-bottom: 1.2rem;
   color: var(--grey-200);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
-
 `;
 
-const Details = styled.div`
-`;
+const Details = styled.div``;
 
 const TechStack = styled.div`
   margin-bottom: 3.2rem;
   font-size: var(--fs-medium);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
-
-
 `;
 
 const ResponsibilityList = styled.ul`

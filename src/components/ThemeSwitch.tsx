@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Sun, Moon } from 'react-feather';
-import { useThemeContext } from 'style';
+import { useThemeContext } from 'style/index';
 
-const ThemeSwitch = () => {
+const ThemeSwitch: React.FC = () => {
   const { inDarkMode, setDarkMode } = useThemeContext();
 
   return (
@@ -47,7 +47,7 @@ const SwitchButtonBase = styled.span`
   }
 `;
 
-const SwitchButton = styled(SwitchButtonBase)`
+const SwitchButton = styled(SwitchButtonBase)<{ active: boolean }>`
   svg {
     color: ${(props) =>
       props.active ? props.theme.__color_secondary : 'currentColor'};

@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.3",
+    "@types/styled-components": "^4.1.19",
     "babel-eslint": "9.x",
     "eslint": "5.x",
     "eslint-config-react-app": "^3.0.8",

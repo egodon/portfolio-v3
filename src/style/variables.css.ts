@@ -46,5 +46,5 @@ export const media = (Object.keys(sizes) as (keyof typeof sizes)[]).reduce(
 
     return acc;
   },
-  {} as { [key in keyof typeof sizes]: ThemedCssFunction }
+  {} as { [key in keyof typeof sizes]: any }
 );

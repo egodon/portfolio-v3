@@ -55,9 +55,9 @@ const CvButton = styled(Button)`
   }
 
   svg {
+    width: 12px;
     position: relative;
     top: -2px;
-    right: -3px;
   }
 `;
 

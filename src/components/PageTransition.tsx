@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useTransition, animated } from 'react-spring';
 import { useRouter } from 'hooks/useRouter';
-import { isSSR } from 'constants';
+import { isSSR } from 'constants/index';
 
-export const PageTransition = ({ children, ...props }) => {
+type Props = {
+  children: (component: any) => React.ReactNode;
+};
+
+export const PageTransition: React.FC<Props> = ({ children, ...props }) => {
   const isFirstRender = useRef(true);
   const router = useRouter();
 
@@ -33,11 +37,13 @@ export const PageTransition = ({ children, ...props }) => {
       {transitions.map(({ item, props: style, key }) => {
         const { Component, props } = item.components
           ? item.components[item.pathname]
-          : {};
+          : { Component: null, props: null };
 
         return (
           <Page key={key} style={style}>
-            {children(item ? { Component, pageProps: props && props.pageProps } : {})}
+            {children(
+              item ? { Component, pageProps: props && props.pageProps } : {}
+            )}
           </Page>
         );
       })}

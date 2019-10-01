@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { ROUTES } from 'constants/index';
 import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
@@ -7,14 +8,18 @@ import { media } from 'style/index';
 import Logo from 'components/Logo';
 import Glitch from 'components/Glitch';
 
-const SideNav = ({ pathname }) => {
+type Props = {
+  pathname: string;
+};
+
+const SideNav: React.FC<Props> = ({ pathname }) => {
   return (
     <Container>
-      <LogoContainer>
-        <Glitch icon={() => <Logo />}>
-          {({ icon: GlitchLogo }) => <GlitchLogo />}
-        </Glitch>
-      </LogoContainer>
+      <Link href="/">
+        <LogoContainer>
+          <Glitch Icon={() => <Logo />}>{({ GlitchIcon }) => <GlitchIcon />}</Glitch>
+        </LogoContainer>
+      </Link>
       <>
         <Nav>
           <NavList currentPath={pathname}>
@@ -62,10 +67,11 @@ const Container = styled.div`
   `}
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.a`
   padding: var(--side-padding);
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 15rem;
+  cursor: pointer;
 
   ${media.tablet`
       display: none;
@@ -91,7 +97,7 @@ const Nav = styled.nav`
   `}
 `;
 
-const NavList = styled.ul`
+const NavList = styled.ul<{ currentPath: string }>`
   &:before {
     content: '';
     position: absolute;

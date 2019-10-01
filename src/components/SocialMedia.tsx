@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Glitch from 'components/Glitch';
 import Button from 'components/Button';
-import { fadeIn, media } from 'style';
+import { fadeIn } from 'style/animations.css';
+import { media } from 'style/index';
 import CodesandboxIcon from 'static/icons/codesandbox.svg';
 import GitHubIcon from 'static/icons/github.svg';
 import LinkedinIcon from 'static/icons/linkedin.svg';
@@ -28,7 +29,7 @@ const socialLinks = [
 
 type Props = {
   inside: 'sidenav' | 'main';
-  displayOnMobile: boolean;
+  displayOnMobile?: boolean;
 };
 
 const SocialMedia: React.FC<Props> = ({ inside, displayOnMobile }) => {
@@ -40,14 +41,14 @@ const SocialMedia: React.FC<Props> = ({ inside, displayOnMobile }) => {
     <Footer displayOnMobile={displayOnMobile}>
       <SocialIcons inSidenav={inSidenav}>
         {socialLinks.map((socialLink) => (
-          <Glitch icon={socialLink.icon} key={socialLink.id}>
-            {({ icon: GlitchIcon }) => (
+          <Glitch Icon={socialLink.icon} key={socialLink.id}>
+            {({ GlitchIcon }) => (
               <SocialIcon>
                 <IconContainer
                   inSidenav={inSidenav}
                   href={socialLink.url}
                   target="_blank"
-                  noopener
+                  rel="noopener"
                   onMouseEnter={() => setIconHovered(socialLink.id)}
                   onMouseLeave={() => setIconHovered(null)}
                 >
@@ -71,7 +72,7 @@ const SocialMedia: React.FC<Props> = ({ inside, displayOnMobile }) => {
   );
 };
 
-const Footer = styled.footer`
+const Footer = styled.footer<{ displayOnMobile: boolean }>`
   padding: 0 var(--side-padding);
   display: flex;
   flex-direction: column;
@@ -82,7 +83,7 @@ const Footer = styled.footer`
   `}
 `;
 
-const SocialIcons = styled.div`
+const SocialIcons = styled.div<{ inSidenav: boolean }>`
   margin-bottom: 1.8rem;
   display: grid;
   grid-gap: 1rem;
@@ -93,7 +94,7 @@ const SocialIcons = styled.div`
   }
 `;
 
-const IconContainer = styled.a`
+const IconContainer = styled.a<{ inSidenav?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;

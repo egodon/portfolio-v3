@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled.button<{ color?: string }>`
   text-transform: uppercase;
   border: 1px solid currentColor;
   background-color: transparent;
@@ -22,7 +22,7 @@ const Button = styled.button`
   }
 
   &:active {
-    /* background-color: var(--color-secondary); */
+    background-color: var(--color-secondary);
   }
 
   svg {
@@ -31,7 +31,6 @@ const Button = styled.button`
     width: 1.6rem;
     margin-left: 0.6rem;
   }
-
 `;
 
 export default Button;

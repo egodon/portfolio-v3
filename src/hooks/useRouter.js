@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { withRouter } from "next/router";
+import React, { useContext } from 'react';
+import { withRouter } from 'next/router';
 
 const Context = React.createContext();
 

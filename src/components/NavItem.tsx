@@ -18,16 +18,17 @@ const navIcon = {
   CONTACT: Mail,
 };
 
-const NavItem = ({ isCurrent, route }) => (
+type Props = {
+  isCurrent: boolean;
+  route: string;
+};
+
+const NavItem: React.FC<Props> = ({ isCurrent, route }) => (
   <Link href={ROUTES[route]}>
     <a>
-      <Glitch text={route} icon={navIcon[route]}>
-        {({ text: GlitchText, icon: GlitchIcon }) => (
-          <Container
-            key={route}
-            isCurrent={isCurrent}
-            aria-current={isCurrent ? 'page' : false}
-          >
+      <Glitch text={route} Icon={navIcon[route]}>
+        {({ GlitchText, GlitchIcon }) => (
+          <Container key={route} aria-current={isCurrent ? 'page' : false}>
             <GlitchIcon viewBox="0 0 24 24" width={18} />
             <GlitchText />
           </Container>
