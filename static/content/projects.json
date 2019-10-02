@@ -7,7 +7,7 @@
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib.tk",
-      "builtWith": ["NextJs", "Material UI"],
+      "builtWith": ["NextJs", "TypeScript", "Material UI"],
       "screenshotUrl": "https://ucarecdn.com/6440d5cf-6e4d-4514-b98c-9713d6c14a73"
     },
     {
@@ -23,7 +23,7 @@
       "description": "",
       "githubUrl": "https://github.com/egodon/portfolio-v3",
       "websiteUrl": "https://egodon.dev",
-      "builtWith": ["NextJs", "Styled-Components"],
+      "builtWith": ["NextJs", "TypeScript", "Styled-Components"],
       "screenshotUrl": "https://ucarecdn.com/02924235-2b49-4a37-9852-66ec0906d75d"
     }
   ]
