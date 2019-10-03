@@ -3,7 +3,8 @@ import App from 'next/app';
 import Template from 'components/layout/Template';
 import { RouterContextProvider } from 'hooks/useRouter';
 import { PageTransition } from 'components/PageTransition';
-import Favicon from 'components/Favicon';
+import Favicon from 'components/head/Favicon';
+import MetaTags from 'components/head/MetaTags';
 
 class MyApp extends App {
   render() {
@@ -12,6 +13,7 @@ class MyApp extends App {
     return (
       <RouterContextProvider>
         <Favicon />
+        <MetaTags />
         <Template>
           <PageTransition>
             {({ Component, pageProps }) => {
