@@ -120,6 +120,8 @@ const TextContainerBase = styled.span`
 
 const TextContainer = styled(TextContainerBase)<{ eachLetter?: boolean }>`
   display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
+  position: relative;
+  top: 1px;
 `;
 
 const LetterContainerBase = styled(TextContainer)`
