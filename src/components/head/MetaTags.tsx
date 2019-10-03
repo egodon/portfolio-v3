@@ -3,8 +3,8 @@ import Head from 'next/head';
 
 const title = 'Evan Godon';
 const description =
-  'Portfolio of Evan Godon, a front-end developer who loves React and TypeScript';
-const imagePath = 'https://egodon.dev/static/images/egodon.dev.png';
+  'Portfolio of Evan Godon, a front-end web developer and fan of React, NextJs and TypeScript';
+const imagePath = 'https://egodon.dev/static/images/logo.jpg';
 
 const MetaTags = () => (
   <Head>
