@@ -35,9 +35,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a:hover, a:active, a:focus, a:link, a:visited {
-  outline: 0;
-  outline: 0 !important;
-  outline-style:none;
+    outline: 0 !important;
+    outline-style:none;
   }
 
   p {
