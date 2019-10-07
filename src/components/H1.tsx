@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Glitch from 'components/Glitch';
-import { media } from 'style/variables.css';
+import { media } from 'css/variables.css';
 
 type Props = {
   largeMargin?: boolean;

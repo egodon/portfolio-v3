@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { rainEffect } from 'style/animations.css';
+import { rainEffect } from 'css/animations.css';
 
 const AnimatedBackground: React.FC = () => {
   return (

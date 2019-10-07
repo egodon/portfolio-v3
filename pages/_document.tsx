@@ -1,7 +1,7 @@
 import React from 'react';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import GlobalStyle from 'style';
+import GlobalStyle from 'css/global.css';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

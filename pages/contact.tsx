@@ -14,7 +14,7 @@ type State = {
   message: string;
 };
 
-const contact: NextPage = () => {
+const Contact: NextPage = () => {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -135,4 +135,4 @@ const encode = (data) =>
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 
-export default contact;
+export default Contact;

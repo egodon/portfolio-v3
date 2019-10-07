@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NextPage } from 'next';
 import SocialMedia from 'components/SocialMedia';
 import H1 from 'components/H1';
-import { media } from 'style/variables.css';
+import { media } from 'css/variables.css';
 import Title from 'components/Title';
 
-export default () => (
+const Index: NextPage = () => (
   <>
     <Title title="Evan Godon" withoutName />
     <Container>
       <HeaderContainer>
         <H1>Evan Godon</H1>
         <H2>Front End Web Developer</H2>
-        <SocialMedia displayOnMobile/>
+        <SocialMedia displayOnMobile inside="main" />
       </HeaderContainer>
     </Container>
   </>
@@ -46,3 +47,5 @@ const H2 = styled.h2`
     letter-spacing: 2px;
   `}
 `;
+
+export default Index;

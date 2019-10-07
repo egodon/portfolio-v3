@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NextPage } from 'next';
+import { ExternalLink } from 'react-feather';
 import PageContainer from 'components/layout/PageContainer';
 import WorkExperience from 'components/WorkExperience';
 import Title from 'components/Title';
 import Button from 'components/Button';
 import H1 from 'components/H1';
-import ExternalLinkIcon from 'static/icons/external-link.svg';
 import experienceData from 'static/content/experience.json';
 
-export default () => {
+const Experience: NextPage = () => {
   const { header, companies } = experienceData;
 
   return (
@@ -24,7 +25,7 @@ export default () => {
           >
             <span>
               <span>View CV</span>
-              <ExternalLinkIcon viewBox="0 0 24 24" />
+              <ExternalLink />
             </span>
           </CvButton>
           <ExperienceList>
@@ -44,7 +45,7 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const CvButton = styled(Button)`
+const CvButton = styled(Button)<{ as: string; href: string; target: string }>`
   display: block;
   margin-bottom: 4.2rem;
 
@@ -62,3 +63,5 @@ const CvButton = styled(Button)`
 `;
 
 const ExperienceList = styled.ul``;
+
+export default Experience;

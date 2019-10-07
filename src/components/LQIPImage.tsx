@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { isSSR } from 'constants/index';
-import { fadeOut } from 'style/animations.css';
+import { fadeOut } from 'css/animations.css';
 
 type Props = {
   imageId: string;

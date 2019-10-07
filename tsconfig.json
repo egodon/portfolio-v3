@@ -18,14 +18,15 @@
     "paths": {
       "pages": ["./pages"],
       "components/*": ["./src/components/*"],
-      "style/*": ["./src/style/*"],
+      "style/*": ["src/css/*"],
       "context": ["./src/context"],
       "hooks/*": ["./src/hooks/*"],
       "api/*": ["./src/pages/api/*"],
       "interfaces": ["src/interfaces"],
       "constants/*": ["./src/constants/*"],
       "utils/*": ["./src/utils/*"],
-      "static/*": ["./static/*"]
+      "static/*": ["./static/*"],
+      "css/*": ["./src/css/*"]
     }
   },
   "exclude": ["node_modules"],

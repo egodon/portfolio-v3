@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ROUTES } from 'constants/index';
 import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
-import { media } from 'style/index';
+import { media } from 'css/index';
 import Logo from 'components/Logo';
 import Glitch from 'components/Glitch';
 

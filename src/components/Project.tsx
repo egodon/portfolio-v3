@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import LQIPImage from 'components/LQIPImage';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
-import { media } from 'style/variables.css';
+import { media } from 'css/variables.css';
 import { ChevronRight, Globe, GitHub } from 'react-feather';
 
 type Props = {

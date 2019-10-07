@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { ROUTES } from 'constants/index';
 import Glitch from 'components/Glitch';
-import { media } from 'style/index';
+import { media } from 'css/index';
 import HomeIcon from 'static/icons/home.svg';
 import UserIcon from 'static/icons/user.svg';
 import WorkIcon from 'static/icons/clipboard.svg';

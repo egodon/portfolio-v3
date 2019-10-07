@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ChevronRight } from 'react-feather';
-import { media } from 'style/variables.css';
+import { media } from 'css/variables.css';
 
 type Props = {
   company: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Sun, Moon } from 'react-feather';
-import { useThemeContext } from 'style/index';
+import { useThemeContext } from 'css/index';
 
 const ThemeSwitch: React.FC = () => {
   const { inDarkMode, setDarkMode } = useThemeContext();

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NextPage } from 'next';
 import PageContainer from 'components/layout/PageContainer';
 import H1 from 'components/H1';
 import Title from 'components/Title';
-import { media } from 'style/variables.css';
+import { media } from 'css/variables.css';
 import aboutData from 'static/content/about.json';
 
-export default () => {
+const About: NextPage = () => {
   const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
 
   return (
@@ -71,3 +72,5 @@ const AboutText = styled.div`
 const ProfileImg = styled.img`
   max-width: 100%;
 `;
+
+export default About;

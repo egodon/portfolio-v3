@@ -6,7 +6,7 @@ import {
   glitch_skew,
   glitch_loop,
   glitch_loop_2,
-} from 'style/animations.css';
+} from 'css/animations.css';
 
 type Props = {
   text?: string;

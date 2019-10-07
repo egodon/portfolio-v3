@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import SideNav from 'components/SideNav';
 import AnimatedBackground from 'components/AnimatedBackground';
 import ThemeSwitch from 'components/ThemeSwitch';
-import GlobalStyle, { variables, media } from 'style';
+import GlobalStyle, { variables, media } from 'css';
 import { isNightTime } from 'utils';
 
 const Template = ({ children, router }) => {
