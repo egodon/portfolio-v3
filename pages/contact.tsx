@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NextPage } from 'next';
 import styled from 'styled-components';
 import PageContainer from 'components/layout/PageContainer';
-import WorkExperience from 'components/WorkExperience';
 import Title from 'components/Title';
 import Button from 'components/Button';
 import H1 from 'components/H1';
@@ -129,10 +128,6 @@ const MessageSent = styled.div`
   svg {
     margin-right: 0.8rem;
   }
-`;
-
-const NetlifyForm = styled.form`
-  display: none;
 `;
 
 const encode = (data) =>
