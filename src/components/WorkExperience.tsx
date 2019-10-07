@@ -13,7 +13,7 @@ type Props = {
   };
 };
 
-const WorkExperience = ({ company }) => {
+const WorkExperience: React.FC<Props> = ({ company }) => {
   const { companyName, timePeriod, position, techStack, responsibilities } = company;
 
   return (
@@ -167,6 +167,7 @@ const Responsibility = styled.li`
   display: flex;
   align-items: center;
   position: relative;
+  line-height: 1.5;
 
   ${media.mobile`
       align-items: flex-start;

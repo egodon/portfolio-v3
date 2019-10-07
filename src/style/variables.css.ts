@@ -1,4 +1,4 @@
-import { css, ThemedCssFunction } from 'styled-components';
+import { css } from 'styled-components';
 
 export const variables = {
   /* Colour */
