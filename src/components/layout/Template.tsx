@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { withRouter } from 'next/router';
+import { withRouter, NextRouter } from 'next/router';
 import styled, { ThemeProvider } from 'styled-components';
 import SideNav from 'components/SideNav';
 import AnimatedBackground from 'components/AnimatedBackground';
 import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'css';
-import { isNightTime } from 'utils';
+import { isNightTime } from 'utils/index';
 
-const Template = ({ children, router }) => {
+type Props = {
+  children: React.ReactChildren | React.ReactElement;
+  router: NextRouter;
+};
+
+const Template: React.FC<Props> = ({ children, router }) => {
   const [inDarkMode, setDarkMode] = useState(isNightTime());
 
   return (

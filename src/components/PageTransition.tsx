@@ -4,8 +4,13 @@ import { useTransition, animated } from 'react-spring';
 import { useRouter } from 'hooks/useRouter';
 import { isSSR } from 'constants/index';
 
+type RenderPropArgs = {
+  Component?: any;
+  pageProps?: any;
+};
+
 type Props = {
-  children: (component: any) => React.ReactNode;
+  children: ({ Component, pageProps }: RenderPropArgs) => React.ReactNode;
 };
 
 export const PageTransition: React.FC<Props> = ({ children, ...props }) => {
