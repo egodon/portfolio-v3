@@ -8,6 +8,7 @@
       "techStack": ["React", "Redux", "Redux-Thunk", "Emotion", "Jest", "Webpack"],
       "responsibilities": [
         "Built the front-end of a social-media app using server-side rendered React and Redux",
+        "Developed the UI while implementing the design specifications provided by the UX/UI designer",
         "Maintained configuration code including Webpack to ensure app could efficiently be pushed to production",
         "Developed the mobile version of the web app"
       ]
@@ -27,7 +28,6 @@
       "responsibilities": [
         "Collaborated with team members using the Scrum framework and sprint planning.",
         "Responsible for the front-end infrastructure of a web and electron application using React.",
-        "Developed the UI while implementing the design specifications provided by the UX/UI designer.",
         "Created many reusable React components and helped grow the UI library of the application.",
         "Developed the registration and login pages and built the UI for a virtual reality platform using React 360."
       ]
