@@ -27,8 +27,8 @@ Logo.defaultProps = {
 };
 
 const SVG = styled.svg`
-  --logo-grey: ${({ theme }) => (theme.inDarkMode ? '#F7FAFC' : '#718096')};
-  color: ${({ theme }) => (theme.inDarkMode ? '#F7FAFC' : '#718096')};
+  --logo-grey: ${({ theme }) => (theme.inDarkMode ? '#EDF2F7' : '#718096')};
+  color: ${({ theme }) => (theme.inDarkMode ? '#EDF2F7' : '#718096')};
 
   &:hover {
     /* For glitch animation */
