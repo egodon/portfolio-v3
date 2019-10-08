@@ -4,7 +4,7 @@
     {
       "companyName": "Huddol",
       "position": "Front-End Web Developer",
-      "timePeriod": "August 2018 - June 2019",
+      "timePeriod": "August 2018 - August 2019",
       "techStack": ["React", "Redux", "Redux-Thunk", "Emotion", "Jest", "Webpack"],
       "responsibilities": [
         "Built the front-end of a social-media app using server-side rendered React and Redux",
@@ -16,7 +16,7 @@
     {
       "companyName": "Bmad",
       "position": "Front-End Web Developer",
-      "timePeriod": "January 2018 - August 2018",
+      "timePeriod": "July 2017 - August 2018",
       "techStack": [
         "React",
         "Redux",

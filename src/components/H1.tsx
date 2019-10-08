@@ -10,7 +10,7 @@ type Props = {
 
 const H1: React.FC<Props> = ({ children, largeMargin }) => (
   <Container largeMargin={largeMargin}>
-    <Glitch text={children} eachLetter />
+    <Glitch text={children} eachLetter delay={0.4} />
   </Container>
 );
 

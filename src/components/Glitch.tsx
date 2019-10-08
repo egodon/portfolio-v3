@@ -13,6 +13,7 @@ type Props = {
   Icon?: string | (() => React.ReactElement);
   eachLetter?: boolean;
   theme: any;
+  delay?: number;
   children?: ({ GlitchText, GlitchIcon }) => React.ReactNode;
 };
 
@@ -21,6 +22,7 @@ const Glitch: React.FC<Props> = ({
   Icon,
   eachLetter = false,
   theme,
+  delay = 0,
   children,
 }) => {
   if (eachLetter) {
@@ -31,7 +33,7 @@ const Glitch: React.FC<Props> = ({
             <Container key={index}>
               <LetterContainer
                 data-text={letter}
-                timing={0.4}
+                delay={delay}
                 key={theme.inDarkMode}
               >
                 {letter !== ' ' ? letter : <Whitespace />}
@@ -144,14 +146,13 @@ const LetterContainerBase = styled(TextContainer)`
   }
 `;
 
-const LetterContainer = styled(LetterContainerBase)<{ timing: number }>`
+const LetterContainer = styled(LetterContainerBase)<{ delay: number }>`
   ${Container} &::before {
-    animation: ${glitch_loop} 22s ${(p) => p.timing + 's'} infinite linear alternate;
+    animation: ${glitch_loop} 22s ${(p) => p.delay + 's'} infinite linear alternate;
   }
 
   ${Container} &::after {
-    animation: ${glitch_loop_2} 22s ${(p) => p.timing + 's'} infinite linear
-      alternate;
+    animation: ${glitch_loop_2} 22s ${(p) => p.delay + 's'} infinite linear alternate;
   }
 `;
 
