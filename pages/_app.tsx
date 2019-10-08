@@ -1,15 +1,15 @@
 import React from 'react';
 import App from 'next/app';
+import LogRocket from 'logrocket';
 import Template from 'components/layout/Template';
 import { RouterContextProvider } from 'hooks/useRouter';
 import { PageTransition } from 'components/PageTransition';
 import Favicon from 'components/head/Favicon';
 import MetaTags from 'components/head/MetaTags';
-import LogRocket from 'logrocket';
 
 class MyApp extends App {
   componentDidMount() {
-    LogRocket.init('tj21zp/my-portfolio');
+    LogRocket.init(process.env.LOGROCKET_APP_ID);
   }
 
   render() {
