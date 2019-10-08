@@ -6,10 +6,13 @@ import { RouterContextProvider } from 'hooks/useRouter';
 import { PageTransition } from 'components/PageTransition';
 import Favicon from 'components/head/Favicon';
 import MetaTags from 'components/head/MetaTags';
+import { prod } from 'constants/index';
 
 class MyApp extends App {
   componentDidMount() {
-    LogRocket.init(process.env.LOGROCKET_APP_ID);
+    if (prod) {
+      LogRocket.init(process.env.LOGROCKET_APP_ID);
+    }
   }
 
   render() {
