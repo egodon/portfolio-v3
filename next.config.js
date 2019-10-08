@@ -5,6 +5,8 @@ const optimizedImages = require('next-optimized-images');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 
+const env = dotenv.config().parsed;
+
 module.exports = withPlugins(
   [images, [optimizedImages, { handleImages: ['png'] }]],
   {
@@ -30,7 +32,6 @@ module.exports = withPlugins(
       });
 
       /* Inject env variables */
-      const env = dotenv.config().parsed;
       console.log({ env });
       const envKeys = Object.keys(env).reduce((prev, next) => {
         prev[`process.env.${next}`] = JSON.stringify(env[next]);
