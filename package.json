@@ -4,7 +4,8 @@
   "scripts": {
     "start": "next start",
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build",
+    "build:netlify": "next build && next export",
     "serve": "serve out -p 3000"
   },
   "dependencies": {
