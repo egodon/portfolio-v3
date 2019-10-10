@@ -11,7 +11,7 @@ import { prod } from 'constants/index';
 class MyApp extends App {
   componentDidMount() {
     if (prod) {
-      LogRocket.init('tj21zp/my-portfolio');
+      LogRocket.init(process.env.LOGROCKET_APP_ID);
     }
   }
 
