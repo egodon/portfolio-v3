@@ -12,6 +12,18 @@ class MyApp extends App {
   componentDidMount() {
     if (prod) {
       LogRocket.init(process.env.LOGROCKET_APP_ID);
+      fetch('https://json.geoiplookup.io/')
+        .then((res) => res.json())
+        .then((data) => {
+          LogRocket.identify(
+            data.ip === process.env.MY_IP_ADDRESS ? 'Me' : data.ip,
+            {
+              city: data.city,
+              hostname: data.hostname,
+            }
+          );
+        })
+        .catch((e) => null);
     }
   }
 
