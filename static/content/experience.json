@@ -5,7 +5,7 @@
       "companyName": "Huddol",
       "position": "Front-End Web Developer",
       "timePeriod": "August 2018 - August 2019",
-      "techStack": ["React", "Redux", "Redux-Thunk", "Emotion", "Jest", "Webpack"],
+      "techStack": ["React", "Redux", "Laravel", "Emotion", "Jest", "Webpack"],
       "responsibilities": [
         "Built the front-end of a social-media app using server-side rendered React and Redux.",
         "Developed the UI while implementing the design specifications provided by the UX/UI designer.",
