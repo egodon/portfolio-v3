@@ -20,8 +20,9 @@ const Experience: NextPage = () => {
           <H1 largeMargin>{header}</H1>
           <CvButton
             as="a"
-            href="https://docs.google.com/document/d/1oRRKbLnIwHAstLXkW2SHXKTz04Ce51gDXKIokOoUQo8/edit?usp=sharing"
+            href="bit.ly/Evan-Godon-Resume"
             target="_blank"
+            rel="noopener"
           >
             <span>
               <span>View CV</span>
@@ -45,7 +46,12 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const CvButton = styled(Button)<{ as: string; href: string; target: string }>`
+const CvButton = styled(Button)<{
+  as: string;
+  href: string;
+  target: string;
+  rel: 'noopener';
+}>`
   display: block;
   margin-bottom: 4.2rem;
 
