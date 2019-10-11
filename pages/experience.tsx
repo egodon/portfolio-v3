@@ -20,7 +20,7 @@ const Experience: NextPage = () => {
           <H1 largeMargin>{header}</H1>
           <CvButton
             as="a"
-            href="www.bit.ly/Evan-Godon-Resume"
+            href="https://bit.ly/Evan-Godon-Resume"
             target="_blank"
             rel="noopener"
           >
