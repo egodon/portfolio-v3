@@ -10,7 +10,7 @@ import { prod } from 'constants/index';
 
 class MyApp extends App {
   componentDidMount() {
-    if (prod || true) {
+    if (prod) {
       initLogRocket();
     }
   }
