@@ -12,7 +12,7 @@
     },
     {
       "projectName": "Tracy's Porfolio",
-      "description": "A portfolio website I made for my girlfriend who works as a concept artist.",
+      "description": "A website I made for a client so that she could showcase her art. I used Netlify CMS for her to be able to upload her images.",
       "githubUrl": "https://github.com/egodon/tracy-portfolio",
       "websiteUrl": "https://tracygenereux.ml/",
       "builtWith": ["React Static", "Styled-Components", "Netlify CMS"],
