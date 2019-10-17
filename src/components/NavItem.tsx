@@ -55,7 +55,7 @@ const Container = styled.span`
   &[aria-current='page'] {
     color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
     background-color: ${({ theme }) =>
-      theme.inDarkMode ? 'none' : theme.__grey_100};
+      theme.inDarkMode ? 'initial' : theme.__grey_100};
   }
 
   svg {
