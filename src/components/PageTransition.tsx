@@ -56,7 +56,7 @@ export const PageTransition: React.FC<Props> = ({ children, ...props }) => {
   );
 };
 
-const Page = styled(animated.main)`
+const Page = styled(animated.div)`
   min-height: 100%;
   height: 0;
   display: flex;
