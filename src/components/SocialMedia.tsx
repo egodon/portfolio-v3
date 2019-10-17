@@ -83,7 +83,7 @@ const Footer = styled.footer<{ displayOnMobile: boolean }>`
   `}
 `;
 
-const SocialIcons = styled.div<{ inSidenav: boolean }>`
+const SocialIcons = styled.span<{ inSidenav: boolean }>`
   margin-bottom: 1.8rem;
   display: grid;
   grid-gap: 1rem;
@@ -125,7 +125,7 @@ const IconContainer = styled.a<{ inSidenav?: boolean }>`
   `}
 `;
 
-const SocialIcon = styled.div``;
+const SocialIcon = styled.span``;
 
 const ButtonText = styled.span`
   text-transform: uppercase;
