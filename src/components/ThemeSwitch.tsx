@@ -8,7 +8,10 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <Container>
-      <Border onClick={() => setDarkMode(!inDarkMode)}>
+      <Border
+        title={`${inDarkMode ? 'Disable' : 'Enable'} Dark Mode`}
+        onClick={() => setDarkMode(!inDarkMode)}
+      >
         <SwitchButton active={!inDarkMode}>
           <Sun />
         </SwitchButton>
