@@ -6,11 +6,15 @@ import { useThemeContext } from 'css/index';
 const ThemeSwitch: React.FC = () => {
   const { inDarkMode, setDarkMode } = useThemeContext();
 
+  function handleClick() {
+    setDarkMode(!inDarkMode);
+  }
+
   return (
     <Container>
       <Border
         title={`${inDarkMode ? 'Disable' : 'Enable'} Dark Mode`}
-        onClick={() => setDarkMode(!inDarkMode)}
+        onClick={handleClick}
       >
         <SwitchButton active={!inDarkMode}>
           <Sun />
@@ -31,11 +35,12 @@ const Container = styled.div`
   z-index: 3;
 `;
 
-const Border = styled.span`
+const Border = styled.button`
   display: inline-flex;
   align-items: center;
   color: #8e0c3a;
   border: 1px solid currentColor;
+  background-color: transparent;
 `;
 
 const SwitchButtonBase = styled.span`
