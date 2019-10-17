@@ -33,7 +33,10 @@ const SVG = styled.svg`
   &:hover {
     /* For glitch animation */
     --logo-grey: currentColor;
-    --color-secondary: currentColor;
+  }
+
+  &:first-of-type:hover {
+    color: var(--color-secondary);
   }
 `;
 
