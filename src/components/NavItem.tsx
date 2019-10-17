@@ -38,7 +38,7 @@ const NavItem: React.FC<Props> = ({ isCurrent, route }) => (
   </Link>
 );
 
-const Container = styled.li`
+const Container = styled.span`
   cursor: pointer;
   display: flex;
   align-items: center;

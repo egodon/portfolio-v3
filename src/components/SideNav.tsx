@@ -97,7 +97,7 @@ const Nav = styled.nav`
   `}
 `;
 
-const NavList = styled.ul<{ currentPath: string }>`
+const NavList = styled.div<{ currentPath: string }>`
   &:before {
     content: '';
     position: absolute;
