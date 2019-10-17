@@ -5,7 +5,10 @@ const optimizedImages = require('next-optimized-images');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = withPlugins(
-  [images, [optimizedImages, { handleImages: ['png'] }]],
+  [
+    [images, { inlineImageLimit: 16384 }],
+    [optimizedImages, { handleImages: ['png'] }],
+  ],
   {
     exclude: [path.resolve(__dirname, 'static/icons')],
     webpack(config) {
