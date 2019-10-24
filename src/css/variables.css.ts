@@ -18,7 +18,7 @@ export const variables = {
   /* Font-size */
   __fs_xsmall: '1rem',
   __fs_small: '1.2rem',
-  __fs_medium: '1.4rem',
+  __fs_medium: '1.3rem',
   __fs_default: '1.6rem',
   __fs_large: '2.8rem',
   __fs_xlarge: '3.6rem',

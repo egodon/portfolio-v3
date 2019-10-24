@@ -75,7 +75,7 @@ const ProfileImg = styled.img`
 `;
 
 const AboutText = styled.div`
-  max-width: 46rem;
+  max-width: 48rem;
   font-size: var(--fs-medium);
   margin-left: 6rem;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_500)};

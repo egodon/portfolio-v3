@@ -70,6 +70,7 @@ const Container = styled.span`
     height: var(--mobile-nav-height);
     line-height: 1;
     padding: 0 1.2rem;
+    letter-spacing: normal; 
 
     svg {
       margin-right: 0;
