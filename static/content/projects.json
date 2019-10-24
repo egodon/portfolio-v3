@@ -3,11 +3,11 @@
   "projects": [
     {
       "projectName": "LinkLib",
-      "description": "A single-page application made in React that stores and organizes web-related ressources I'd like to bookmark.",
+      "description": "An app where I can store and manage web bookmarks and easily find them later. When adding a bookmark, it will scrape the site for metadata such as the title, description, website image, and the favicon.",
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v2",
       "websiteUrl": "https://linklib.tk",
-      "builtWith": ["NextJs", "TypeScript", "Material UI"],
+      "builtWith": ["NextJs", "TypeScript", "Material UI", "Firebase"],
       "screenshotUrl": "https://ucarecdn.com/6440d5cf-6e4d-4514-b98c-9713d6c14a73"
     },
     {

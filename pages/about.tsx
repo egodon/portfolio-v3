@@ -59,7 +59,7 @@ const Content = styled.div`
 
 const ProfileContainer = styled.div`
   position: relative;
-  --size: 16rem;
+  --size: 18rem;
   min-width: var(--size);
   min-height: var(--size);
   width: var(--size);
@@ -70,12 +70,16 @@ const ProfileContainer = styled.div`
   align-items: center;
 `;
 
+const ProfileImg = styled.img`
+  max-width: 100%;
+`;
+
 const AboutText = styled.div`
-  max-width: 45.4rem;
+  max-width: 46rem;
   font-size: var(--fs-medium);
-  margin: 0 4rem;
+  margin-left: 6rem;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_500)};
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
 
   ${media.tablet`
       margin: 4rem 0;
@@ -84,6 +88,7 @@ const AboutText = styled.div`
 
 const P = styled.p`
   margin-bottom: 1.8rem;
+  font-size: var(--fs-medium);
 
   &:last-of-type {
     margin-bottom: 0;
@@ -96,10 +101,6 @@ const Line = styled.span`
   display: block;
   border-bottom: 1px solid
     ${({ theme }) => (theme.inDarkMode ? theme.__grey_400 : theme.__grey_200)};
-`;
-
-const ProfileImg = styled.img`
-  max-width: 100%;
 `;
 
 export default About;

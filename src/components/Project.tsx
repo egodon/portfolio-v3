@@ -133,11 +133,14 @@ const Technology = styled.li`
 
 const H3 = styled.h3`
   margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  font-size: var(--fs-medium);
+  font-weight: 300;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_200 : theme.__grey_500)};
 `;
 
 const Description = styled.p`
-  font-size: var(--fs-medium);
+  font-size: var(--fs-small);
   color: var(--grey-300);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;

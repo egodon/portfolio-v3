@@ -2,8 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import { customProperties } from './variables.css';
 import anurati_woff2 from 'static/fonts/anurati-regular-webfont.woff2';
 import anurati_woff from 'static/fonts/anurati-regular-webfont.woff2';
-import inter_woff from 'static/fonts/inter.woff';
-import inter_woff2 from 'static/fonts/inter.woff2';
+import inter_woff from 'static/fonts/robotomono-regular.woff';
+import inter_woff2 from 'static/fonts/robotomono-regular.woff2';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   } 
 
   body {
-    font-family: 'interUI', monospace;
+    font-family: 'robotomono', monospace;
     font-weight: 400;
     font-size: var(--fs-default);
     letter-spacing: 0.3px;
@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'interUI';
+    font-family: 'robotomono';
     src: url(${inter_woff}) format('woff'),
          url(${inter_woff2}) format('woff2');
     font-weight: normal;

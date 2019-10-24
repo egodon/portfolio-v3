@@ -44,7 +44,7 @@ const WorkExperience: React.FC<Props> = ({ company }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 17rem 8rem 1fr;
+  grid-template-columns: 17.5rem 8rem 1fr;
   --container-margin-bottom: 6rem;
   margin-bottom: var(--container-margin-bottom);
 
@@ -71,11 +71,12 @@ const Line = styled.span`
 `;
 
 const TimePeriod = styled.span`
-  font-size: var(--fs-small);
+  font-size: var(--fs-xsmall);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
   text-align: right;
   display: inline-block;
   margin-bottom: 1.2rem;
+  text-transform: uppercase;
 `;
 
 const darkLineGradient = css`
@@ -139,26 +140,31 @@ const IconContainer = styled.div`
 
 const Company = styled.h3`
   margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 300;
   color: var(--grey-200);
+  font-size: var(--fs-default);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
 `;
 
 const Position = styled.h4`
   margin-bottom: 1.2rem;
   color: var(--grey-200);
+  font-weight: 300;
+  font-size: var(--fs-medium);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
 `;
 
 const Details = styled.div``;
 
 const TechStack = styled.div`
-  margin-bottom: 3.2rem;
-  font-size: var(--fs-medium);
+  margin-bottom: 2.4rem;
+  font-size: var(--fs-small);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
 const ResponsibilityList = styled.ul`
-  font-size: var(--fs-medium);
+  font-size: var(--fs-small);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
 `;
 
