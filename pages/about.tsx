@@ -6,9 +6,12 @@ import H1 from 'components/H1';
 import Title from 'components/Title';
 import { media } from 'css/variables.css';
 import aboutData from 'static/content/about.json';
+import { useThemeContext } from 'css/index';
 
 const About: NextPage = () => {
   const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
+  const { inDarkMode } = useThemeContext();
+
 
   return (
     <>
@@ -18,7 +21,7 @@ const About: NextPage = () => {
         <Content>
           <ProfileContainer>
             <ProfileImg
-              src={profileImage + '/-/preview/460x460/-/grayscale/'}
+              src={profileImage + inDarkMode ? '/-/preview/460x460/-/grayscale/' : ''}
               alt="profile"
             />
           </ProfileContainer>
