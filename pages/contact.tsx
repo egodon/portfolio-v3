@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PageContainer from 'components/layout/PageContainer';
 import Title from 'components/Title';
 import Button from 'components/Button';
-import H1 from 'components/H1';
+import H1 from 'components/typography/H1';
 import Input from 'components/Input';
 import { Send, CheckCircle } from 'react-feather';
 

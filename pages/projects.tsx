@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import PageContainer from 'components/layout/PageContainer';
-import H1 from 'components/H1';
+import H1 from 'components/typography/H1';
 import Project from 'components/Project';
 import Title from 'components/Title';
 import projectsData from 'static/content/projects.json';

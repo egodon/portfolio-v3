@@ -2,12 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { NextPage } from 'next';
 import PageContainer from 'components/layout/PageContainer';
-import H1 from 'components/H1';
+import H1 from 'components/typography/H1';
 import Title from 'components/Title';
 import { media } from 'css/variables.css';
 import aboutData from 'static/content/about.json';
 import { useThemeContext } from 'css/index';
+import H2 from 'components/typography/H2';
 
+/**
+ * @todo: preload profile images
+ */
 const About: NextPage = () => {
   const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
   const { inDarkMode } = useThemeContext();
@@ -28,11 +32,15 @@ const About: NextPage = () => {
             />
           </ProfileContainer>
           <AboutText>
-            <p>{paragraph_1}</p>
-            <br />
-            <p>{paragraph_2}</p>
-            <br />
-            <p>{paragraph_3}</p>
+            <H2>Who I Am</H2>
+            <Line />
+            <P>{paragraph_1}</P>
+            <H2>What I Do</H2>
+            <Line />
+            <P>{paragraph_2}</P>
+            <H2>What I Use</H2>
+            <Line />
+            <P>{paragraph_3}</P>
           </AboutText>
         </Content>
       </PageContainer>
@@ -63,7 +71,7 @@ const ProfileContainer = styled.div`
 `;
 
 const AboutText = styled.div`
-  max-width: 45rem;
+  max-width: 45.4rem;
   font-size: var(--fs-medium);
   margin: 0 4rem;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_500)};
@@ -72,6 +80,22 @@ const AboutText = styled.div`
   ${media.tablet`
       margin: 4rem 0;
   `};
+`;
+
+const P = styled.p`
+  margin-bottom: 1.8rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`;
+
+const Line = styled.span`
+  max-width: 14rem;
+  margin: 0.8rem 0;
+  display: block;
+  border-bottom: 1px solid
+    ${({ theme }) => (theme.inDarkMode ? theme.__grey_400 : theme.__grey_200)};
 `;
 
 const ProfileImg = styled.img`

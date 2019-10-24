@@ -6,7 +6,7 @@ import PageContainer from 'components/layout/PageContainer';
 import WorkExperience from 'components/WorkExperience';
 import Title from 'components/Title';
 import Button from 'components/Button';
-import H1 from 'components/H1';
+import H1 from 'components/typography/H1';
 import experienceData from 'static/content/experience.json';
 
 const Experience: NextPage = () => {

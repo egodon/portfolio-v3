@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NextPage } from 'next';
 import SocialMedia from 'components/SocialMedia';
-import H1 from 'components/H1';
+import H1 from 'components/typography/H1';
 import { media } from 'css/variables.css';
 import Title from 'components/Title';
 
