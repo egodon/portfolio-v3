@@ -12,7 +12,6 @@ const About: NextPage = () => {
   const { header, profileImage, paragraph_1, paragraph_2, paragraph_3 } = aboutData;
   const { inDarkMode } = useThemeContext();
 
-
   return (
     <>
       <Title title={header} />
@@ -21,7 +20,10 @@ const About: NextPage = () => {
         <Content>
           <ProfileContainer>
             <ProfileImg
-              src={profileImage + inDarkMode ? '/-/preview/460x460/-/grayscale/' : ''}
+              src={
+                profileImage +
+                `/-/preview/460x460/${inDarkMode ? '-/grayscale/' : ''}`
+              }
               alt="profile"
             />
           </ProfileContainer>
