@@ -24,7 +24,7 @@ const Template: React.FC<Props> = ({ children, router }) => {
           <Main>
             <>
               <AnimatedBackground />
-              <LogoOnMobile size={55} />
+              <LogoOnMobile size={52} />
               <ThemeSwitch />
               {children}
             </>
@@ -60,7 +60,6 @@ const Main = styled.main`
 
 const LogoOnMobile = styled(Logo)`
   position: absolute;
-  border: 1px solid red;
   top: 2rem;
   left: 2rem;
   display: none;

@@ -27,6 +27,7 @@ const Container = styled.h1<{ largeMargin?: boolean }>`
 
   ${media.mobile`
     font-size: var(--fs-large);
+    margin-bottom: ${(p) => (p.largeMargin ? '6rem' : '2.8rem')};
   `}
 `;
 
