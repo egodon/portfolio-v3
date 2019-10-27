@@ -38,8 +38,8 @@ const H2 = styled.h2`
   font-weight: 300;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
   text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 5.4px;
+  font-size: var(--fs-default);
+  letter-spacing: 4px;
   text-align: center;
 
   ${media.mobile`
