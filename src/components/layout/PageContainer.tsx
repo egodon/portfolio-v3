@@ -7,7 +7,7 @@ export default styled.div`
   align-items: center;
   flex-direction: column;
   padding: 0 2.8rem;
-  padding-top: 16%;
+  padding-top: 12%;
   width: 100%;
   overflow-y: auto;
   z-index: 2;

@@ -7,7 +7,14 @@ import inter_woff2 from 'static/fonts/robotomono-regular.woff2';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 62.5%;
+    font-size: 80%;
+
+    /* For 4k monitors */
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+      font-size: 62.5%;
+    }
   }
 
   :root {
