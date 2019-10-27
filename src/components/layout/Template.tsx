@@ -5,6 +5,7 @@ import SideNav from 'components/SideNav';
 import AnimatedBackground from 'components/AnimatedBackground';
 import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'css';
+import Logo from 'components/Logo';
 import { isNightTime } from 'utils/index';
 
 type Props = {
@@ -23,6 +24,7 @@ const Template: React.FC<Props> = ({ children, router }) => {
           <Main>
             <>
               <AnimatedBackground />
+              <LogoOnMobile size={55} />
               <ThemeSwitch />
               {children}
             </>
@@ -54,6 +56,18 @@ const Main = styled.main`
   overflow-y: auto;
   position: relative;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
+`;
+
+const LogoOnMobile = styled(Logo)`
+  position: absolute;
+  border: 1px solid red;
+  top: 2rem;
+  left: 2rem;
+  display: none;
+
+  ${media.tablet`
+    display: block
+  `};
 `;
 
 export default withRouter(Template);

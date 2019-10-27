@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo: React.FC<{ size?: number | string }> = ({ size }) => (
+type Props = {
+  size?: number | string;
+  className?: string;
+};
+
+const Logo: React.FC<Props> = ({ size, className }) => (
   <SVG
+    className={className}
     width={size}
-    height={66}
     viewBox="0 0 139 66"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
