@@ -5,7 +5,7 @@
       "projectName": "LinkLib",
       "description": "An app where I can store and manage web bookmarks and easily find them later. When adding a bookmark, it will scrape the site for metadata such as the title, description, website image, and the favicon.",
       "imageSrc": "linklib.png",
-      "githubUrl": "https://github.com/egodon/link-library-v2",
+      "githubUrl": "https://github.com/egodon/link-library-v3",
       "websiteUrl": "https://linklib.tk",
       "builtWith": ["NextJs", "TypeScript", "Material UI", "Firebase"],
       "screenshotUrl": "https://ucarecdn.com/efd4a930-f2d4-4a3e-9b58-fbccf824b26d"
