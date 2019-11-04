@@ -1,7 +1,7 @@
 import { useState} from 'react';
 
 export function useForceUpdate(dependencies) {
-  const [value, set] = useState(true); //boolean state
+  const [value, set] = useState(true);
 
   return () => set((value) => !value);
 }
