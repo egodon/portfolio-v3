@@ -1,7 +1,7 @@
 {
   "header": "About",
   "profileImage": "https://ucarecdn.com/28f1166e-fa77-41eb-98d5-381802468f43",
-  "paragraph_1": "I'm a front-end web developer from Montreal who loves buiding user-interfaces. I see myself as a life-long student with a high interest in learning the latest web technologies.",
-  "paragraph_2": "I mostly work on the front-end but I enjoy working on all sides of the stack, from backend APIs to more DevOps related tasks. In addition, I like to get creative by dabbling in web design and css animations. ",
-  "paragraph_3": "I specialize in React and I enjoy using the NextJs framework with TypeScript. Whenever I need a backend I reach for Node and use Firebase as a database. I'm trying to expand on my backend skills and I'm currently learning Python alongside the Django framework."
+  "paragraph_1": "My name's Evan. I'm a front-end web developer from Montreal with a passion for building user-interfaces. I see myself as a life-long student with a high interest in learning the latest web technologies.",
+  "paragraph_2": "I mostly work on the front-end but I enjoy working on all sides of the stack, from backend APIs to more DevOps related tasks. I also value slick user-interfaces and like to dabble in web design and css animations.",
+  "paragraph_3": "I specialize in React and enjoy using the NextJs framework with TypeScript. Whenever I need a backend I reach for Node and use Firebase for backend services. I'm trying to expand on my backend skills and I'm currently learning Python alongside the Django framework."
 }

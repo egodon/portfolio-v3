@@ -3,7 +3,7 @@
   "projects": [
     {
       "projectName": "LinkLib",
-      "description": "An app where I can store and manage web bookmarks and easily find them later. When adding a bookmark, it will scrape the site for metadata such as the title, description, website image, and the favicon.",
+      "description": "My personal bookmark manager complete with authentication and web-scraping. When adding a bookmark, it will scrape the site for metadata such as the title, description, website image, and the favicon.",
       "imageSrc": "linklib.png",
       "githubUrl": "https://github.com/egodon/link-library-v3",
       "websiteUrl": "https://linklib.tk",

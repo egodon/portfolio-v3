@@ -77,7 +77,7 @@ const ProfileImg = styled.img`
 const AboutText = styled.div`
   max-width: 48rem;
   font-size: var(--fs-medium);
-  margin-left: 6rem;
+  margin-left: 8rem;
   color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__grey_500)};
   letter-spacing: 1px;
 
@@ -87,7 +87,7 @@ const AboutText = styled.div`
 `;
 
 const P = styled.p`
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.4rem;
   font-size: var(--fs-medium);
 
   &:last-of-type {
