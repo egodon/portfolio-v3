@@ -3,6 +3,7 @@
   "companies": [
     {
       "companyName": "Huddol",
+      "companyWebsite": "https://www.huddol.com/",
       "position": "Front-End Web Developer",
       "timePeriod": "August 2018 - August 2019",
       "techStack": ["React", "Redux", "Laravel", "Emotion", "Jest", "Webpack"],
@@ -15,6 +16,7 @@
     },
     {
       "companyName": "Bmad",
+      "companyWebsite": "https://www.bmad.ca/",
       "position": "Front-End Web Developer",
       "timePeriod": "July 2017 - August 2018",
       "techStack": [

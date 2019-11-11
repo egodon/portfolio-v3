@@ -6,6 +6,7 @@ import { media } from 'css/variables.css';
 type Props = {
   company: {
     companyName: string;
+    companyWebsite: string;
     timePeriod: string;
     position: string;
     techStack: string[];
@@ -14,7 +15,14 @@ type Props = {
 };
 
 const WorkExperience: React.FC<Props> = ({ company }) => {
-  const { companyName, timePeriod, position, techStack, responsibilities } = company;
+  const {
+    companyName,
+    companyWebsite,
+    timePeriod,
+    position,
+    techStack,
+    responsibilities,
+  } = company;
 
   return (
     <>
@@ -24,7 +32,9 @@ const WorkExperience: React.FC<Props> = ({ company }) => {
           <IconContainer>{companyName[0]}</IconContainer>
         </TimeLine>
         <Details>
-          <Company>{companyName}</Company>
+          <Company href={companyWebsite} target="_blank" rel="noopener">
+            {companyName}
+          </Company>
           <Position>{position}</Position>
           <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
           <ResponsibilityList>
@@ -138,13 +148,18 @@ const IconContainer = styled.div`
   align-items: center;
 `;
 
-const Company = styled.h3`
+const Company = styled.a`
+  display: inline-block;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   font-weight: 300;
   color: var(--grey-200);
   font-size: var(--fs-default);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Position = styled.h4`
