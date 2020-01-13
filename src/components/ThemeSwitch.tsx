@@ -12,17 +12,32 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <Container>
-      <Border
-        title={`${inDarkMode ? 'Disable' : 'Enable'} Dark Mode`}
-        onClick={handleClick}
-      >
-        <SwitchButton active={!inDarkMode}>
-          <Sun />
-        </SwitchButton>
-        <SwitchButton active={inDarkMode}>
-          <Moon />
-        </SwitchButton>
-      </Border>
+      <Content>
+        <svg
+          width="100%"
+          viewBox="0 0 57 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="svg-border"
+        >
+          <path
+            d="M1 0.5H49L56.5 8V31M57 31H8.5L1 23.5V0"
+            stroke="var(--color-secondary)"
+          />
+        </svg>
+
+        <Border
+          title={`${inDarkMode ? 'Disable' : 'Enable'} Dark Mode`}
+          onClick={handleClick}
+        >
+          <SwitchButton active={!inDarkMode}>
+            <Sun />
+          </SwitchButton>
+          <SwitchButton active={inDarkMode}>
+            <Moon />
+          </SwitchButton>
+        </Border>
+      </Content>
     </Container>
   );
 };
@@ -35,18 +50,31 @@ const Container = styled.div`
   z-index: 3;
 `;
 
+const Content = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+
+  .svg-border {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+  }
+`;
+
 const Border = styled.button`
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   color: #8e0c3a;
-  border: 1px solid currentColor;
   background-color: transparent;
+  border: 0;
 `;
 
 const SwitchButtonBase = styled.span`
   display: flex;
   align-items: center;
-  padding: 2px 4px;
+  padding: 2px 5px;
   cursor: pointer;
 
   svg {
