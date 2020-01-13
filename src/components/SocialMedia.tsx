@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Glitch from 'components/Glitch';
-import Button from 'components/Button';
+import Button from 'components/CustomButton';
 import { fadeIn } from 'css/animations.css';
 import { media } from 'css/index';
 import CodesandboxIcon from 'static/icons/codesandbox.svg';
@@ -83,10 +83,10 @@ const Footer = styled.footer<{ displayOnMobile: boolean }>`
   `}
 `;
 
-const SocialIcons = styled.span<{ inSidenav: boolean }>`
-  margin-bottom: 1.8rem;
+const SocialIcons = styled.div<{ inSidenav: boolean }>`
+  margin-bottom: 2rem;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 1.8rem;
   grid-template-columns: repeat(3, 1fr);
 
   svg {
