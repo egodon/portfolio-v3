@@ -2,6 +2,13 @@
   "header": "Experience",
   "companies": [
     {
+      "companyName": "Lane",
+      "companyWebsite": "https://www.joinlane.com/",
+      "position": "Software Developer",
+      "timePeriod": "December 2019 - Present",
+      "techStack": ["React", "React-Native", "Node", "GraphQL", "PostgreSQL"]
+    },
+    {
       "companyName": "Huddol",
       "companyWebsite": "https://www.huddol.com/",
       "position": "Front-End Web Developer",

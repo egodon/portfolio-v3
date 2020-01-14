@@ -9,8 +9,8 @@ type Props = {
     companyWebsite: string;
     timePeriod: string;
     position: string;
-    techStack: string[];
-    responsibilities: string[];
+    techStack?: string[];
+    responsibilities?: string[];
   };
 };
 
@@ -36,15 +36,19 @@ const WorkExperience: React.FC<Props> = ({ company }) => {
             {companyName}
           </Company>
           <Position>{position}</Position>
-          <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
-          <ResponsibilityList>
-            {responsibilities.map((responsibility, index) => (
-              <Responsibility key={index}>
-                <ChevronRight />
-                {responsibility}
-              </Responsibility>
-            ))}
-          </ResponsibilityList>
+          {techStack?.length > 0 && (
+            <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
+          )}
+          {responsibilities?.length > 0 && (
+            <ResponsibilityList>
+              {responsibilities.map((responsibility, index) => (
+                <Responsibility key={index}>
+                  <ChevronRight />
+                  {responsibility}
+                </Responsibility>
+              ))}
+            </ResponsibilityList>
+          )}
         </Details>
       </Container>
       <Line />
@@ -189,6 +193,7 @@ const Responsibility = styled.li`
   align-items: center;
   position: relative;
   line-height: 1.5;
+  max-width: 42rem;
 
   ${media.mobile`
       align-items: flex-start;
