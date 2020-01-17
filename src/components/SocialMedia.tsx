@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Glitch from 'components/Glitch';
-import Button from 'components/CustomButton';
+import CustomButton from 'components/CustomButton';
 import { fadeIn } from 'css/animations.css';
 import { media } from 'css/index';
 import CodesandboxIcon from 'static/icons/codesandbox.svg';
 import GitHubIcon from 'static/icons/github.svg';
 import LinkedinIcon from 'static/icons/linkedin.svg';
-import Link from 'next/link';
 
 const socialLinks = [
   {
@@ -60,13 +59,11 @@ const SocialMedia: React.FC<Props> = ({ inside, displayOnMobile }) => {
         ))}
       </SocialIcons>
       {!inSidenav && (
-        <Link href="/contact">
-          <Button as="a">
-            <ButtonText>
-              {iconHovered ? <Glitch text={iconHovered} eachLetter /> : 'Contact Me'}
-            </ButtonText>
-          </Button>
-        </Link>
+        <CustomButton href="/contact">
+          <ButtonText>
+            {iconHovered ? <Glitch text={iconHovered} eachLetter /> : 'Contact Me'}
+          </ButtonText>
+        </CustomButton>
       )}
     </Footer>
   );

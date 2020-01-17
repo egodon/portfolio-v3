@@ -1,31 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 type Props = {
-  as: string;
+  href: string;
   children: React.ReactChildren | React.ReactElement;
 };
 
-const CustomButton: React.FC<Props> = ({ children, as }) => {
+const CustomButton: React.FC<Props> = ({ children, href }) => {
   return (
-    <Container>
-      <svg
-        width="100%"
-        viewBox="0 0 231 49"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M213.5 0.5H0.5V32L17 48.5H230V17L213.5 0.5Z"
-          stroke="var(--color-secondary)"
-        />
-      </svg>
-      {children}
-    </Container>
+    <Link href={href}>
+      <Container>
+        <svg
+          width="100%"
+          viewBox="0 0 231 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M213.5 0.5H0.5V32L17 48.5H230V17L213.5 0.5Z"
+            stroke="var(--color-secondary)"
+          />
+        </svg>
+        {children}
+      </Container>
+    </Link>
   );
 };
 
-const Container = styled.button`
+const Container = styled.a`
   text-transform: uppercase;
   border: 0;
   background-color: transparent;
