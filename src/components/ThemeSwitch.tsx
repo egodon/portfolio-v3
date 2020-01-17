@@ -26,7 +26,7 @@ const ThemeSwitch: React.FC = () => {
           />
         </svg>
 
-        <Border
+        <Button
           title={`${inDarkMode ? 'Disable' : 'Enable'} Dark Mode`}
           onClick={handleClick}
         >
@@ -36,7 +36,7 @@ const ThemeSwitch: React.FC = () => {
           <SwitchButton active={inDarkMode}>
             <Moon />
           </SwitchButton>
-        </Border>
+        </Button>
       </Content>
     </Container>
   );
@@ -58,11 +58,14 @@ const Content = styled.div`
   .svg-border {
     position: absolute;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     pointer-events: none;
+    opacity: 0.7;
   }
 `;
 
-const Border = styled.button`
+const Button = styled.button`
   width: 100%;
   display: flex;
   align-items: center;
@@ -74,7 +77,7 @@ const Border = styled.button`
 const SwitchButtonBase = styled.span`
   display: flex;
   align-items: center;
-  padding: 2px 5px;
+  padding: 2px 4px;
   cursor: pointer;
 
   svg {
