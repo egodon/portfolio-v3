@@ -7,6 +7,7 @@ import ThemeSwitch from 'components/ThemeSwitch';
 import GlobalStyle, { variables, media } from 'css';
 import Logo from 'components/Logo';
 import { isNightTime } from 'utils/index';
+import LandingAnimation from 'components/LandingAnimation';
 
 type Props = {
   children: React.ReactChildren | React.ReactElement;
@@ -30,6 +31,7 @@ const Template: React.FC<Props> = ({ children, router }) => {
             </>
           </Main>
           <GlobalStyle theme={{ ...variables, inDarkMode }} />
+          <LandingAnimation />
         </AppContainer>
       </ThemeProvider>
     </>

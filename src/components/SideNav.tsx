@@ -6,7 +6,7 @@ import SocialMedia from 'components/SocialMedia';
 import NavItem from 'components/NavItem';
 import { media } from 'css/index';
 import Logo from 'components/Logo';
-import Glitch from 'components/Glitch';
+// import Glitch from 'components/Glitch';
 
 type Props = {
   pathname: string;
@@ -17,7 +17,7 @@ const SideNav: React.FC<Props> = ({ pathname }) => {
     <Container>
       <Link href="/">
         <LogoContainer>
-          <Glitch Icon={() => <Logo />}>{({ GlitchIcon }) => <GlitchIcon />}</Glitch>
+          <Logo />
         </LogoContainer>
       </Link>
       <>

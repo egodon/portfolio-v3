@@ -9,12 +9,30 @@ export const fadeIn = keyframes`
   }
 `;
 
+export const translateRight = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+
 export const fadeOut = keyframes`
   from {
     opacity: 1;
   }
   to {
     opacity: 0;
+  }
+`;
+
+export const animStrokeDashoffset = () => keyframes`
+  from {
+    stroke-dashoffset: 292.16811678385073;
+  }
+  to {
+    stroke-dashoffset: 58.43362335677015;
   }
 `;
 
@@ -29,10 +47,6 @@ export const rainEffect = keyframes`
   }
 `;
 
-/**
- * todo
- * [] Use clip-path instead of clip
- */
 export const glitch = keyframes`
   0% {
     clip: rect(5px, 9999px, 54px, 0);

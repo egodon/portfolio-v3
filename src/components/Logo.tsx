@@ -2,38 +2,84 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  size?: number | string;
+  size?: number;
   className?: string;
 };
 
-const Logo: React.FC<Props> = ({ size, className }) => (
-  <SVG
-    className={className}
-    width={size}
-    viewBox="0 0 139 66"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M0 12H46.3187L65.3187 0H19L0 12Z" fill="var(--logo-grey)" />
-    <path d="M0 39H46.0927L65 27H18.9073L0 39Z" fill="var(--color-secondary)" />
-    <path d="M0 66H46.0927L65 54H18.9073L0 66Z" fill="var(--logo-grey)" />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M134.659 13.5467C128.657 5.33448 118.951 0 108 0C89.7746 0 75 14.7746 75 33C75 51.2254 89.7746 66 108 66C118.951 66 128.657 60.6655 134.659 52.4533L124.492 46.0021C120.646 50.8734 114.688 54 108 54C96.402 54 87 44.598 87 33C87 21.402 96.402 12 108 12C114.688 12 120.646 15.1266 124.492 19.9979L134.659 13.5467Z"
-      fill="var(--logo-grey)"
-    />
-    <path d="M137.145 27H101.5V39H118.5L137.145 27Z" fill="var(--color-secondary)" />
-  </SVG>
-);
+const Logo: React.FC<Props> = ({ size = 80, className }) => {
+  const CX = String(Number(size) * 0.9);
+  const CY = '50%';
+  const strokeWidth = 22;
 
-Logo.defaultProps = {
-  size: 80,
+  // 115 is from the viewBox
+  const RADIUS = 115 / 2 - strokeWidth / 2;
+  const strokeDasharray = RADIUS * 2 * Math.PI;
+  const strokeDashoffset = strokeDasharray * 0.2;
+
+  return (
+    <>
+      <SVG
+        className={className}
+        width={size / 2}
+        viewBox="0 0 115 115"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 20.9091H81.2983L114.647 0H33.3487L0 20.9091Z"
+          fill="var(--logo-grey)"
+          className="logo-bar-1"
+        />
+        <path
+          d="M0 67.9546H80.9016L114.088 47.0455H33.186L0 67.9546Z"
+          fill="var(--color-secondary)"
+          className="logo-bar-2"
+        />
+        <path
+          d="M0 115H80.9016L114.088 94.0909H33.186L0 115Z"
+          fill="var(--logo-grey)"
+          className="logo-bar-3"
+        />
+      </SVG>
+      <SVG
+        className={className}
+        width={size / 2}
+        circleOrigin={[CX, CY]}
+        viewBox="0 0 115 115"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        strokeDashoffset={strokeDashoffset}
+      >
+        <path
+          d="M115 46H54V67H83.0926L115 46Z"
+          fill="var(--color-secondary)"
+          className="logo-bar-4"
+        />
+        <circle
+          cx="50%"
+          cy="50%"
+          r={RADIUS}
+          fill="none"
+          strokeWidth={strokeWidth}
+          stroke="var(--logo-grey)"
+          strokeDasharray={strokeDasharray}
+          className="logo-curve"
+        ></circle>
+      </SVG>
+    </>
+  );
 };
 
-const SVG = styled.svg`
+const SVG = styled.svg<{ circleOrigin?: String[] }>`
+  margin: 0 0.2rem;
   --logo-grey: ${({ theme }) => (theme.inDarkMode ? '#EDF2F7' : '#718096')};
   color: ${({ theme }) => (theme.inDarkMode ? '#EDF2F7' : '#718096')};
+
+  .logo-curve {
+    stroke-dashoffset: ${({ strokeDashoffset }) => strokeDashoffset};
+    transform: rotate(33deg);
+    transform-origin: 50% 50%;
+  }
 
   &:hover {
     /* For glitch animation */
