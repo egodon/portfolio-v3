@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  fadeOut,
-  fadeIn,
-  translateRight,
-  glitch,
-  animStrokeDashoffset,
-} from 'css/animations.css';
+import { fadeOut, logoAnim, clockWise } from 'css/animations.css';
 import Logo from './Logo';
 
 const LandingAnimation = () => {
@@ -32,61 +26,48 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  animation: ${fadeOut} 0.3s 1.8s ease forwards;
-  /* opacity: 0; */
+  animation: ${fadeOut} 0.3s 4s ease forwards;
 `;
 
 const LogoContainer = styled.div`
   position: relative;
 
-  svg {
-    /* position: absolute;
-    left: 0; */
-  }
-
-  .logo-2 {
-    /* left: -2px; */
-    /* --logo-grey: var(--color-primary);
-    animation: ${glitch} 0.7s infinite linear alternate-reverse; */
-  }
-
-  --duration: 0.3s;
-  --timing-function: ease-out;
-  --fill-mode: backwards;
+  --duration: 3s;
+  --timing-function: ease;
+  --fill-mode: both;
   --delay-1: 0.3s;
   --delay-2: 0.4s;
   --delay-3: 0.5s;
   --delay-4: 0.6s;
   --delay-5: 0.7s;
 
+  .logo-bar-1,
+  .logo-bar-2,
+  .logo-bar-3,
+  .logo-bar-4 {
+    animation-name: ${logoAnim};
+    animation-duration: var(--duration);
+    animation-timing-function: var(--timing-function);
+    animation-fill-mode: vaR(--fill-mode);
+  }
+
   .logo-bar-1 {
-    animation: var(--duration) var(--timing-function) var(--delay-1) var(--fill-mode) ${fadeIn},
-      var(--duration) var(--timing-function) var(--delay-1) var(--fill-mode) ${translateRight};
+    animation-delay: var(--delay-1);
   }
 
   .logo-bar-2 {
-    animation: var(--duration) var(--timing-function) var(--delay-2) var(--fill-mode)
-        ${fadeIn},
-      var(--duration) var(--timing-function) var(--delay-2) var(--fill-mode)
-        ${translateRight};
+    animation-delay: var(--delay-2);
   }
 
   .logo-bar-3 {
-    animation: var(--duration) var(--timing-function) var(--delay-3) var(--fill-mode)
-        ${fadeIn},
-      var(--duration) var(--timing-function) var(--delay-3) var(--fill-mode)
-        ${translateRight};
+    animation-delay: var(--delay-3);
+  }
+  .logo-bar-4 {
+    animation-delay: var(--delay-5);
   }
 
   .logo-curve {
-    animation: ${animStrokeDashoffset} .4s ease var(--delay-4) backwards;
-  }
-
-  .logo-bar-4 {
-    animation: var(--duration) var(--timing-function) var(--delay-5) var(--fill-mode)
-        ${fadeIn},
-      var(--duration) var(--timing-function) var(--delay-5) var(--fill-mode)
-        ${translateRight};
+    animation: ${clockWise} var(--duration) var(--delay-4) ease both;
   }
 `;
 

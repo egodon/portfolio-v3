@@ -9,12 +9,22 @@ export const fadeIn = keyframes`
   }
 `;
 
-export const translateRight = keyframes`
-  from {
+export const logoAnim = keyframes`
+  0% {
     transform: translateX(-100%);
+    opacity: 0;
   }
-  to {
+  20% {
     transform: translateX(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
   }
 `;
 
@@ -27,12 +37,19 @@ export const fadeOut = keyframes`
   }
 `;
 
-export const animStrokeDashoffset = () => keyframes`
-  from {
+// todo: use dynamic values here
+export const clockWise = () => keyframes`
+  0% {
     stroke-dashoffset: 292.16811678385073;
   }
-  to {
+  20% {
     stroke-dashoffset: 58.43362335677015;
+  }
+  80% {
+    stroke-dashoffset: 58.43362335677015;
+  }
+  100% {
+    stroke-dashoffset: -292.16811678385073;
   }
 `;
 

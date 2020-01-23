@@ -48,7 +48,7 @@ const AppContainer = styled.div`
   background-color: var(--bg-color);
 
   ${media.tablet`
-    --mobile-nav-height: 7rem
+    --mobile-nav-height: 7rem;
     grid-template-columns: auto;
     grid-template-rows: calc(100vh - var(--mobile-nav-height)) var(--mobile-nav-height);
   `};

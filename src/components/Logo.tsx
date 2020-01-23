@@ -17,9 +17,8 @@ const Logo: React.FC<Props> = ({ size = 80, className }) => {
   const strokeDashoffset = strokeDasharray * 0.2;
 
   return (
-    <>
+    <Container className={className}>
       <SVG
-        className={className}
         width={size / 2}
         viewBox="0 0 115 115"
         fill="none"
@@ -42,7 +41,6 @@ const Logo: React.FC<Props> = ({ size = 80, className }) => {
         />
       </SVG>
       <SVG
-        className={className}
         width={size / 2}
         circleOrigin={[CX, CY]}
         viewBox="0 0 115 115"
@@ -66,9 +64,11 @@ const Logo: React.FC<Props> = ({ size = 80, className }) => {
           className="logo-curve"
         ></circle>
       </SVG>
-    </>
+    </Container>
   );
 };
+
+const Container = styled.div``;
 
 const SVG = styled.svg<{ circleOrigin?: String[] }>`
   margin: 0 0.2rem;
