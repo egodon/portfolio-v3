@@ -1,0 +1,3 @@
+[submodule "portfolio-v3.wiki"]
+	path = portfolio-v3.wiki
+	url = git@github.com:egodon/portfolio-v3.wiki.git
