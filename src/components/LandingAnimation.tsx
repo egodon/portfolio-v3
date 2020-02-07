@@ -21,7 +21,7 @@ const Container = styled.div`
   right: 0;
   background-color: var(--bg-color);
   color: red;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;

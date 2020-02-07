@@ -21,6 +21,7 @@ const Template: React.FC<Props> = ({ children, router }) => {
     <>
       <ThemeProvider theme={{ ...variables, inDarkMode, setDarkMode }}>
         <AppContainer>
+          <LandingAnimation />
           <SideNav pathname={router.pathname} />
           <Main>
             <>
@@ -31,7 +32,6 @@ const Template: React.FC<Props> = ({ children, router }) => {
             </>
           </Main>
           <GlobalStyle theme={{ ...variables, inDarkMode }} />
-          <LandingAnimation />
         </AppContainer>
       </ThemeProvider>
     </>
