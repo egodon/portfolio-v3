@@ -20,7 +20,6 @@ const Container = styled.div`
   left: 0;
   right: 0;
   background-color: var(--bg-color);
-  color: red;
   z-index: 200;
   display: flex;
   justify-content: center;
