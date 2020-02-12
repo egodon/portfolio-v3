@@ -25,6 +25,7 @@
     "next-images": "^1.1.2",
     "next-optimized-images": "^2.5.3",
     "node-geocoder": "^3.24.0",
+    "polished": "^3.4.4",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-feather": "^2.0.3",
