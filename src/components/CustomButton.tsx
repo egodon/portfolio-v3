@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { transparentize } from 'polished';
 
 type Props = {
   href: string;
@@ -36,19 +37,22 @@ const Container = styled.a`
   padding: 0 2.4rem;
   cursor: pointer;
   transition: all 0.1s;
-  font-size: var(--fs-xsmall);
+  font-size: var(--fs-small);
   --height: 4.2rem;
   line-height: var(--height);
   height: var(--height);
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
   position: relative;
 
   svg {
     position: absolute;
     left: 0;
+  }
+
+  &:hover svg {
+    fill: ${(props) => transparentize(0.9, props.theme.__color_secondary)};
   }
 `;
 

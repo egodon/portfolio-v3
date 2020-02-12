@@ -162,7 +162,7 @@ const IconContainer = styled.div`
 const Company = styled.a`
   display: inline-flex;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
   text-transform: uppercase;
   font-weight: 300;
   color: var(--grey-200);

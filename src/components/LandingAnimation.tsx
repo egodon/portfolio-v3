@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { fadeOut, logoAnim, clockWise } from 'css/animations.css';
+import { dev } from 'constants/index';
 import Logo from './Logo';
 
 const LandingAnimation = () => {
+  if (dev) {
+    return null;
+  }
+
   return (
     <Container>
       <LogoContainer>

@@ -4,6 +4,7 @@ import anurati_woff2 from 'static/fonts/anurati-regular-webfont.woff2';
 import anurati_woff from 'static/fonts/anurati-regular-webfont.woff2';
 import inter_woff from 'static/fonts/robotomono-regular.woff';
 import inter_woff2 from 'static/fonts/robotomono-regular.woff2';
+import { normalize } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -16,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
       font-size: 62.5%;
     }
   }
+
+  ${normalize()}
 
   :root {
     ${customProperties}

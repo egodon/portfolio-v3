@@ -89,8 +89,8 @@ const Contact: NextPage = () => {
                 as="textarea"
               />
               <SendButton type="submit">
+                <span>Send</span>
                 <Send />
-                Send
               </SendButton>
             </Form>
           )}
@@ -111,7 +111,7 @@ const SendButton = styled(Button)`
   margin-left: auto;
 
   svg {
-    margin-right: 0.8rem;
+    margin-left: 0.8rem;
   }
 `;
 

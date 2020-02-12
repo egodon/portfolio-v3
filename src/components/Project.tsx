@@ -5,6 +5,7 @@ import ButtonGroup from 'components/ButtonGroup';
 import Button from 'components/Button';
 import { media } from 'css/variables.css';
 import { ChevronRight, Globe, GitHub } from 'react-feather';
+import { transparentize } from 'polished';
 
 type Props = {
   project: {
@@ -153,6 +154,11 @@ type ButtonAsAnchor = {
 
 const LiveSiteButton = styled(Button)<ButtonAsAnchor>`
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_100 : theme.__grey_500)};
+
+  &:hover {
+    background-color: ${({ theme }) =>
+      transparentize(0.9, theme.inDarkMode ? theme.__grey_100 : theme.__grey_500)};
+  }
 `;
 
 const GitHubButton = styled(Button)<ButtonAsAnchor>``;

@@ -8,3 +8,4 @@ export const ROUTES = {
 
 export const isSSR = !!(typeof window === 'undefined');
 export const prod = process.env.NODE_ENV === 'production';
+export const dev = process.env.NODE_ENV === 'development';

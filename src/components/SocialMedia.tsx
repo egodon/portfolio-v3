@@ -7,6 +7,7 @@ import { media } from 'css/index';
 import CodesandboxIcon from 'static/icons/codesandbox.svg';
 import GitHubIcon from 'static/icons/github.svg';
 import LinkedinIcon from 'static/icons/linkedin.svg';
+import { transparentize } from 'polished';
 
 const socialLinks = [
   {
@@ -107,6 +108,8 @@ const IconContainer = styled.a<{ inSidenav?: boolean }>`
 
   &:hover {
     color: ${({ theme }) => (theme.inDarkMode ? theme.__white : theme.__black)};
+    background-color: ${({ theme }) =>
+      transparentize(0.9, theme.inDarkMode ? theme.__grey_300 : theme.__grey_400)};
   }
 
   svg {
