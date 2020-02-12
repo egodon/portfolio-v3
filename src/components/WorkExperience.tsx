@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ChevronRight } from 'react-feather';
+import externalLink from 'static/icons/external-link.svg';
 import { media } from 'css/variables.css';
+import Glitch from 'components/Glitch';
 
 type Props = {
   company: {
@@ -32,9 +34,14 @@ const WorkExperience: React.FC<Props> = ({ company }) => {
           <IconContainer>{companyName[0]}</IconContainer>
         </TimeLine>
         <Details>
-          <Company href={companyWebsite} target="_blank" rel="noopener">
-            {companyName}
-          </Company>
+          <Glitch text={companyName} Icon={externalLink}>
+            {({ GlitchText, GlitchIcon }) => (
+              <Company href={companyWebsite} target="_blank" rel="noopener">
+                <GlitchText />
+                <GlitchIcon viewBox="0 0 24 24" width={15} strokeWidth={2} />
+              </Company>
+            )}
+          </Glitch>
           <Position>{position}</Position>
           {techStack?.length > 0 && (
             <TechStack>Tech Stack: {techStack.join(', ')}</TechStack>
@@ -153,7 +160,8 @@ const IconContainer = styled.div`
 `;
 
 const Company = styled.a`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   font-weight: 300;
@@ -161,8 +169,18 @@ const Company = styled.a`
   font-size: var(--fs-default);
   color: ${({ theme }) => (theme.inDarkMode ? theme.__grey_300 : theme.__grey_500)};
 
-  &:hover {
-    text-decoration: underline;
+  span {
+    margin-right: 0.6rem;
+  }
+
+  svg {
+    opacity: 0;
+    stroke-width: 2;
+    transition: opacity 0.1s ease;
+  }
+
+  &:hover svg {
+    opacity: 1;
   }
 `;
 
