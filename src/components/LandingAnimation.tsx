@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { fadeOut, logoAnim, clockWise } from 'css/animations.css';
-import { dev } from 'constants/index';
+import { DEV_ENV } from 'constants/index';
 import Logo from './Logo';
 
 const LandingAnimation = () => {
-  if (dev) {
+  if (DEV_ENV) {
     return null;
   }
 
