@@ -2,7 +2,6 @@ import { isSSR } from 'constants/index';
 
 const options = {
   timeZone: 'America/New_York',
-  timeStyle: 'short',
   hour: 'numeric',
   hour12: false,
 };
