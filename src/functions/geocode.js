@@ -2,8 +2,6 @@ const NodeGeocoder = require('node-geocoder');
 const { promisify } = require('util');
 const Base64 = require('js-base64').Base64;
 
-require('dotenv').config();
-
 const options = {
   provider: 'opencage',
   httpAdapter: 'https',
