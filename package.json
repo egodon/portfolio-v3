@@ -1,5 +1,5 @@
 {
-  "name": "react-static-example-basic",
+  "name": "evan-portfolio",
   "private": true,
   "scripts": {
     "start": "next start",
