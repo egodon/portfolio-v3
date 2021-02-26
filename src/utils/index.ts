@@ -4,7 +4,7 @@ const options = {
   timeZone: 'America/New_York',
   hour: 'numeric',
   hour12: false,
-};
+} as const;
 
 export const isNightTime = () => {
   const time = new Date().toLocaleString([], options);
@@ -13,7 +13,9 @@ export const isNightTime = () => {
   const isNight = hour >= 17 || hour < 6;
 
   if (isSSR) {
-    console.log(`Hour is ${hour}, setting ${isNight ? 'night' : 'light'} theme`);
+    console.log(
+      `[theme] Hour is ${hour}, setting ${isNight ? 'night' : 'light'} theme`
+    );
   }
 
   return isNight;
