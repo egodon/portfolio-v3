@@ -9,9 +9,7 @@
     "serve": "serve out -p 3000"
   },
   "dependencies": {
-    "@reach/router": "1.2.1",
     "@svgr/webpack": "5.5.0",
-    "axios": "0.21.1",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-plugin-styled-components": "1.12.0",
     "icon-gen": "2.1.0",
