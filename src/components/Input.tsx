@@ -6,7 +6,9 @@ type Props = {
   label: string;
   type?: string;
   name: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   value: string;
   as?: 'textarea';
   required?: boolean;

@@ -26,7 +26,8 @@
       "constants/*": ["./src/constants/*"],
       "utils/*": ["./src/utils/*"],
       "static/*": ["./static/*"],
-      "css/*": ["./src/css/*"]
+      "css/*": ["./src/css/*"],
+      "css": ["./src/css"]
     }
   },
   "exclude": ["node_modules, next.config.js"],
